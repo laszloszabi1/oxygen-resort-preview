@@ -116,16 +116,16 @@
   const burger = document.querySelector('.nav-burger');
   const mm = document.querySelector('.mobile-menu');
   if (burger && mm){
-    burger.addEventListener('click', ()=>{
-      burger.classList.toggle('open');
-      mm.classList.toggle('open');
-      document.body.style.overflow = mm.classList.contains('open') ? 'hidden' : '';
-    });
-    mm.querySelectorAll('a').forEach(a=> a.addEventListener('click', ()=>{
-      burger.classList.remove('open');
-      mm.classList.remove('open');
-      document.body.style.overflow = '';
-    }));
+    // jelöljük, hogy a mobile-menu scroll-ját NE fogja el a Lenis
+    mm.setAttribute('data-lenis-prevent','');
+    const setOpen = (open)=>{
+      burger.classList.toggle('open', open);
+      mm.classList.toggle('open', open);
+      document.body.style.overflow = open ? 'hidden' : '';
+      if (open){ lenis.stop(); } else { lenis.start(); mm.scrollTop = 0; }
+    };
+    burger.addEventListener('click', ()=> setOpen(!mm.classList.contains('open')));
+    mm.querySelectorAll('a').forEach(a=> a.addEventListener('click', ()=> setOpen(false)));
   }
 
   // ==== Form handler (local preview) ====

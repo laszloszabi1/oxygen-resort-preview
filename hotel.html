@@ -21,7 +21,8 @@
   .soon-inner .r input{flex:1;padding:14px;background:var(--bg-deep);border:1px solid var(--line);border-radius:var(--r-sharp);color:var(--text);font-size:14px}
   .soon-inner .r input:focus{outline:none;border-color:var(--accent)}
   .soon-inner .r .note{font-family:var(--f-mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
-  @media(max-width:860px){.soon-inner{grid-template-columns:1fr;padding:var(--s-6) var(--s-4)}}
+  @media(max-width:860px){.soon-inner{grid-template-columns:1fr;padding:var(--s-6) var(--s-4);gap:var(--s-5)}.soon-inner .l h2{font-size:clamp(36px,8vw,56px);max-width:100%}.soon-inner .r{padding:var(--s-4)}.soon-inner .r form{flex-wrap:wrap}.soon-inner .r input{min-width:0;width:100%}.soon-inner .r .btn{width:100%;justify-content:center}}
+  @media(max-width:420px){.soon-hero{min-height:auto}.soon-inner{padding:var(--s-5) var(--s-3)}.soon-inner .l h2{font-size:clamp(32px,9vw,48px);word-break:break-word;overflow-wrap:anywhere}}
 
   .coming{margin-top:var(--s-8);display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s-3)}
   .coming .c{padding:var(--s-5);border:1px dashed var(--line);background:var(--surface);border-radius:var(--r-sharp);opacity:.88}
