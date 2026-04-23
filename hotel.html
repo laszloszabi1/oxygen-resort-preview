@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Hotel Oxygen · În curând · Oxygen Resort</title>
+<meta name="description" content="Hotelul Oxygen Resort — în curând pe DN12C, cu propriul său sistem de rezervare. Înscrie-te la newsletter pentru lansare.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@200;300;400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400;1,6..72,500;1,6..72,600&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Spline+Sans+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./style.css">
+<style>
+  .soon-hero{margin-top:var(--s-8);position:relative;min-height:520px;border:1px solid var(--line);border-radius:var(--r-sharp);overflow:hidden}
+  .soon-hero .bg-grid{position:absolute;inset:0;display:grid;grid-template-columns:repeat(24,1fr);grid-auto-rows:60px;pointer-events:none;z-index:0;opacity:.22}
+  .soon-hero .bg-grid i{border:1px solid rgba(255,255,255,.05)}
+  .soon-inner{position:relative;z-index:2;padding:var(--s-9) var(--s-7);display:grid;grid-template-columns:1.4fr 1fr;gap:var(--s-7);align-items:center}
+  .soon-inner .l h2{font-size:clamp(48px,6vw,108px);font-weight:300;letter-spacing:-.035em;line-height:.96;max-width:16ch}
+  .soon-inner .l h2 em{font-family:var(--f-accent);font-style:italic;color:var(--accent)}
+  .soon-inner .l p{margin-top:var(--s-4);font-size:17px;color:var(--text-lead);line-height:1.7;max-width:46ch}
+  .soon-inner .r{padding:var(--s-6);border:1px solid var(--line);background:rgba(6,9,13,.7);backdrop-filter:blur(8px);border-radius:var(--r-sharp);display:flex;flex-direction:column;gap:var(--s-3)}
+  .soon-inner .r h4{font-family:var(--f-mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent)}
+  .soon-inner .r form{display:flex;gap:8px}
+  .soon-inner .r input{flex:1;padding:14px;background:var(--bg-deep);border:1px solid var(--line);border-radius:var(--r-sharp);color:var(--text);font-size:14px}
+  .soon-inner .r input:focus{outline:none;border-color:var(--accent)}
+  .soon-inner .r .note{font-family:var(--f-mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+  @media(max-width:860px){.soon-inner{grid-template-columns:1fr;padding:var(--s-6) var(--s-4)}}
+
+  .coming{margin-top:var(--s-8);display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s-3)}
+  .coming .c{padding:var(--s-5);border:1px dashed var(--line);background:var(--surface);border-radius:var(--r-sharp);opacity:.88}
+  .coming .c .k{font-family:var(--f-mono);font-size:10px;letter-spacing:.22em;color:var(--accent);text-transform:uppercase}
+  .coming .c h5{font-family:var(--f-display);font-size:18px;font-weight:500;letter-spacing:-.005em;margin-top:8px}
+  .coming .c p{margin-top:var(--s-2);font-size:13px;color:var(--muted);line-height:1.6}
+  @media(max-width:760px){.coming{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="rail" id="rail" style="--p:0%"></div>
+<div class="alt-chip"><div class="ac-line"></div><div class="ac-val">Altitudine <b id="altV">820</b> m</div><div class="ac-line"></div></div>
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <div class="nav-left"><a href="./index.html" class="brandmark"><img src="./logo/logo.webp" alt="Oxygen Resort"><span class="bn">OXYGEN RESORT</span></a></div>
+    <nav class="nav-links"><a href="./index.html">Acasă</a><a href="./restro.html">Restro</a><a href="./cabine.html">Cabine</a><a href="./bob.html">Bob</a><a href="./contact.html">Contact</a></nav>
+    <div class="nav-right"><div class="lang-toggle"><a class="on" href="#">RO</a><a href="#">HU</a><a href="#">EN</a></div><a href="./contact.html" class="nav-cta">Rezervă<span class="arr">→</span></a><button class="nav-burger" aria-label="Menu"><span></span><span></span><span></span></button></div>
+  </div>
+</header>
+<nav class="mobile-menu"><a href="./index.html"><span class="num">00</span>Acasă</a><a href="./restro.html"><span class="num">01</span>Oxygen Restro</a><a href="./cabine.html"><span class="num">02</span>17 Cabine</a><a href="./bob.html"><span class="num">03</span>Pistă de bob</a><a href="./aventura.html"><span class="num">04</span>Parc de aventură</a><a href="./schi.html"><span class="num">05</span>Pârtie de schi</a><a href="./adventure.html"><span class="num">06</span>Adventure offroad</a><a href="./salina.html"><span class="num">07</span>Salina</a><a href="./hotel.html"><span class="num">08</span>Hotel · în curând</a><a href="./contact.html"><span class="num">09</span>Contact</a><div class="lang-toggle-mm"><a href="#" class="on">RO</a><a href="#">HU</a><a href="#">EN</a></div></nav>
+
+<section class="cover cover-sub" id="cover">
+  <img src="./images/hotel-1.webp" class="cover-video" alt="Hotel Oxygen — în curând">
+  <div class="cover-inner">
+    <div class="cover-top reveal">
+      <div class="cover-chips"><span class="chip on">● 08 / 08 · Hotel</span><span class="chip">În curând</span><span class="chip">Sistem propriu de rezervare</span></div>
+      <div class="cover-coord"><div><span>Newsletter</span></div><div>lansare · <span>în curând</span></div></div>
+    </div>
+    <div class="cover-mid">
+      <span class="eyebrow reveal" style="margin-bottom:0">— în pregătire · lansare anunțată</span>
+      <h1 class="words" id="heroH1">
+        <span class="w"><span>Hotel</span></span>
+        <span class="w"><span><em>Oxygen.</em></span></span>
+      </h1>
+      <p class="lead reveal">„Hotelul nostru va fi disponibil în curând, cu propriul său sistem de rezervare.” Completează cererea de mai jos și vom trimite anunțul de lansare direct la tine.</p>
+      <div class="cover-cta reveal">
+        <a class="btn primary" href="#newsletter"><span>Fii printre primii</span><span class="arr">→</span></a>
+        <a class="btn ghost" href="./cabine.html"><span>Între timp · cabine</span><span class="arr">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="seg-flow">
+  <div class="wrap">
+    <div class="sh reveal"><div class="sh-left"><span class="eyebrow">01 · statusul proiectului</span><h2 class="reveal-clip"><span class="clip-inner">Un <span class="italic">hotel</span> la capătul drumului DN12C.</span></h2></div><span class="sh-meta">coming soon</span></div>
+
+    <div class="soon-hero reveal" id="newsletter">
+      <div class="bg-grid"></div>
+      <div class="soon-inner">
+        <div class="l">
+          <span class="micro" style="color:var(--accent)">● în curs de amenajare</span>
+          <h2>Un <span class="italic">hotel</span> integrat în complex.</h2>
+          <p>Ca parte finală din constelația Oxygen Resort, hotelul va avea propriul său sistem de rezervare și propriul său ritm. Vom comunica detaliile (camere, pachete, data de deschidere) doar celor înscriși la newsletter.</p>
+        </div>
+        <div class="r">
+          <h4>— Anunț de lansare</h4>
+          <form data-local name="hotel-newsletter" method="POST" data-netlify="true" novalidate>
+            <input type="hidden" name="form-name" value="hotel-newsletter">
+            <input type="email" name="email" required placeholder="email@exemplu.ro" aria-label="Email">
+            <button type="submit" class="btn primary"><span>Notifică-mă</span><span class="arr">→</span></button>
+          </form>
+          <span class="note">Nu trimitem spam · doar anunț de lansare.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="seg-flow dark">
+  <div class="wrap">
+    <div class="sh reveal"><div class="sh-left"><span class="eyebrow">02 · ce urmează</span><h2 class="reveal-clip"><span class="clip-inner">Câteva <span class="italic">detalii</span> cunoscute.</span></h2><p class="lead">Ce putem confirma astăzi despre hotelul Oxygen — pe baza a ceea ce este comunicat pe oxygenresort.ro.</p></div><span class="sh-meta">verified · sub acolada „soon”</span></div>
+    <div class="coming reveal" data-stagger>
+      <div class="c"><span class="k">01 · sistem</span><h5>Rezervare proprie</h5><p>„Hotelul va avea propriul său sistem de rezervare” — independent de sistemele de cazare actuale ale cabinelor.</p></div>
+      <div class="c"><span class="k">02 · locație</span><h5>Pasul Pângărați</h5><p>Pe aceeași locație a complexului Oxygen Resort — DN12C, creasta Munților Hășmaș, 1240 m altitudine.</p></div>
+      <div class="c"><span class="k">03 · complex</span><h5>Integrat cu experiențele</h5><p>Hotelul va putea fi combinat cu celelalte experiențe Oxygen — bob, aventură, schi, salină, restro.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="seg-flow">
+  <div class="wrap">
+    <div class="sh reveal"><div class="sh-left"><span class="eyebrow">03 · galerie</span><h2 class="reveal-clip"><span class="clip-inner">Cum <span class="italic">va arăta.</span></span></h2><p class="lead">Imagini din timpul construcției și ale complexului în care va fi integrat — cadru de referință pentru ceea ce urmează.</p></div><span class="sh-meta">cadre construcție</span></div>
+    <div class="gal-pro">
+      <a class="gp-item" href="#"><img src="./images/hotel-1.webp" alt="Hotel — stadiu 01"><div class="ov"><span class="mh">01 · stadiu construcție</span><span class="mn">Cadru exterior</span></div></a>
+      <a class="gp-item" href="#"><img src="./images/hotel-2.webp" alt="Hotel — stadiu 02"><div class="ov"><span class="mh">02 · structură</span><span class="mn">Volum principal</span></div></a>
+      <a class="gp-item" href="#"><img src="./images/hotel-3.webp" alt="Hotel — stadiu 03"><div class="ov"><span class="mh">03 · detaliu fațadă</span><span class="mn">În lucru</span></div></a>
+      <a class="gp-item" href="#"><img src="./images/hotel-4.webp" alt="Hotel — stadiu 04"><div class="ov"><span class="mh">04 · context</span><span class="mn">În mijlocul complexului</span></div></a>
+      <a class="gp-item" href="#"><img src="./images/hotel-5.webp" alt="Hotel — stadiu 05"><div class="ov"><span class="mh">05 · vedere aerian</span><span class="mn">Integrare în decorul montan</span></div></a>
+      <a class="gp-item" href="#"><img src="./images/hotel-6.webp" alt="Hotel — stadiu 06"><div class="ov"><span class="mh">06 · amenajări</span><span class="mn">Pasajele de acces</span></div></a>
+      <a class="gp-item" href="#"><img src="./images/hotel-7.webp" alt="Hotel — stadiu 07"><div class="ov"><span class="mh">07 · structură</span><span class="mn">Cadru constructiv</span></div></a>
+      <a class="gp-item" href="#"><img src="./images/hotel-9.webp" alt="Hotel — stadiu 09"><div class="ov"><span class="mh">08 · lucrări finale</span><span class="mn">Etapele finale</span></div></a>
+      <a class="gp-item" href="#"><img src="./images/hotel-12.webp" alt="Hotel — stadiu 12"><div class="ov"><span class="mh">09 · cadre noi</span><span class="mn">Aspect aproape final</span></div></a>
+    </div>
+    <div class="strip reveal" style="margin-top:var(--s-8)"><img src="./images/cabin-1.webp" alt="">
+      <div class="strip-inner">
+        <div class="lt"><span class="ey">— între timp</span><h3>Până la deschidere, ești <em>invitat</em> la cele 17 cabine.</h3></div>
+        <div class="rt"><div>Cabine · <b>17 în pădure</b></div><div>Tel · <b>+40 775 607 812</b></div></div>
+      </div>
+    </div>
+    <div class="cover-cta" style="justify-content:center;margin-top:var(--s-6)">
+      <a class="btn primary" href="./cabine.html"><span>Vezi cabinele</span><span class="arr">→</span></a>
+      <a class="btn ghost" href="./contact.html"><span>Contact direct</span><span class="arr">→</span></a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="brand"><div class="lg"><img src="./logo/logo.webp" alt="Oxygen Resort"><span>OXYGEN RESORT</span></div><p>Complex de altitudine pe DN12C, creasta Munților Hășmaș.</p>
+      <div class="f-social"><a href="https://www.facebook.com/profile.php?id=100063484366206" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg></a><a href="https://www.instagram.com/oxygen_restro" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor"/></svg></a></div>
+    </div>
+    <div class="col"><h5>— Experiențe</h5><ul><li><a href="./restro.html">Restro</a></li><li><a href="./cabine.html">Cabine</a></li><li><a href="./bob.html">Bob</a></li><li><a href="./aventura.html">Aventură</a></li><li><a href="./schi.html">Schi</a></li><li><a href="./adventure.html">Adventure</a></li><li><a href="./salina.html">Salina</a></li></ul></div>
+    <div class="col"><h5>— Complex</h5><ul><li><a href="./hotel.html">Hotel</a></li><li><a href="./contact.html">Contact</a></li><li><a href="./index.html#constelatie">Hartă</a></li></ul></div>
+    <div class="col"><h5>— Hotel</h5><ul><li>în curând</li><li>sistem propriu</li><li>newsletter deschis</li></ul></div>
+    <div class="f-bot"><span class="mono">© 2026 Oxygen Resort</span><span class="mono">46.7757° N · 1240 m</span></div>
+  </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js"></script>
+<script src="./app.js"></script>
+<script>
+  // bg-grid cells fill
+  const bg = document.querySelector('.bg-grid');
+  if (bg){ for (let i=0;i<24*8;i++) bg.appendChild(document.createElement('i')); }
+</script>
+</body>
+</html>

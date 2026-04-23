@@ -1,0 +1,1003 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Oxygen Resort — Moodboard v2 · Art Direction</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@200;300;400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400;1,6..72,500;1,6..72,600&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Spline+Sans+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg-deep:#06090D;
+    --bg:#0A1118;
+    --surface:#131C26;
+    --surface-hi:#1C2734;
+    --line:#223041;
+    --line-soft:#1A2430;
+    --text:#F3F5F2;
+    --text-lead:#D7DCDC;
+    --muted:#7B8A98;
+    --muted-dim:#4A5764;
+    --accent:#4DC5FF;
+    --accent-warm:#FFD9A1;
+    --moss:#7FD195;
+    --danger:#E86B6B;
+
+    --f-display:'Sora',ui-sans-serif,system-ui,sans-serif;
+    --f-accent:'Newsreader','EB Garamond',serif;
+    --f-body:'Plus Jakarta Sans',ui-sans-serif,system-ui,sans-serif;
+    --f-mono:'Spline Sans Mono','SF Mono',monospace;
+
+    --s-1:4px; --s-2:8px; --s-3:16px; --s-4:24px;
+    --s-5:32px; --s-6:48px; --s-7:64px; --s-8:96px;
+    --s-9:120px; --s-10:160px;
+
+    --r-sharp:2px; --r-pill:999px;
+    --ease:cubic-bezier(.22,1,.36,1);
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:var(--bg-deep);color:var(--text);font-family:var(--f-body);line-height:1.55;font-weight:400;-webkit-font-smoothing:antialiased}
+  html{scroll-behavior:auto}
+  body{overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  img,video{display:block;max-width:100%}
+
+  /* Lenis */
+  html.lenis,html.lenis body{height:auto}
+  .lenis.lenis-smooth{scroll-behavior:auto !important}
+  .lenis.lenis-smooth [data-lenis-prevent]{overscroll-behavior:contain}
+  .lenis.lenis-stopped{overflow:hidden}
+
+  /* ==== SCROLL PROGRESS + ALTITUDE CHIP ==== */
+  .rail{position:fixed;top:0;left:24px;height:100vh;width:1px;background:linear-gradient(180deg,transparent,var(--line) 15%,var(--line) 85%,transparent);z-index:40;pointer-events:none}
+  .rail::after{content:"";position:absolute;top:0;left:-1px;width:3px;height:var(--p,0%);background:linear-gradient(180deg,var(--accent),var(--accent-warm));transition:height .15s linear;border-radius:2px}
+  .alt-chip{position:fixed;top:50%;right:24px;transform:translateY(-50%);z-index:40;display:flex;flex-direction:column;gap:var(--s-2);align-items:flex-end;pointer-events:none}
+  .alt-chip .ac-line{width:1px;height:80px;background:linear-gradient(180deg,transparent,var(--line),transparent)}
+  .alt-chip .ac-val{font-family:var(--f-mono);font-size:10px;letter-spacing:.22em;color:var(--muted);writing-mode:vertical-rl;transform:rotate(180deg);padding:var(--s-3) 0}
+  .alt-chip .ac-val b{color:var(--accent);font-weight:500}
+  @media(max-width:960px){.rail,.alt-chip{display:none}}
+
+  /* ==== LAYOUT ==== */
+  .wrap{max-width:1440px;margin:0 auto;padding:0 72px}
+  @media(max-width:760px){.wrap{padding:0 24px}}
+
+  section{padding:var(--s-10) 0;position:relative}
+  section::before{content:"";position:absolute;inset:-120px 0 auto 0;height:120px;background:linear-gradient(180deg,transparent 0%,var(--bg-deep) 90%);pointer-events:none;z-index:0}
+  section > *{position:relative;z-index:1}
+
+  .eyebrow{font-family:var(--f-mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin-bottom:var(--s-4);display:inline-flex;align-items:center;gap:var(--s-2);overflow:hidden}
+  .eyebrow::before{content:"";width:0;height:1px;background:var(--accent);transition:width 1.2s var(--ease) .1s}
+  .reveal.in .eyebrow::before{width:32px}
+  .reveal .eyebrow::before{width:0}
+
+  h1,h2,h3,h4{font-family:var(--f-display);font-weight:500;letter-spacing:-.02em;color:var(--text);line-height:1.05}
+  h2{font-size:clamp(42px,5vw,72px);font-weight:400}
+  h3{font-size:clamp(28px,3vw,44px);font-weight:400}
+  h4{font-size:18px;font-weight:500;letter-spacing:.02em;text-transform:uppercase}
+
+  .italic{font-family:var(--f-accent);font-style:italic;font-weight:400;letter-spacing:-.005em}
+  .lead{font-family:var(--f-body);font-size:19px;line-height:1.62;color:var(--text-lead);max-width:58ch}
+  .micro{font-family:var(--f-mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+  .mono{font-family:var(--f-mono)}
+
+  /* ==== REVEAL ==== */
+  .reveal{opacity:0;transform:translateY(36px);transition:opacity 1.1s var(--ease),transform 1.1s var(--ease)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal-clip{overflow:hidden}
+  .reveal-clip > .clip-inner{transform:translateY(110%);transition:transform 1.3s var(--ease)}
+  .reveal-clip.in > .clip-inner{transform:none}
+  [data-stagger] > *{opacity:0;transform:translateY(24px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+  [data-stagger].in > *{opacity:1;transform:none}
+  [data-stagger].in > *:nth-child(1){transition-delay:.05s}
+  [data-stagger].in > *:nth-child(2){transition-delay:.12s}
+  [data-stagger].in > *:nth-child(3){transition-delay:.19s}
+  [data-stagger].in > *:nth-child(4){transition-delay:.26s}
+  [data-stagger].in > *:nth-child(5){transition-delay:.33s}
+  [data-stagger].in > *:nth-child(6){transition-delay:.40s}
+  [data-stagger].in > *:nth-child(7){transition-delay:.47s}
+  [data-stagger].in > *:nth-child(8){transition-delay:.54s}
+  [data-stagger].in > *:nth-child(9){transition-delay:.61s}
+  [data-stagger].in > *:nth-child(10){transition-delay:.68s}
+  [data-stagger].in > *:nth-child(11){transition-delay:.75s}
+  [data-stagger].in > *:nth-child(12){transition-delay:.82s}
+
+  /* word reveal (hero) */
+  .words .w{display:inline-block;overflow:hidden;vertical-align:top;padding:0 .06em}
+  .words .w > span{display:inline-block;transform:translateY(105%);transition:transform 1.1s var(--ease)}
+  .words.in .w > span{transform:none}
+  .words .w:nth-child(1)>span{transition-delay:.15s}
+  .words .w:nth-child(2)>span{transition-delay:.25s}
+  .words .w:nth-child(3)>span{transition-delay:.35s}
+  .words .w:nth-child(4)>span{transition-delay:.45s}
+  .words .w:nth-child(5)>span{transition-delay:.55s}
+  .words .w:nth-child(6)>span{transition-delay:.65s}
+  .words .w:nth-child(7)>span{transition-delay:.75s}
+
+  /* ==== NAV ==== */
+  .nav{position:fixed;top:0;left:0;right:0;z-index:50;transition:background .4s var(--ease),border-color .4s var(--ease),backdrop-filter .4s var(--ease)}
+  .nav.scrolled{backdrop-filter:blur(20px);background:rgba(6,9,13,.72);border-bottom:1px solid var(--line)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:16px 72px}
+  .nav-left{display:flex;align-items:center;gap:var(--s-4)}
+  .brandmark{display:flex;align-items:center;gap:12px}
+  .brandmark img{height:30px;width:auto;filter:brightness(1.05)}
+  .brandmark .bn{font-family:var(--f-display);font-size:13px;letter-spacing:.32em;font-weight:500}
+  .nav-badge{font-family:var(--f-mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;padding:5px 10px;border:1px solid var(--accent);color:var(--accent);border-radius:var(--r-sharp);display:inline-flex;align-items:center;gap:6px}
+  .nav-badge .dot{width:6px;height:6px;background:var(--accent);border-radius:999px;animation:breath 2.4s var(--ease) infinite}
+  .nav-right{display:flex;gap:var(--s-4);align-items:center}
+  .nav-right .micro{color:var(--muted)}
+  @keyframes breath{0%,100%{opacity:.4;transform:scale(.85)}50%{opacity:1;transform:scale(1.15)}}
+  @media(max-width:760px){.nav-inner{padding:12px 20px}.nav-badge{display:none}}
+
+  /* ==== COVER ==== */
+  .cover{position:relative;height:100vh;min-height:860px;padding:0;overflow:hidden}
+  .cover::before{display:none}
+  .cover-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.55) saturate(1.05);transform:scale(1.04);transition:transform 30s linear}
+  .cover.ready .cover-video{transform:scale(1.14)}
+  .cover::after{content:"";position:absolute;inset:0;background:radial-gradient(80% 120% at 50% 110%,rgba(6,9,13,.92) 0%,rgba(6,9,13,.35) 50%,rgba(6,9,13,.88) 100%),linear-gradient(180deg,rgba(6,9,13,.7) 0%,rgba(6,9,13,0) 22%,rgba(6,9,13,.92) 100%);pointer-events:none}
+  .cover-inner{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;padding:116px 72px 140px}
+  .cover-top{display:flex;justify-content:space-between;align-items:flex-start;gap:var(--s-5);flex-wrap:wrap}
+  .cover-chips{display:flex;gap:var(--s-2);flex-wrap:wrap}
+  .chip{font-family:var(--f-mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;padding:7px 12px;border:1px solid var(--line);border-radius:var(--r-sharp);color:var(--muted);background:rgba(6,9,13,.55);transition:all .5s var(--ease)}
+  .chip.on{color:var(--accent);border-color:var(--accent)}
+  .chip:hover{color:var(--text);border-color:var(--text)}
+  .cover-coord{font-family:var(--f-mono);font-size:11px;letter-spacing:.16em;color:var(--muted);text-align:right;line-height:1.9}
+  .cover-coord span{color:var(--text-lead)}
+  .cover-mid{display:flex;flex-direction:column;gap:var(--s-4);max-width:1100px;margin:auto 0}
+  .cover-mid h1{font-family:var(--f-display);font-size:clamp(56px,7.2vw,124px);font-weight:300;letter-spacing:-.035em;line-height:.94;color:var(--text)}
+  .cover-mid h1 em{font-family:var(--f-accent);font-style:italic;font-weight:400;color:var(--accent);letter-spacing:-.015em}
+  .cover-mid .lead{font-size:clamp(16px,1.4vw,19px);color:var(--text-lead);max-width:54ch}
+  .cover-cta{display:flex;gap:var(--s-3);flex-wrap:wrap;margin-top:var(--s-2)}
+  .cover-bot{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--s-5);border-top:1px solid rgba(255,255,255,.12);padding-top:var(--s-4);margin-top:var(--s-6)}
+  .meta .k{display:block;font-family:var(--f-mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+  .meta .v{display:block;font-family:var(--f-display);font-size:22px;font-weight:400;color:var(--text);letter-spacing:-.01em}
+  .meta .v em{font-family:var(--f-accent);font-style:italic;color:var(--accent-warm)}
+  .cover-marquee{position:absolute;bottom:0;left:0;right:0;overflow:hidden;padding:14px 0;border-top:1px solid rgba(255,255,255,.08);background:rgba(6,9,13,.55);backdrop-filter:blur(8px);z-index:3}
+  .marquee-track{display:flex;gap:80px;animation:mq 48s linear infinite;white-space:nowrap}
+  .marquee-track span{font-family:var(--f-mono);font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--muted);display:inline-flex;align-items:center;gap:20px}
+  .marquee-track span::after{content:"◇";color:var(--accent);font-size:9px}
+  @keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  @media(max-width:760px){
+    .cover-inner{padding:92px 24px 80px}
+    .cover-bot{grid-template-columns:repeat(2,1fr);gap:var(--s-3)}
+    .cover-mid h1{font-size:clamp(48px,13vw,72px)}
+  }
+
+  /* ==== SOFT TRANSITIONS BETWEEN SECTIONS ==== */
+  .seg-flow{position:relative;padding:var(--s-10) 0 var(--s-10);background:linear-gradient(180deg,var(--bg-deep) 0%,var(--bg) 100%)}
+  .seg-flow + .seg-flow{background:linear-gradient(180deg,var(--bg) 0%,var(--bg-deep) 100%)}
+  .seg-flow.dark{background:var(--bg-deep)}
+
+  /* ==== MANIFESTO ==== */
+  .manifest{display:grid;grid-template-columns:1fr 1fr;gap:var(--s-8);align-items:start;margin-top:var(--s-7)}
+  .manifest-left h3{max-width:14ch;font-size:clamp(32px,3.6vw,52px);font-weight:400;line-height:1.08}
+  .manifest-left h3 .italic{color:var(--accent)}
+  .manifest-left .inline-img{margin-top:var(--s-6);position:relative;aspect-ratio:4/5;overflow:hidden;border-radius:var(--r-sharp);border:1px solid var(--line)}
+  .manifest-left .inline-img img{width:100%;height:100%;object-fit:cover;filter:saturate(.95) brightness(.85)}
+  .manifest-left .inline-img .cap{position:absolute;bottom:16px;left:16px;right:16px;font-family:var(--f-mono);font-size:10px;letter-spacing:.22em;color:var(--text-lead);text-transform:uppercase}
+  .manifest-left .inline-img .cap b{color:var(--accent);margin-right:8px;font-weight:500}
+  .manifest-right{display:flex;flex-direction:column;gap:var(--s-4)}
+  .manifest-right p{font-size:17px;line-height:1.72;color:var(--text-lead)}
+  .manifest-right .pull{font-family:var(--f-accent);font-size:clamp(30px,2.8vw,42px);line-height:1.3;color:var(--text);padding:var(--s-5) 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin:var(--s-4) 0}
+  .manifest-right .pull em{color:var(--accent-warm);font-style:italic}
+  .manifest-tags{display:flex;gap:var(--s-2);flex-wrap:wrap;margin-top:var(--s-3)}
+  @media(max-width:860px){.manifest{grid-template-columns:1fr;gap:var(--s-5)}}
+
+  /* ==== PALETTA ==== */
+  .palette-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-top:var(--s-6)}
+  .swatch{position:relative;aspect-ratio:3/4;border-radius:var(--r-sharp);overflow:hidden;border:1px solid var(--line);display:flex;flex-direction:column;justify-content:space-between;padding:var(--s-3);transition:transform .8s var(--ease),box-shadow .8s var(--ease)}
+  .swatch:hover{transform:translateY(-6px);box-shadow:0 20px 40px -20px rgba(0,0,0,.8)}
+  .swatch .sw-head{display:flex;justify-content:space-between;align-items:flex-start}
+  .swatch .sw-role{font-family:var(--f-mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase}
+  .swatch .sw-idx{font-family:var(--f-mono);font-size:10px;opacity:.5}
+  .swatch .sw-foot{display:flex;flex-direction:column;gap:4px}
+  .swatch .sw-name{font-family:var(--f-display);font-size:14px;font-weight:500;letter-spacing:-.005em}
+  .swatch .sw-hex{font-family:var(--f-mono);font-size:11px;letter-spacing:.12em}
+  .palette-context{margin-top:var(--s-6);display:grid;grid-template-columns:2fr 1fr;gap:var(--s-4)}
+  .palette-context .ctx-img{position:relative;aspect-ratio:16/7;overflow:hidden;border-radius:var(--r-sharp);border:1px solid var(--line)}
+  .palette-context .ctx-img img{width:100%;height:100%;object-fit:cover;filter:brightness(.7) saturate(1.1)}
+  .palette-context .ctx-img::after{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(77,197,255,.08) 0%,transparent 60%),linear-gradient(-45deg,rgba(255,217,161,.04) 0%,transparent 40%)}
+  .palette-context .ctx-img .cap{position:absolute;bottom:20px;left:20px;right:20px;display:flex;justify-content:space-between;align-items:flex-end;gap:var(--s-3)}
+  .palette-context .ctx-img .cap .e{font-family:var(--f-mono);font-size:10px;letter-spacing:.2em;color:var(--accent);text-transform:uppercase}
+  .palette-context .ctx-img .cap .t{font-family:var(--f-accent);font-size:22px;color:var(--text);max-width:22ch;line-height:1.3}
+  .palette-context .ctx-side{padding:var(--s-4);border:1px solid var(--line);background:var(--surface);border-radius:var(--r-sharp);display:flex;flex-direction:column;gap:var(--s-3)}
+  .palette-context .ctx-side h5{font-family:var(--f-display);font-size:14px;font-weight:500;letter-spacing:.02em;text-transform:uppercase;color:var(--text)}
+  .palette-context .ctx-side p{font-family:var(--f-body);font-size:13px;color:var(--muted);line-height:1.6}
+  .palette-context .ctx-side .cdot{display:flex;gap:6px;margin-top:var(--s-2)}
+  .palette-context .ctx-side .cdot i{width:14px;height:14px;border-radius:2px;display:block;border:1px solid rgba(255,255,255,.1)}
+  @media(max-width:880px){.palette-grid{grid-template-columns:repeat(3,1fr)}.palette-context{grid-template-columns:1fr}}
+  @media(max-width:520px){.palette-grid{grid-template-columns:repeat(2,1fr)}}
+
+  /* ==== TYPOGRAPHY ==== */
+  .type-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--s-5);margin-top:var(--s-6)}
+  .type-card{position:relative;padding:var(--s-5);border:1px solid var(--line);background:linear-gradient(180deg,var(--surface) 0%,rgba(19,28,38,0) 100%);border-radius:var(--r-sharp);overflow:hidden}
+  .type-card::before{content:"";position:absolute;top:0;left:0;height:2px;width:100%;background:linear-gradient(90deg,var(--accent),transparent);opacity:0;transform:scaleX(0);transform-origin:left;transition:opacity .6s var(--ease),transform 1.2s var(--ease)}
+  .type-card:hover::before{opacity:1;transform:scaleX(1)}
+  .type-card .type-tag{display:flex;justify-content:space-between;align-items:center;padding-bottom:var(--s-3);border-bottom:1px solid var(--line);margin-bottom:var(--s-4)}
+  .type-card .fam{font-family:var(--f-mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent)}
+  .type-card .usage{font-family:var(--f-mono);font-size:10px;letter-spacing:.16em;color:var(--muted)}
+  .type-sample-display{font-family:var(--f-display);font-size:clamp(44px,5.2vw,84px);font-weight:300;letter-spacing:-.035em;line-height:.95;color:var(--text)}
+  .type-sample-accent{font-family:var(--f-accent);font-style:italic;font-size:clamp(42px,5vw,76px);line-height:1.05;color:var(--accent);font-weight:400}
+  .type-sample-body{font-family:var(--f-body);font-size:18px;line-height:1.68;color:var(--text-lead);max-width:52ch}
+  .type-sample-mono{font-family:var(--f-mono);font-size:15px;letter-spacing:.1em;color:var(--text);line-height:1.8}
+  .type-sample-mono b{color:var(--accent);font-weight:500}
+  .type-details{display:flex;gap:var(--s-3);margin-top:var(--s-3);padding-top:var(--s-3);border-top:1px solid var(--line);flex-wrap:wrap}
+  .type-details .d{font-family:var(--f-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .type-hero{margin-top:var(--s-6);position:relative;aspect-ratio:21/7;overflow:hidden;border-radius:var(--r-sharp);border:1px solid var(--line);background:var(--bg-deep)}
+  .type-hero img{width:100%;height:100%;object-fit:cover;opacity:.35;filter:brightness(.8) saturate(1.15)}
+  .type-hero .overlay{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:var(--s-6);text-align:center;gap:var(--s-3)}
+  .type-hero .overlay .eyebrow{margin:0}
+  .type-hero .overlay .big{font-family:var(--f-display);font-size:clamp(48px,7vw,108px);font-weight:300;letter-spacing:-.035em;line-height:.92;color:var(--text)}
+  .type-hero .overlay .big em{font-family:var(--f-accent);font-style:italic;color:var(--accent);font-weight:400}
+  .type-hero .overlay .sub{font-family:var(--f-mono);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);margin-top:var(--s-3)}
+  @media(max-width:760px){.type-grid{grid-template-columns:1fr}}
+
+  /* ==== SPACING & RADIUS ==== */
+  .spacing-wrap{display:grid;grid-template-columns:2fr 1fr;gap:var(--s-6);margin-top:var(--s-6);align-items:start}
+  .spacing-bars{display:flex;flex-direction:column;gap:12px}
+  .spacing-row{display:grid;grid-template-columns:90px 1fr 70px;align-items:center;gap:var(--s-3)}
+  .spacing-row .token{font-family:var(--f-mono);font-size:11px;letter-spacing:.14em;color:var(--accent)}
+  .spacing-row .bar-wrap{height:16px;background:var(--surface);border-radius:var(--r-sharp);overflow:hidden;position:relative}
+  .spacing-row .bar{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent-warm));border-radius:var(--r-sharp);opacity:.9;transform:scaleX(0);transform-origin:left;transition:transform 1.4s var(--ease)}
+  .in .spacing-row .bar{transform:scaleX(1)}
+  .spacing-row .px{font-family:var(--f-mono);font-size:11px;letter-spacing:.12em;color:var(--muted);text-align:right}
+  .aside-stack{display:flex;flex-direction:column;gap:var(--s-4)}
+  .radius-stack{display:flex;flex-direction:column;gap:var(--s-3);padding:var(--s-4);background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sharp)}
+  .radius-stack .cmp-label,.aside-stack .cmp-label{font-family:var(--f-mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+  .radius-stack .rr{display:flex;align-items:center;gap:var(--s-3)}
+  .radius-stack .rr-box{width:56px;height:32px;background:var(--accent);flex-shrink:0}
+  .radius-stack .rr-lbl{font-family:var(--f-mono);font-size:11px;letter-spacing:.14em;color:var(--text)}
+  .radius-stack .rr-lbl span{color:var(--muted);margin-left:8px}
+  .ease-card{padding:var(--s-4);border:1px solid var(--line);background:var(--surface);border-radius:var(--r-sharp);display:flex;flex-direction:column;gap:var(--s-3)}
+  .ease-graph{height:72px;position:relative;background:rgba(77,197,255,.04);border:1px solid var(--line-soft);border-radius:var(--r-sharp);overflow:hidden}
+  .ease-graph svg{width:100%;height:100%}
+  .ease-card .ease-meta{display:flex;justify-content:space-between;font-family:var(--f-mono);font-size:10px;letter-spacing:.16em;color:var(--muted);text-transform:uppercase}
+  .ease-card .ease-meta b{color:var(--accent);font-weight:500}
+  @media(max-width:760px){.spacing-wrap{grid-template-columns:1fr}}
+
+  /* ==== COMPONENTS ==== */
+  .cmp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s-4);margin-top:var(--s-6)}
+  .cmp{padding:var(--s-5);border:1px solid var(--line);background:var(--surface);border-radius:var(--r-sharp);display:flex;flex-direction:column;gap:var(--s-4);transition:border-color .6s var(--ease)}
+  .cmp:hover{border-color:rgba(77,197,255,.35)}
+  .cmp-label{font-family:var(--f-mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:16px 26px;font-family:var(--f-mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;border-radius:var(--r-sharp);cursor:pointer;border:1px solid transparent;transition:all .5s var(--ease);width:fit-content;position:relative;overflow:hidden}
+  .btn.primary{background:var(--accent);color:var(--bg-deep)}
+  .btn.primary::before{content:"";position:absolute;inset:0;background:var(--text);transform:translateY(100%);transition:transform .6s var(--ease);z-index:0}
+  .btn.primary:hover::before{transform:translateY(0)}
+  .btn.primary > *{position:relative;z-index:1;transition:color .5s var(--ease)}
+  .btn.primary:hover > *{color:var(--bg-deep)}
+  .btn.ghost{background:transparent;color:var(--text);border-color:var(--line)}
+  .btn.ghost:hover{border-color:var(--accent);color:var(--accent);background:rgba(77,197,255,.04)}
+  .btn .arr{display:inline-block;transition:transform .5s var(--ease)}
+  .btn:hover .arr{transform:translateX(6px)}
+  .badge{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;font-family:var(--f-mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;border:1px solid var(--line);border-radius:var(--r-pill);color:var(--text)}
+  .badge.oxygen{border-color:var(--accent);color:var(--accent)}
+  .badge.moss{border-color:var(--moss);color:var(--moss)}
+  .badge::before{content:"";width:6px;height:6px;border-radius:999px;background:currentColor;animation:breath 2.4s var(--ease) infinite}
+  .svc-card{position:relative;padding:var(--s-5);border:1px solid var(--line);background:linear-gradient(180deg,var(--surface) 0%,var(--bg) 100%);border-radius:var(--r-sharp);overflow:hidden;transition:border-color .6s var(--ease),transform .6s var(--ease)}
+  .svc-card:hover{border-color:var(--accent);transform:translateY(-4px)}
+  .svc-card .svc-idx{position:absolute;top:var(--s-4);right:var(--s-4);font-family:var(--f-mono);font-size:10px;letter-spacing:.2em;color:var(--muted)}
+  .svc-card .svc-head{font-family:var(--f-mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:var(--s-3)}
+  .svc-card h4{font-family:var(--f-display);font-size:28px;font-weight:400;letter-spacing:-.01em;line-height:1.1;margin-bottom:10px}
+  .svc-card h4 .italic{color:var(--accent-warm);font-style:italic}
+  .svc-card .svc-stat{display:flex;gap:var(--s-3);margin-top:var(--s-3);padding-top:var(--s-3);border-top:1px solid var(--line)}
+  .svc-card .svc-stat .s{font-family:var(--f-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);display:flex;flex-direction:column;gap:4px}
+  .svc-card .svc-stat .s b{color:var(--text);font-weight:500;font-size:18px;letter-spacing:.04em}
+  @media(max-width:760px){.cmp-grid{grid-template-columns:1fr}}
+
+  /* ==== IMAGE TREATMENT ==== */
+  .img-trio{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s-3);margin-top:var(--s-6)}
+  .img-tile{position:relative;aspect-ratio:4/5;overflow:hidden;border:1px solid var(--line);border-radius:var(--r-sharp)}
+  .img-tile img{width:100%;height:100%;object-fit:cover;transition:transform 2.6s var(--ease),filter 1s var(--ease)}
+  .img-tile:hover img{transform:scale(1.035)}
+  .img-tile.cinematic img{filter:brightness(.65) contrast(1.1) saturate(.95)}
+  .img-tile.editorial img{filter:brightness(1.02) contrast(1.02) saturate(1.08)}
+  .img-tile.duotone{background:var(--accent)}
+  .img-tile.duotone img{mix-blend-mode:luminosity;opacity:.75;filter:contrast(1.2)}
+  .img-tile .ov{position:absolute;inset:auto 0 0 0;padding:var(--s-4);background:linear-gradient(0deg,rgba(6,9,13,.96) 0%,rgba(6,9,13,0) 100%)}
+  .img-tile .ov .mh{font-family:var(--f-mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin-bottom:4px;display:block}
+  .img-tile .ov .mn{font-family:var(--f-display);font-size:15px;font-weight:500;color:var(--text)}
+  .img-tile .ov .mx{font-family:var(--f-body);font-size:12px;color:var(--muted);margin-top:4px;line-height:1.4}
+  @media(max-width:760px){.img-trio{grid-template-columns:1fr}}
+
+  /* ==== SERVICE CONSTELLATION ==== */
+  .constell-hero{display:grid;grid-template-columns:360px 1fr;gap:var(--s-6);margin-top:var(--s-7);align-items:start}
+  .constell-intro .pull{font-family:var(--f-accent);font-style:italic;font-size:clamp(22px,1.8vw,28px);line-height:1.45;color:var(--text-lead);margin:var(--s-3) 0}
+  .constell-intro .pull em{color:var(--accent);font-style:italic}
+  .constell-intro .cmp-label{margin-bottom:var(--s-2)}
+  .constell-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;position:relative}
+  .constell-grid::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 80% at 50% 50%,rgba(77,197,255,.06) 0%,transparent 70%);pointer-events:none;border-radius:var(--r-sharp)}
+  .star{position:relative;padding:var(--s-4);border:1px solid var(--line);background:var(--surface);border-radius:var(--r-sharp);aspect-ratio:1/1;display:flex;flex-direction:column;justify-content:space-between;transition:all .6s var(--ease);overflow:hidden}
+  .star::after{content:"";position:absolute;inset:-1px;border:1px solid var(--accent);border-radius:var(--r-sharp);opacity:0;transition:opacity .5s var(--ease)}
+  .star:hover{background:var(--surface-hi);transform:translateY(-4px)}
+  .star:hover::after{opacity:1}
+  .star .st-idx{font-family:var(--f-mono);font-size:10px;letter-spacing:.2em;color:var(--muted)}
+  .star .st-ico{font-size:28px;color:var(--accent);transition:transform 1s var(--ease)}
+  .star:hover .st-ico{transform:translateY(-4px) rotate(6deg)}
+  .star h5{font-family:var(--f-display);font-size:17px;font-weight:500;letter-spacing:-.005em;line-height:1.2}
+  .star .st-m{font-family:var(--f-mono);font-size:10px;letter-spacing:.16em;color:var(--muted)}
+  .star.featured{border-color:var(--accent);background:linear-gradient(135deg,rgba(77,197,255,.1) 0%,var(--surface) 60%)}
+  .star.soon{opacity:.66}
+  .star.soon .st-ico{animation:breath 3.2s var(--ease) infinite;color:var(--muted)}
+  @media(max-width:960px){.constell-hero{grid-template-columns:1fr}.constell-grid{grid-template-columns:repeat(2,1fr)}}
+
+  /* ==== MOODBOARD ==== */
+  .mb-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:var(--s-6);flex-wrap:wrap;gap:var(--s-4)}
+  .mb-grid{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:110px;gap:10px}
+  .mb-cell{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:var(--r-sharp);opacity:0;transform:translateY(30px) scale(.97);transition:opacity 1.2s var(--ease),transform 1.2s var(--ease)}
+  .mb-cell.in{opacity:1;transform:none}
+  .mb-cell img,.mb-cell video{width:100%;height:100%;object-fit:cover;transition:transform 3s var(--ease)}
+  .mb-cell:hover img,.mb-cell:hover video{transform:scale(1.04)}
+  .mb-cell .mb-ov{position:absolute;inset:auto 0 0 0;padding:14px 16px;background:linear-gradient(0deg,rgba(6,9,13,.96) 0%,rgba(6,9,13,0) 100%);display:flex;flex-direction:column;gap:4px;transform:translateY(10px);opacity:0;transition:opacity .6s var(--ease),transform .8s var(--ease)}
+  .mb-cell:hover .mb-ov{opacity:1;transform:none}
+  .mb-cell::after{content:"";position:absolute;top:12px;right:12px;width:8px;height:8px;background:var(--accent);border-radius:999px;opacity:0;transform:scale(.6);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+  .mb-cell:hover::after{opacity:1;transform:scale(1);animation:breath 2.4s var(--ease) infinite}
+  .mb-cell .mb-role{font-family:var(--f-mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent)}
+  .mb-cell .mb-txt{font-family:var(--f-body);font-size:12px;line-height:1.4;color:var(--text-lead);max-width:32ch}
+  .mb-cell.lg{grid-column:span 7;grid-row:span 5}
+  .mb-cell.md{grid-column:span 5;grid-row:span 3}
+  .mb-cell.sm{grid-column:span 5;grid-row:span 2}
+  .mb-cell.sq{grid-column:span 3;grid-row:span 3}
+  .mb-cell.wide{grid-column:span 6;grid-row:span 2}
+  .mb-cell.wide-tall{grid-column:span 6;grid-row:span 3}
+  .mb-cell.tall{grid-column:span 3;grid-row:span 4}
+  .mb-cell.mini{grid-column:span 3;grid-row:span 2}
+  @media(max-width:960px){
+    .mb-grid{grid-template-columns:repeat(6,1fr);grid-auto-rows:110px}
+    .mb-cell{grid-column:span 6 !important;grid-row:span 3 !important}
+  }
+
+  /* ==== SITEMAP ==== */
+  .sitemap{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:var(--s-6)}
+  .site{padding:var(--s-4);border:1px solid var(--line);background:var(--surface);border-radius:var(--r-sharp);display:flex;justify-content:space-between;align-items:flex-start;gap:var(--s-3);transition:all .6s var(--ease);position:relative;overflow:hidden}
+  .site::before{content:"";position:absolute;bottom:0;left:0;height:1px;width:0;background:var(--accent);transition:width .8s var(--ease)}
+  .site:hover{border-color:rgba(77,197,255,.4);background:var(--surface-hi)}
+  .site:hover::before{width:100%}
+  .site .left{display:flex;flex-direction:column;gap:6px}
+  .site .url{font-family:var(--f-mono);font-size:11px;letter-spacing:.14em;color:var(--accent)}
+  .site .title{font-family:var(--f-display);font-size:18px;font-weight:500;letter-spacing:-.005em}
+  .site .desc{font-family:var(--f-body);font-size:13px;color:var(--muted);line-height:1.55;max-width:32ch}
+  .site .n{font-family:var(--f-mono);font-size:11px;letter-spacing:.18em;color:var(--muted)}
+  .site.soon{opacity:.6;border-style:dashed}
+  @media(max-width:880px){.sitemap{grid-template-columns:1fr}}
+
+  /* ==== INLINE BG IMAGE STRIPS (flow-filler) ==== */
+  .strip{position:relative;margin-top:var(--s-8);aspect-ratio:24/5;overflow:hidden;border-radius:var(--r-sharp);border:1px solid var(--line)}
+  .strip img{width:100%;height:100%;object-fit:cover;filter:brightness(.55) saturate(1.05);transition:transform 3s var(--ease)}
+  .strip:hover img{transform:scale(1.025)}
+  .strip::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(6,9,13,.85) 0%,rgba(6,9,13,0) 40%,rgba(6,9,13,0) 60%,rgba(6,9,13,.85) 100%),linear-gradient(180deg,rgba(6,9,13,.2) 0%,rgba(6,9,13,.5) 100%)}
+  .strip-inner{position:absolute;inset:0;display:flex;justify-content:space-between;align-items:center;padding:var(--s-7);gap:var(--s-5);z-index:2}
+  .strip-inner .lt{max-width:44%}
+  .strip-inner .lt .ey{display:block;font-family:var(--f-mono);font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--accent);margin-bottom:var(--s-3)}
+  .strip-inner .lt h3{font-family:var(--f-display);font-size:clamp(24px,2.4vw,36px);font-weight:400;line-height:1.2;color:var(--text)}
+  .strip-inner .lt h3 em{font-family:var(--f-accent);font-style:italic;color:var(--accent-warm)}
+  .strip-inner .rt{display:flex;flex-direction:column;align-items:flex-end;gap:6px;font-family:var(--f-mono);font-size:10px;letter-spacing:.22em;color:var(--muted);text-transform:uppercase}
+  .strip-inner .rt b{color:var(--text);font-weight:500;font-size:14px;letter-spacing:.14em}
+  @media(max-width:760px){.strip{aspect-ratio:16/10}.strip-inner{flex-direction:column;padding:var(--s-4);align-items:flex-start}.strip-inner .lt{max-width:100%}}
+
+  /* ==== FOOT ==== */
+  .foot{padding:var(--s-8) 0 var(--s-7);display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:var(--s-5)}
+  .foot .mono{color:var(--muted);font-size:11px;letter-spacing:.16em;text-transform:uppercase}
+
+  /* section header */
+  .sh{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:var(--s-4);gap:var(--s-4);flex-wrap:wrap}
+  .sh .sh-meta{font-family:var(--f-mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+  .sh h2 .italic{color:var(--accent-warm);font-style:italic}
+  .sh .lead{margin-top:var(--s-3)}
+  .sh-left{max-width:780px}
+
+  /* decorative floating dots */
+  .fl-dots{position:absolute;pointer-events:none;z-index:0;font-family:var(--f-mono);color:var(--line);opacity:.5}
+  .fl-dots.tl{top:40px;left:40px;font-size:10px;letter-spacing:.2em}
+  .fl-dots.br{bottom:40px;right:40px;font-size:10px;letter-spacing:.2em}
+
+  @media (prefers-reduced-motion: reduce){
+    *,*::before,*::after{transition-duration:.01ms !important;animation-duration:.01ms !important}
+  }
+</style>
+</head>
+<body>
+
+<!-- scroll rail + altitude chip -->
+<div class="rail" id="rail" style="--p:0%"></div>
+<div class="alt-chip"><div class="ac-line"></div><div class="ac-val" id="alt">Altitudine <b id="altV">0000</b> m</div><div class="ac-line"></div></div>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <div class="nav-left">
+      <div class="brandmark">
+        <img src="./logo/logo.webp" alt="Oxygen Resort">
+        <span class="bn">OXYGEN RESORT</span>
+      </div>
+      <span class="nav-badge"><span class="dot"></span>Moodboard v2</span>
+    </div>
+    <div class="nav-right">
+      <span class="micro">RO · HU · EN</span>
+      <span class="micro">22 apr 2026</span>
+    </div>
+  </div>
+</header>
+
+<!-- COVER -->
+<section class="cover" id="cover">
+  <video preload="metadata" class="cover-video" id="heroVid" autoplay muted loop playsinline poster="./images/ski-6.webp">
+    <source src="./images/hero-video.mp4" type="video/mp4">
+  </video>
+  <div class="cover-inner">
+    <div class="cover-top reveal">
+      <div class="cover-chips">
+        <span class="chip on">● Art direction — v2</span>
+        <span class="chip">Hășmaș · 1240 m</span>
+        <span class="chip">DN12C</span>
+        <span class="chip">Lacul Roșu · 9 km</span>
+      </div>
+      <div class="cover-coord">
+        <div>46°46′32.5″N · 25°43′24.8″E</div>
+        <div><span>Pasul Pângărați · Gheorgheni · Harghita</span></div>
+      </div>
+    </div>
+
+    <div class="cover-mid">
+      <span class="eyebrow reveal" style="margin-bottom:0">moodboard · v2 — 22 aprilie 2026</span>
+      <h1 class="words" id="heroH1">
+        <span class="w"><span>Respiră</span></span>
+        <span class="w"><span>muntele.</span></span><br>
+        <span class="w"><span><em>Oxygen</em></span></span>
+        <span class="w"><span><em>Resort.</em></span></span>
+      </h1>
+      <p class="lead reveal">Șapte experiențe montane. Un singur complex de altitudine. Un singur respir.</p>
+      <div class="cover-cta reveal">
+        <a class="btn primary" href="#constelatie"><span>Explorează complexul</span><span class="arr">→</span></a>
+        <a class="btn ghost" href="#manifest"><span>Citește manifestul</span><span class="arr">↓</span></a>
+      </div>
+    </div>
+
+    <div class="cover-bot reveal" data-stagger>
+      <div class="meta"><span class="k">Coordonate</span><span class="v">46.7757° <em>N</em></span></div>
+      <div class="meta"><span class="k">Drum</span><span class="v">DN12C · <em>est</em></span></div>
+      <div class="meta"><span class="k">Servicii</span><span class="v">7 active · <em>1 în curând</em></span></div>
+      <div class="meta"><span class="k">Limbi</span><span class="v">RO / HU / <em>EN</em></span></div>
+    </div>
+  </div>
+
+  <div class="cover-marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Restaurant panoramic</span><span>17 cabine de munte</span><span>Pistă de bob 1260 m</span><span>Parc de aventură 5 ha</span><span>Pârtie de schi</span><span>Adventure offroad</span><span>Salina</span><span>Hotel — în curând</span>
+      <span>Restaurant panoramic</span><span>17 cabine de munte</span><span>Pistă de bob 1260 m</span><span>Parc de aventură 5 ha</span><span>Pârtie de schi</span><span>Adventure offroad</span><span>Salina</span><span>Hotel — în curând</span>
+    </div>
+  </div>
+</section>
+
+<!-- MANIFESTO -->
+<section class="seg-flow" id="manifest">
+  <div class="wrap">
+    <div class="sh reveal">
+      <div class="sh-left">
+        <span class="eyebrow">01 · esență</span>
+        <h2 class="reveal-clip"><span class="clip-inner">Un complex de altitudine, <span class="italic">pentru toate vârstele.</span></span></h2>
+      </div>
+      <span class="sh-meta">brand manifesto · 01 / 09</span>
+    </div>
+
+    <div class="manifest">
+      <div class="manifest-left reveal">
+        <h3><span class="italic">High-tech alpin.</span><br>Precizie geometrică.<br>Aer care se respiră.</h3>
+        <div class="inline-img">
+          <img src="./images/bob-1.webp" alt="Cabine și munte">
+          <div class="cap"><b>01</b>Cabinele roșii pe creasta DN12C</div>
+        </div>
+      </div>
+      <div class="manifest-right reveal" data-stagger>
+        <p>Oxygen Resort nu este un singur loc. Este o constelație de experiențe situate pe drumul DN12C, între Gheorgheni și Piatra Neamț, pe creasta Munților Hășmaș — un complex care unește restaurantul panoramic, cele 17 cabine din pădure, pârtia de schi, pista de bob de 1260 m, parcul de aventură de 5 hectare, salina cu generator de sare fină, și — în curând — hotelul propriu.</p>
+        <div class="pull">„Un singur munte. <em>Șapte feluri de a-l trăi.</em>"</div>
+        <p>Limbajul vizual caută echilibrul între tehnologia precisă (tipografie geometrică, grid monospaced, neon oxigen) și materialitatea muntelui (fotografie cinematică, spațiu alb abundant, textură alpină). Nu o stațiune rustică — un resort de altitudine, high-tech, premium.</p>
+        <div class="manifest-tags">
+          <span class="chip">cinematic</span>
+          <span class="chip">editorial</span>
+          <span class="chip">premium</span>
+          <span class="chip">high-tech</span>
+          <span class="chip on">oxigen</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="strip reveal">
+      <img src="./images/ski-1.webp" alt="Pârtia de schi panoramă">
+      <div class="strip-inner">
+        <div class="lt">
+          <span class="ey">— voce vizuală</span>
+          <h3>Fotografia <em>respiră aerul</em> muntelui. Tipografia îl măsoară.</h3>
+        </div>
+        <div class="rt">
+          <div>Ken-burns · <b>12s loop</b></div>
+          <div>Overlay · <b>radial bottom</b></div>
+          <div>Saturație · <b>−8%</b></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PALETTE -->
+<section class="seg-flow dark" id="paleta">
+  <div class="wrap">
+    <div class="sh reveal">
+      <div class="sh-left">
+        <span class="eyebrow">02 · paletă</span>
+        <h2 class="reveal-clip"><span class="clip-inner">Noapte alpină, <span class="italic">cu o respirație de oxigen.</span></span></h2>
+        <p class="lead">Douăsprezece tokenuri semantice — fundal adânc pentru contrast cinematic, un singur signature-blue pentru chemarea la aer curat, și o nuanță caldă pentru reflexul soarelui pe zăpadă. Contrastul minim: 8 : 1 pentru textul primar.</p>
+      </div>
+      <span class="sh-meta">12 tokenuri · 8 : 1 contrast</span>
+    </div>
+
+    <div class="palette-grid reveal" data-stagger>
+      <div class="swatch" style="background:#06090D;color:#F3F5F2"><div class="sw-head"><span class="sw-role">bg · deep</span><span class="sw-idx">01</span></div><div class="sw-foot"><span class="sw-name">Obsidian Night</span><span class="sw-hex">#06090D</span></div></div>
+      <div class="swatch" style="background:#131C26;color:#F3F5F2"><div class="sw-head"><span class="sw-role">surface</span><span class="sw-idx">02</span></div><div class="sw-foot"><span class="sw-name">Alpine Slate</span><span class="sw-hex">#131C26</span></div></div>
+      <div class="swatch" style="background:#1C2734;color:#F3F5F2"><div class="sw-head"><span class="sw-role">surface · hi</span><span class="sw-idx">03</span></div><div class="sw-foot"><span class="sw-name">Granite Rise</span><span class="sw-hex">#1C2734</span></div></div>
+      <div class="swatch" style="background:#223041;color:#F3F5F2"><div class="sw-head"><span class="sw-role">line · divider</span><span class="sw-idx">04</span></div><div class="sw-foot"><span class="sw-name">Ridge Line</span><span class="sw-hex">#223041</span></div></div>
+      <div class="swatch" style="background:#4A5764;color:#F3F5F2"><div class="sw-head"><span class="sw-role">muted · dim</span><span class="sw-idx">05</span></div><div class="sw-foot"><span class="sw-name">Pine Shadow</span><span class="sw-hex">#4A5764</span></div></div>
+      <div class="swatch" style="background:#7B8A98;color:#06090D"><div class="sw-head"><span class="sw-role">text · muted</span><span class="sw-idx">06</span></div><div class="sw-foot"><span class="sw-name">Cold Mist</span><span class="sw-hex">#7B8A98</span></div></div>
+      <div class="swatch" style="background:#D7DCDC;color:#06090D"><div class="sw-head"><span class="sw-role">text · lead</span><span class="sw-idx">07</span></div><div class="sw-foot"><span class="sw-name">Glacier Light</span><span class="sw-hex">#D7DCDC</span></div></div>
+      <div class="swatch" style="background:#F3F5F2;color:#06090D"><div class="sw-head"><span class="sw-role">text · primary</span><span class="sw-idx">08</span></div><div class="sw-foot"><span class="sw-name">Snow Breath</span><span class="sw-hex">#F3F5F2</span></div></div>
+      <div class="swatch" style="background:#4DC5FF;color:#06090D"><div class="sw-head"><span class="sw-role">accent · signature</span><span class="sw-idx">09</span></div><div class="sw-foot"><span class="sw-name">Oxygen Blue</span><span class="sw-hex">#4DC5FF</span></div></div>
+      <div class="swatch" style="background:#FFD9A1;color:#06090D"><div class="sw-head"><span class="sw-role">accent · warm</span><span class="sw-idx">10</span></div><div class="sw-foot"><span class="sw-name">Alpine Sun</span><span class="sw-hex">#FFD9A1</span></div></div>
+      <div class="swatch" style="background:#7FD195;color:#06090D"><div class="sw-head"><span class="sw-role">accent · aurora</span><span class="sw-idx">11</span></div><div class="sw-foot"><span class="sw-name">Moss Signal</span><span class="sw-hex">#7FD195</span></div></div>
+      <div class="swatch" style="background:#E86B6B;color:#06090D"><div class="sw-head"><span class="sw-role">state · alert</span><span class="sw-idx">12</span></div><div class="sw-foot"><span class="sw-name">Alpine Flare</span><span class="sw-hex">#E86B6B</span></div></div>
+    </div>
+
+    <div class="palette-context reveal">
+      <div class="ctx-img">
+        <img src="./images/salina-1.webp" alt="Paleta în context — salina">
+        <div class="cap">
+          <div class="t">Tokenii aplicați pe atmosfera reală a complexului — contrast cinematic, text fin, signature pulsant.</div>
+          <div class="e">— în context</div>
+        </div>
+      </div>
+      <div class="ctx-side">
+        <h5>Signature — Oxygen Blue</h5>
+        <p>Folosit strict pentru eyebrow, state-uri active, CTA primar, pulsații „live". Nu pentru paragraf. Max 5% din suprafața vizuală / screen.</p>
+        <div class="cdot"><i style="background:#4DC5FF"></i><i style="background:#FFD9A1"></i><i style="background:#7FD195"></i><i style="background:#F3F5F2"></i><i style="background:#06090D;border-color:#223041"></i></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TYPOGRAPHY -->
+<section class="seg-flow">
+  <div class="wrap">
+    <div class="sh reveal">
+      <div class="sh-left">
+        <span class="eyebrow">03 · tipografie</span>
+        <h2 class="reveal-clip"><span class="clip-inner">Patru familii, <span class="italic">patru voci.</span></span></h2>
+        <p class="lead">Sora pentru geometrie tehnică, Newsreader pentru momentul editorial cu căldură, Plus Jakarta Sans pentru paragraf lung, Spline Sans Mono pentru coordonate și metadate. Nicio suprapunere cu alți clienți — voce vizuală proprie Oxygen.</p>
+      </div>
+      <span class="sh-meta">4 familii · google fonts · variable</span>
+    </div>
+
+    <div class="type-grid reveal" data-stagger>
+      <div class="type-card">
+        <div class="type-tag"><span class="fam">Sora</span><span class="usage">display · h1 · headline</span></div>
+        <div class="type-sample-display">Respiră<br>muntele</div>
+        <div class="type-details"><span class="d">Weight 300–800</span><span class="d">Tracking −0.04em</span><span class="d">Line-height 0.92</span></div>
+      </div>
+      <div class="type-card">
+        <div class="type-tag"><span class="fam">Newsreader</span><span class="usage">accent · italic · editorial</span></div>
+        <div class="type-sample-accent">un singur munte.</div>
+        <div class="type-details"><span class="d">Optical size 6–72</span><span class="d">Italic integral</span><span class="d">Contrast variabil</span></div>
+      </div>
+      <div class="type-card">
+        <div class="type-tag"><span class="fam">Plus Jakarta Sans</span><span class="usage">body · paragraf · UI</span></div>
+        <div class="type-sample-body">Drumul DN12C trece prin Pasul Pângărați, chiar pe creasta Munților Hășmaș, între Gheorgheni și Piatra Neamț. De aici, Lacul Roșu se vede la câteva minute, iar aerul se simte.</div>
+        <div class="type-details"><span class="d">Weight 400 / 500</span><span class="d">Line-height 1.68</span><span class="d">Max 52ch</span></div>
+      </div>
+      <div class="type-card">
+        <div class="type-tag"><span class="fam">Spline Sans Mono</span><span class="usage">meta · coordonate · technical</span></div>
+        <div class="type-sample-mono">
+          <div>COORD ............ <b>46.7757° N</b></div>
+          <div>ELEVATION ........ <b>1240 m</b></div>
+          <div>ROAD ............. <b>DN12C</b></div>
+          <div>DISTANCE ......... <b>9 km · Lacul Roșu</b></div>
+        </div>
+        <div class="type-details"><span class="d">Weight 300 / 400 / 500</span><span class="d">Tracking 0.10em</span><span class="d">Uppercase</span></div>
+      </div>
+    </div>
+
+    <div class="type-hero reveal">
+      <img src="./images/ski-6.webp" alt="Typography in context">
+      <div class="overlay">
+        <span class="eyebrow" style="margin:0">— aplicat</span>
+        <div class="big">Respiră <em>muntele.</em></div>
+        <span class="sub">Sora 300 · Newsreader italic · clamp(48–108px)</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPACING & RADIUS -->
+<section class="seg-flow dark">
+  <div class="wrap">
+    <div class="sh reveal">
+      <div class="sh-left">
+        <span class="eyebrow">04 · ritm &amp; spațiu</span>
+        <h2 class="reveal-clip"><span class="clip-inner">Multiplu de 8. <span class="italic">Mereu.</span></span></h2>
+        <p class="lead">O scală unică de spațiu, din tokeni micro până la respirație verticală. Colțuri ascuțite (2 px) pentru senzație de hârtie / oțel. Easing unic — cubic-bezier(.22, 1, .36, 1) — pentru animații profi, nu agresive.</p>
+      </div>
+      <span class="sh-meta">base 8 · 10 tokens · 2 radii · 1 easing</span>
+    </div>
+
+    <div class="spacing-wrap">
+      <div class="spacing-bars reveal">
+        <div class="spacing-row"><span class="token">—s-1</span><div class="bar-wrap"><div class="bar" style="width:2.5%"></div></div><span class="px">4px</span></div>
+        <div class="spacing-row"><span class="token">—s-2</span><div class="bar-wrap"><div class="bar" style="width:5%"></div></div><span class="px">8px</span></div>
+        <div class="spacing-row"><span class="token">—s-3</span><div class="bar-wrap"><div class="bar" style="width:10%"></div></div><span class="px">16px</span></div>
+        <div class="spacing-row"><span class="token">—s-4</span><div class="bar-wrap"><div class="bar" style="width:15%"></div></div><span class="px">24px</span></div>
+        <div class="spacing-row"><span class="token">—s-5</span><div class="bar-wrap"><div class="bar" style="width:20%"></div></div><span class="px">32px</span></div>
+        <div class="spacing-row"><span class="token">—s-6</span><div class="bar-wrap"><div class="bar" style="width:30%"></div></div><span class="px">48px</span></div>
+        <div class="spacing-row"><span class="token">—s-7</span><div class="bar-wrap"><div class="bar" style="width:40%"></div></div><span class="px">64px</span></div>
+        <div class="spacing-row"><span class="token">—s-8</span><div class="bar-wrap"><div class="bar" style="width:60%"></div></div><span class="px">96px</span></div>
+        <div class="spacing-row"><span class="token">—s-9</span><div class="bar-wrap"><div class="bar" style="width:75%"></div></div><span class="px">120px</span></div>
+        <div class="spacing-row"><span class="token">—s-10</span><div class="bar-wrap"><div class="bar" style="width:100%"></div></div><span class="px">160px</span></div>
+      </div>
+      <div class="aside-stack reveal">
+        <div class="radius-stack">
+          <span class="cmp-label">Border radius</span>
+          <div class="rr"><div class="rr-box" style="border-radius:2px"></div><span class="rr-lbl">—r-sharp <span>2px · card · btn · input</span></span></div>
+          <div class="rr"><div class="rr-box" style="border-radius:999px"></div><span class="rr-lbl">—r-pill <span>999px · chip · badge · dot</span></span></div>
+        </div>
+        <div class="ease-card">
+          <span class="cmp-label">Easing · signature</span>
+          <div class="ease-graph"><svg viewBox="0 0 100 72" preserveAspectRatio="none"><path d="M 2 70 C 22 70, 36 5, 98 5" stroke="#4DC5FF" stroke-width="1.2" fill="none" vector-effect="non-scaling-stroke"/><line x1="0" y1="71" x2="100" y2="71" stroke="#223041" stroke-width="0.4"/><line x1="1" y1="0" x2="1" y2="72" stroke="#223041" stroke-width="0.4"/></svg></div>
+          <div class="ease-meta"><span>cubic-bezier</span><b>.22, 1, .36, 1</b></div>
+          <div class="ease-meta"><span>duration</span><b>1.1 – 2.4s</b></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPONENTS -->
+<section class="seg-flow">
+  <div class="wrap">
+    <div class="sh reveal">
+      <div class="sh-left">
+        <span class="eyebrow">05 · componente</span>
+        <h2 class="reveal-clip"><span class="clip-inner">Kit-ul de bază, <span class="italic">sharp și respirabil.</span></span></h2>
+        <p class="lead">Buton cu hover slide-up, chip minimal, badge cu puls „respirație", card de serviciu cu stat-strip. Toate micro-interacțiile: 0.5 – 1.2s, fără bounce, fără scale agresiv.</p>
+      </div>
+      <span class="sh-meta">btn · chip · badge · svc card</span>
+    </div>
+
+    <div class="cmp-grid reveal" data-stagger>
+      <div class="cmp">
+        <span class="cmp-label">Button · primary / ghost</span>
+        <a class="btn primary" href="#"><span>Rezervă acum</span><span class="arr">→</span></a>
+        <a class="btn ghost" href="#"><span>Descoperă complexul</span><span class="arr">→</span></a>
+        <span class="micro" style="margin-top:auto;padding-top:var(--s-3);border-top:1px solid var(--line);color:var(--muted);text-transform:none;letter-spacing:.08em;font-size:12px">Hover: fill slide-up din jos · 0.6s</span>
+      </div>
+      <div class="cmp">
+        <span class="cmp-label">Chip &amp; badge</span>
+        <div style="display:flex;flex-wrap:wrap;gap:10px">
+          <span class="chip on">Hășmaș</span>
+          <span class="chip">DN12C</span>
+          <span class="chip">L–D · 10–20</span>
+          <span class="chip">1240 m</span>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:10px">
+          <span class="badge oxygen">deschis astăzi</span>
+          <span class="badge moss">aer clasa 1</span>
+          <span class="badge">în curând</span>
+        </div>
+        <span class="micro" style="margin-top:auto;padding-top:var(--s-3);border-top:1px solid var(--line);color:var(--muted);text-transform:none;letter-spacing:.08em;font-size:12px">Badge dot: pulse 2.4s — „live"</span>
+      </div>
+      <div class="cmp">
+        <span class="cmp-label">Service card</span>
+        <div class="svc-card">
+          <span class="svc-idx">03 / 08</span>
+          <span class="svc-head">— pistă de bob</span>
+          <h4>Un <span class="italic">kilometru</span> de spirală.</h4>
+          <p class="micro" style="color:var(--muted);letter-spacing:.04em;text-transform:none;font-size:12px;line-height:1.55">Dublă spirală, oprire automată, capacitate 500 persoane / oră.</p>
+          <div class="svc-stat">
+            <span class="s">lungime<b>1 260 m</b></span>
+            <span class="s">adult<b>27 RON</b></span>
+            <span class="s">copil<b>22 RON</b></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IMAGE TREATMENT -->
+<section class="seg-flow dark">
+  <div class="wrap">
+    <div class="sh reveal">
+      <div class="sh-left">
+        <span class="eyebrow">06 · imagine</span>
+        <h2 class="reveal-clip"><span class="clip-inner">Trei voci fotografice, <span class="italic">o singură atmosferă.</span></span></h2>
+        <p class="lead">Cinematic pentru hero, editorial-warm pentru povești, duotone oxygen-blue pentru signature moments. Toate trec prin același filtru: ușoară subexpunere în umbre, saturație calmă, fără culori țipătoare. Hover scale max 1.035, 2.6s lin.</p>
+      </div>
+      <span class="sh-meta">3 hangulat · hover 2.6s · scale 1.035</span>
+    </div>
+
+    <div class="img-trio reveal" data-stagger>
+      <div class="img-tile cinematic">
+        <img src="./images/ski-6.webp" alt="Cinematic alpin">
+        <div class="ov">
+          <span class="mh">01 · cinematic</span>
+          <span class="mn">Hero, full-bleed, subexpus</span>
+          <span class="mx">brightness .65 · contrast 1.1 · saturation .95</span>
+        </div>
+      </div>
+      <div class="img-tile editorial">
+        <img src="./images/restro-5.webp" alt="Editorial warm">
+        <div class="ov">
+          <span class="mh">02 · editorial warm</span>
+          <span class="mn">Story strip, narativ, saturat</span>
+          <span class="mx">brightness 1.02 · contrast 1.02 · saturation 1.08</span>
+        </div>
+      </div>
+      <div class="img-tile duotone">
+        <img src="./images/bob-5.webp" alt="Duotone oxygen">
+        <div class="ov">
+          <span class="mh">03 · duotone oxygen</span>
+          <span class="mn">Signature moments, CTA, banner</span>
+          <span class="mx">luminosity + oxygen tint · opacity .75</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="strip reveal">
+      <img src="./images/bob-11.webp" alt="Bobpálya panorama">
+      <div class="strip-inner">
+        <div class="lt">
+          <span class="ey">— hover &amp; scroll</span>
+          <h3>Fiecare imagine <em>respiră</em> la scroll — scale 1.035 în 2.6 secunde.</h3>
+        </div>
+        <div class="rt">
+          <div>Parallax · <b>−10% y</b></div>
+          <div>Fade-in · <b>clip-path</b></div>
+          <div>Hover dot · <b>oxygen pulse</b></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE CONSTELLATION -->
+<section class="seg-flow" id="constelatie">
+  <div class="wrap">
+    <div class="sh reveal">
+      <div class="sh-left">
+        <span class="eyebrow">07 · constelație</span>
+        <h2 class="reveal-clip"><span class="clip-inner">Șapte experiențe, <span class="italic">un singur munte.</span></span></h2>
+        <p class="lead">Elementul interactiv signature al site-ului: o constelație de servicii. Nu un grid static, ci o hartă pulsantă a complexului. Pe desktop, hover pe fiecare stea dezvăluie distanța, ora de deschidere, prețul de bază.</p>
+      </div>
+      <span class="sh-meta">7 active · 1 soon · 4 × 2 grid</span>
+    </div>
+
+    <div class="constell-hero">
+      <div class="constell-intro reveal">
+        <span class="cmp-label">interacțiune signature</span>
+        <p class="pull">„Pe harta noastră, <em>fiecare stea este o dimineață nouă.</em>"</p>
+        <p class="micro" style="text-transform:none;letter-spacing:.04em;font-size:13px;color:var(--muted);line-height:1.7">Rolul componentei: orientare rapidă (cine sunt?), cross-sell (cabină + bob + restaurant într-un singur traseu), și marcarea hotelului „în curând" fără a o ascunde.</p>
+        <div class="manifest-tags" style="margin-top:var(--s-4)">
+          <span class="chip on">live dot</span>
+          <span class="chip">hover reveal</span>
+          <span class="chip">stagger radial</span>
+        </div>
+      </div>
+      <div class="constell-grid reveal" data-stagger>
+        <div class="star featured"><span class="st-idx">01</span><span class="st-ico">◐</span><h5>Oxygen Restro</h5><span class="st-m">L–V 10–20 · Sb–D 10–21</span></div>
+        <div class="star"><span class="st-idx">02</span><span class="st-ico">▲</span><h5>17 Cabine</h5><span class="st-m">rezervare · nature.experience</span></div>
+        <div class="star"><span class="st-idx">03</span><span class="st-ico">∿</span><h5>Pistă bob</h5><span class="st-m">1 260 m · 27 / 22 RON</span></div>
+        <div class="star"><span class="st-idx">04</span><span class="st-ico">⋄</span><h5>Parc aventură</h5><span class="st-m">5 ha · 25 RON · 700+ pers.</span></div>
+        <div class="star"><span class="st-idx">05</span><span class="st-ico">◇</span><h5>Pârtie schi</h5><span class="st-m">sezon iarnă</span></div>
+        <div class="star"><span class="st-idx">06</span><span class="st-ico">⌇</span><h5>Adventure offroad</h5><span class="st-m">250 / 125 RON · 2.5 h</span></div>
+        <div class="star"><span class="st-idx">07</span><span class="st-ico">◉</span><h5>Salina Oxygen</h5><span class="st-m">L–D 12–20</span></div>
+        <div class="star soon"><span class="st-idx">08</span><span class="st-ico">○</span><h5>Hotel</h5><span class="st-m">în curând · sistem propriu</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MOODBOARD GRID -->
+<section class="seg-flow dark">
+  <div class="wrap">
+    <div class="mb-header reveal">
+      <div class="sh-left">
+        <span class="eyebrow">08 · moodboard</span>
+        <h2 class="reveal-clip"><span class="clip-inner">Art direction, <span class="italic">cadru cu cadru.</span></span></h2>
+        <p class="lead">Fiecare fotografie are un rol precis pe site — nu decorativ, ci narativ. Mai jos: distribuția imaginilor pe roluri (hero, story, gallery, signature) cu adnotări despre intenție.</p>
+      </div>
+      <span class="sh-meta">16 imagini · 7 roluri · 1 video hero</span>
+    </div>
+
+    <div class="mb-grid">
+      <div class="mb-cell lg">
+        <video preload="metadata" autoplay muted loop playsinline poster="./images/ski-6.webp"><source src="./images/hero-video.mp4" type="video/mp4"></video>
+        <div class="mb-ov"><span class="mb-role">01 · hero video · full-bleed</span><span class="mb-txt">Videoul original al clientului — păstrat. Autoplay muted loop + gradient overlay pentru lizibilitate H1.</span></div>
+      </div>
+      <div class="mb-cell md"><img src="./images/bob-1.webp" alt="Cabin winter"><div class="mb-ov"><span class="mb-role">02 · story · secondary hero</span><span class="mb-txt">Cabinele pe zăpadă — editorial warm, pentru secțiunea Intro / Respiră muntele.</span></div></div>
+      <div class="mb-cell sm"><img src="./images/restro-5.webp" alt="Restro panorama"><div class="mb-ov"><span class="mb-role">03 · restro · panoramă</span><span class="mb-txt">Sala mare cu vedere spre Gheorgheni — hero pentru /restro.</span></div></div>
+      <div class="mb-cell sq"><img src="./images/restro-1.webp" alt="Restro masă"><div class="mb-ov"><span class="mb-role">04 · restro · detail</span><span class="mb-txt">Signature servire — galerie /restro.</span></div></div>
+      <div class="mb-cell sq"><img src="./images/restro-10.webp" alt="Restro ambient"><div class="mb-ov"><span class="mb-role">05 · restro · ambient</span><span class="mb-txt">Warm-light story strip.</span></div></div>
+      <div class="mb-cell sq"><img src="./images/restro-7.webp" alt="Restro detaliu"><div class="mb-ov"><span class="mb-role">06 · restro · meniu</span><span class="mb-txt">Material pentru /etlap section.</span></div></div>
+      <div class="mb-cell wide-tall"><img src="./images/cabin-1.webp" alt="Cabin exterior"><div class="mb-ov"><span class="mb-role">07 · cabin · hero</span><span class="mb-txt">Cadru larg, natură — hero pentru /cabine.</span></div></div>
+      <div class="mb-cell tall"><img src="./images/cabin-2.webp" alt="Cabin garden"><div class="mb-ov"><span class="mb-role">08 · cabin · lifestyle</span><span class="mb-txt">Grădina exterioară — galerie 17 cabine.</span></div></div>
+      <div class="mb-cell tall"><img src="./images/cabin-3.webp" alt="Cabin interior"><div class="mb-ov"><span class="mb-role">09 · cabin · interior</span><span class="mb-txt">Portrait vertical — galerie cabine.</span></div></div>
+      <div class="mb-cell wide"><img src="./images/bob-2.webp" alt="Bob"><div class="mb-ov"><span class="mb-role">10 · bob · feature</span><span class="mb-txt">Pistă — hero pentru /bob cu overlay stat (1260 m · 500 / h).</span></div></div>
+      <div class="mb-cell sq"><img src="./images/bob-5.webp" alt="Bob spiral"><div class="mb-ov"><span class="mb-role">11 · bob · signature duotone</span><span class="mb-txt">Duotone oxygen — banner CTA.</span></div></div>
+      <div class="mb-cell sq"><img src="./images/bob-8.webp" alt="Bob track"><div class="mb-ov"><span class="mb-role">12 · bob · galerie</span><span class="mb-txt">Action shot.</span></div></div>
+      <div class="mb-cell sq"><img src="./images/ski-9.webp" alt="Ski detail"><div class="mb-ov"><span class="mb-role">13 · ski · action</span><span class="mb-txt">Pârtia la apus — tile signature.</span></div></div>
+      <div class="mb-cell mini"><img src="./images/ski-3.webp" alt="Ski wide"><div class="mb-ov"><span class="mb-role">14 · ski · scale</span><span class="mb-txt">Cadru larg al pârtiei.</span></div></div>
+      <div class="mb-cell mini"><img src="./images/salina-10.webp" alt="Salina detail"><div class="mb-ov"><span class="mb-role">15 · salina · detail</span><span class="mb-txt">Cristal de sare, lumini reci.</span></div></div>
+      <div class="mb-cell mini"><img src="./images/salina-23.webp" alt="Salina interior"><div class="mb-ov"><span class="mb-role">16 · salina · interior</span><span class="mb-txt">Atmosferă terapie.</span></div></div>
+      <div class="mb-cell mini"><img src="./images/salina-113.webp" alt="Salina lights"><div class="mb-ov"><span class="mb-role">17 · salina · mood</span><span class="mb-txt">Tile galerie wellness.</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SITEMAP -->
+<section class="seg-flow">
+  <div class="wrap">
+    <div class="sh reveal">
+      <div class="sh-left">
+        <span class="eyebrow">09 · sitemap</span>
+        <h2 class="reveal-clip"><span class="clip-inner">Zece oglinzi <span class="italic">ale aceluiași munte.</span></span></h2>
+        <p class="lead">Structură multipage — fiecare serviciu primește o pagină dedicată, cu aceeași coloană vertebrală vizuală dar compoziție proprie. Plus pagină părinte, contact, și un rezumat „hotel în curând". Primă rundă: <b>Română</b>. Apoi HU + EN.</p>
+      </div>
+      <span class="sh-meta">10 pagini RO · apoi HU + EN</span>
+    </div>
+
+    <div class="sitemap reveal" data-stagger>
+      <div class="site"><div class="left"><span class="url">/</span><span class="title">Acasă · Oxygen Resort</span><span class="desc">Hero video + constelație + rezumat servicii + CTA rezervare.</span></div><span class="n">00</span></div>
+      <div class="site"><div class="left"><span class="url">/restro</span><span class="title">Oxygen Restro</span><span class="desc">Bucătărie panoramică, meniu, terasă, rezervare masă.</span></div><span class="n">01</span></div>
+      <div class="site"><div class="left"><span class="url">/cabine</span><span class="title">17 Cabine de munte</span><span class="desc">Galerie completă + cerere rezervare cabină + amenajări.</span></div><span class="n">02</span></div>
+      <div class="site"><div class="left"><span class="url">/bob</span><span class="title">Pistă de bob</span><span class="desc">1260 m dublă spirală · tarif · orar · capacitate.</span></div><span class="n">03</span></div>
+      <div class="site"><div class="left"><span class="url">/aventura</span><span class="title">Parc de aventură</span><span class="desc">5 hectare · 700+ persoane · jocuri tradiționale.</span></div><span class="n">04</span></div>
+      <div class="site"><div class="left"><span class="url">/schi</span><span class="title">Pârtie de schi</span><span class="desc">Sezon iarnă · galerie · condiții.</span></div><span class="n">05</span></div>
+      <div class="site"><div class="left"><span class="url">/adventure</span><span class="title">Oxygen Adventure</span><span class="desc">Offroad 2.5 h · trasee montane · rezervare grup.</span></div><span class="n">06</span></div>
+      <div class="site"><div class="left"><span class="url">/salina</span><span class="title">Salina Oxygen</span><span class="desc">Terapie cu sare uscată · microclimat · orar.</span></div><span class="n">07</span></div>
+      <div class="site soon"><div class="left"><span class="url">/hotel</span><span class="title">Hotel (în curând)</span><span class="desc">Pagină anticipativă · newsletter · actualizări.</span></div><span class="n">08</span></div>
+      <div class="site"><div class="left"><span class="url">/contact</span><span class="title">Contact</span><span class="desc">Formular funcțional (Netlify) · hartă · coordonate.</span></div><span class="n">09</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOT -->
+<section class="seg-flow dark" style="padding-bottom:var(--s-6)">
+  <div class="wrap foot reveal">
+    <div>
+      <span class="eyebrow">end · moodboard v2</span>
+      <h3 style="margin-top:12px;max-width:24ch">Aștept <span class="italic">feedback-ul tău</span> pentru a începe kivitelezarea.</h3>
+      <div class="cover-cta" style="margin-top:var(--s-4)">
+        <a class="btn primary" href="#cover"><span>Sus — de la început</span><span class="arr">↑</span></a>
+      </div>
+    </div>
+    <div style="text-align:right">
+      <span class="mono">oxygen resort · gheorgheni · harghita</span><br>
+      <span class="mono" style="color:var(--muted-dim)">moodboard v2 · 2026-04-22 · art direction</span>
+    </div>
+  </div>
+</section>
+
+<!-- Lenis -->
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js"></script>
+<script>
+(function(){
+  // ==== Lenis smooth scroll ====
+  const lenis = new Lenis({
+    duration: 1.3,
+    easing: (t)=> Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    wheelMultiplier: 1,
+    smoothWheel: true,
+    touchMultiplier: 1.6
+  });
+  function raf(t){ lenis.raf(t); requestAnimationFrame(raf); }
+  requestAnimationFrame(raf);
+
+  // anchor interceptor
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    a.addEventListener('click', (e)=>{
+      const id = a.getAttribute('href');
+      if (id.length>1){
+        const t = document.querySelector(id);
+        if (t){ e.preventDefault(); lenis.scrollTo(t, { offset:-20, duration:1.6 }); }
+      }
+    });
+  });
+
+  // ==== Nav scrolled state + scroll progress + altitude ====
+  const nav = document.getElementById('nav');
+  const rail = document.getElementById('rail');
+  const altV = document.getElementById('altV');
+  const H = () => document.documentElement.scrollHeight - window.innerHeight;
+  function onScroll(){
+    const y = window.scrollY;
+    if (y > 60) nav.classList.add('scrolled'); else nav.classList.remove('scrolled');
+    const p = Math.max(0, Math.min(1, y / H()));
+    rail.style.setProperty('--p', (p*100).toFixed(2)+'%');
+    // simulated altitude 820m base → 1240m peak
+    const a = Math.round(820 + p * (1240-820));
+    altV.textContent = a;
+  }
+  lenis.on('scroll', onScroll);
+  onScroll();
+
+  // ==== IntersectionObserver reveal ====
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if (e.isIntersecting){
+        e.target.classList.add('in');
+        if (!e.target.dataset.replay) io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.14, rootMargin: '0px 0px -8% 0px' });
+  document.querySelectorAll('.reveal, .reveal-clip, [data-stagger], .mb-cell').forEach(el=> io.observe(el));
+
+  // ==== Hero words — trigger on load ====
+  requestAnimationFrame(()=>{
+    document.querySelector('.cover').classList.add('ready');
+    setTimeout(()=>{
+      document.getElementById('heroH1').classList.add('in');
+      document.querySelector('.cover-top').classList.add('in');
+    }, 180);
+    setTimeout(()=>{
+      document.querySelectorAll('.cover .reveal').forEach(el=>el.classList.add('in'));
+    }, 260);
+  });
+
+  // ==== Magnetic-ish CTA hover ====
+  document.querySelectorAll('.btn').forEach(btn=>{
+    btn.addEventListener('mousemove', (e)=>{
+      const r = btn.getBoundingClientRect();
+      const x = (e.clientX - r.left - r.width/2) * 0.14;
+      const y = (e.clientY - r.top - r.height/2) * 0.14;
+      btn.style.transform = `translate(${x}px,${y}px)`;
+    });
+    btn.addEventListener('mouseleave', ()=>{ btn.style.transform = ''; });
+  });
+
+  // ==== Star constellation — radial stagger ====
+  const starsWrap = document.querySelector('.constell-grid');
+  if (starsWrap){
+    const stars = starsWrap.querySelectorAll('.star');
+    const sio = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if (e.isIntersecting){
+          stars.forEach((s,i)=>{
+            const mid = (stars.length-1)/2;
+            const d = Math.abs(i - mid);
+            s.style.transitionDelay = (0.06*d + 0.04*i) + 's';
+          });
+          starsWrap.classList.add('in');
+          sio.unobserve(starsWrap);
+        }
+      });
+    }, { threshold: 0.22 });
+    sio.observe(starsWrap);
+  }
+
+  // ==== Parallax on mb-cells (subtle) ====
+  const mb = document.querySelectorAll('.mb-cell img, .mb-cell video');
+  let ticking = false;
+  function parallax(){
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(()=>{
+      mb.forEach(el=>{
+        const r = el.getBoundingClientRect();
+        const mid = window.innerHeight/2;
+        const d = (r.top + r.height/2 - mid) / window.innerHeight;
+        el.style.transform = `scale(1.02) translateY(${(-d*10).toFixed(2)}px)`;
+      });
+      ticking = false;
+    });
+  }
+  lenis.on('scroll', parallax);
+})();
+</script>
+</body>
+</html>

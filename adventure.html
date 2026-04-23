@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Oxygen Adventure · Offroad 2.5 h · Oxygen Resort</title>
+<meta name="description" content="Oxygen Adventure — experiență offroad prin Munții Hășmaș. 2.5 ore · adult 250 RON · copil 125 RON. Rezervare directă.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@200;300;400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400;1,6..72,500;1,6..72,600&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Spline+Sans+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./style.css">
+<style>
+  .adv-hero-stat{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:var(--s-8);border:1px solid var(--line);background:var(--surface);border-radius:var(--r-sharp);overflow:hidden}
+  .adv-hero-stat .b{padding:var(--s-7);border-right:1px solid var(--line);position:relative;overflow:hidden}
+  .adv-hero-stat .b:last-child{border-right:0}
+  .adv-hero-stat .b::after{content:"";position:absolute;inset:0;background:radial-gradient(60% 80% at 100% 0%,rgba(77,197,255,.05) 0%,transparent 60%)}
+  .adv-hero-stat .b .k{font-family:var(--f-mono);font-size:10px;letter-spacing:.22em;color:var(--muted);text-transform:uppercase;display:block}
+  .adv-hero-stat .b .v{font-family:var(--f-display);font-size:clamp(48px,5.5vw,88px);font-weight:300;letter-spacing:-.025em;line-height:1;margin-top:var(--s-3);display:block}
+  .adv-hero-stat .b .v em{font-family:var(--f-accent);font-style:italic;color:var(--accent)}
+  .adv-hero-stat .b .d{margin-top:var(--s-3);font-size:13px;color:var(--text-lead);line-height:1.6}
+  @media(max-width:860px){.adv-hero-stat{grid-template-columns:1fr}.adv-hero-stat .b{border-right:0;border-bottom:1px solid var(--line)}.adv-hero-stat .b:last-child{border-bottom:0}}
+</style>
+</head>
+<body>
+<div class="rail" id="rail" style="--p:0%"></div>
+<div class="alt-chip"><div class="ac-line"></div><div class="ac-val">Altitudine <b id="altV">820</b> m</div><div class="ac-line"></div></div>
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <div class="nav-left"><a href="./index.html" class="brandmark"><img src="./logo/logo.webp" alt="Oxygen Resort"><span class="bn">OXYGEN RESORT</span></a></div>
+    <nav class="nav-links"><a href="./index.html">Acasă</a><a href="./restro.html">Restro</a><a href="./cabine.html">Cabine</a><a href="./bob.html">Bob</a><a href="./contact.html">Contact</a></nav>
+    <div class="nav-right"><div class="lang-toggle"><a class="on" href="#">RO</a><a href="#">HU</a><a href="#">EN</a></div><a href="./contact.html" class="nav-cta">Rezervă<span class="arr">→</span></a><button class="nav-burger" aria-label="Menu"><span></span><span></span><span></span></button></div>
+  </div>
+</header>
+<nav class="mobile-menu"><a href="./index.html"><span class="num">00</span>Acasă</a><a href="./restro.html"><span class="num">01</span>Oxygen Restro</a><a href="./cabine.html"><span class="num">02</span>17 Cabine</a><a href="./bob.html"><span class="num">03</span>Pistă de bob</a><a href="./aventura.html"><span class="num">04</span>Parc de aventură</a><a href="./schi.html"><span class="num">05</span>Pârtie de schi</a><a href="./adventure.html"><span class="num">06</span>Adventure offroad</a><a href="./salina.html"><span class="num">07</span>Salina</a><a href="./hotel.html"><span class="num">08</span>Hotel · în curând</a><a href="./contact.html"><span class="num">09</span>Contact</a><div class="lang-toggle-mm"><a href="#" class="on">RO</a><a href="#">HU</a><a href="#">EN</a></div></nav>
+
+<section class="cover cover-sub" id="cover">
+  <img src="./images/adv-borito.webp" class="cover-video" alt="Oxygen Adventure offroad">
+  <div class="cover-inner">
+    <div class="cover-top reveal">
+      <div class="cover-chips"><span class="chip on">● 06 / 07 · Adventure</span><span class="chip">Offroad montan</span><span class="chip">2.5 ore</span></div>
+      <div class="cover-coord"><div><span>Tel dedicat</span></div><div>+40 758 · 067 · 478</div></div>
+    </div>
+    <div class="cover-mid">
+      <span class="eyebrow reveal" style="margin-bottom:0">offroad prin creasta hășmaș</span>
+      <h1 class="words" id="heroH1">
+        <span class="w"><span>Oxygen</span></span>
+        <span class="w"><span><em>Adventure.</em></span></span>
+      </h1>
+      <p class="lead reveal">„Descoperă farmecul autentic al munților cu Oxygen Adventure — experiența perfectă pentru iubitorii de natură și aventură.” Două ore și jumătate prin trasee montane autentice.</p>
+      <div class="cover-cta reveal">
+        <a class="btn primary" href="#rezervare"><span>Rezervă o tură</span><span class="arr">→</span></a>
+        <a class="btn ghost" href="tel:+40758067478"><span>Sună direct</span><span class="arr">↗</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="seg-flow">
+  <div class="wrap">
+    <div class="sh reveal"><div class="sh-left"><span class="eyebrow">01 · tarif &amp; durată</span><h2 class="reveal-clip"><span class="clip-inner">Două <span class="italic">ore și jumătate.</span></span></h2><p class="lead">O experiență autentică — natură brută, trasee care nu se văd de pe drumurile asfaltate. Preț fix, fără surprize.</p></div><span class="sh-meta">L–D · 2.5 h / sesiune</span></div>
+    <div class="adv-hero-stat reveal" data-stagger>
+      <div class="b"><span class="k">Adult</span><span class="v">250 <em>RON</em></span><div class="d">Sesiune completă de 2.5 ore · echipament inclus.</div></div>
+      <div class="b"><span class="k">Copil (&lt; 10 ani)</span><span class="v">125 <em>RON</em></span><div class="d">Însoțit obligatoriu de un adult. Tarif la jumătate, experiență întreagă.</div></div>
+      <div class="b"><span class="k">Durată</span><span class="v">2.5 <em>ore</em></span><div class="d">De la briefing până la întoarcerea la bază. Grup redus, instructor local.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="seg-flow dark">
+  <div class="wrap">
+    <div class="sh reveal"><div class="sh-left"><span class="eyebrow">02 · ce vei simți</span><h2 class="reveal-clip"><span class="clip-inner">Nu un <span class="italic">tur turistic.</span></span></h2><p class="lead">Oxygen Adventure nu este o plimbare comodă — este un drum prin natura brută a Munților Hășmaș, cu pauze în locuri care nu se văd de nicăieri.</p></div><span class="sh-meta">grup redus · instructor local</span></div>
+    <div class="gal-pro">
+      <a class="gp-item" href="#"><img src="./images/adv-borito.webp" alt="Adventure cover"><div class="ov"><span class="mh">01 · cover signature</span><span class="mn">Imaginea oficială Oxygen Adventure</span></div></a>
+      <a class="gp-item" href="#"><img src="./images/adv-1.webp" alt="Offroad traseu"><div class="ov"><span class="mh">02 · traseu tehnic</span><span class="mn">Drum neasfaltat · pădure</span></div></a>
+      <a class="gp-item" href="#"><img src="./images/adv-2.webp" alt="Vehicul offroad"><div class="ov"><span class="mh">03 · vehicule</span><span class="mn">Gata de ture montane</span></div></a>
+      <a class="gp-item" href="#"><img src="./images/adv-3.webp" alt="Oxygen Adventure 03"><div class="ov"><span class="mh">04 · decor sălbatic</span><span class="mn">Farmecul autentic al munților</span></div></a>
+      <a class="gp-item" href="#"><img src="./images/adv-4.webp" alt="Oxygen Adventure 04"><div class="ov"><span class="mh">05 · grup offroad</span><span class="mn">Ture de 2.5 ore</span></div></a>
+      <a class="gp-item" href="#"><img src="./images/adv-5.webp" alt="Oxygen Adventure 05"><div class="ov"><span class="mh">06 · noroi &amp; pădure</span><span class="mn">Terenul adevărat</span></div></a>
+      <a class="gp-item" href="#"><img src="./images/adv-6.webp" alt="Oxygen Adventure 06"><div class="ov"><span class="mh">07 · belvedere</span><span class="mn">Pauză pe creastă</span></div></a>
+      <a class="gp-item" href="#"><img src="./images/adv-8.webp" alt="Oxygen Adventure 08"><div class="ov"><span class="mh">08 · traseu montan</span><span class="mn">Interior de munte</span></div></a>
+      <a class="gp-item" href="#"><img src="./images/adv-10.webp" alt="Oxygen Adventure 10"><div class="ov"><span class="mh">09 · atmosferă</span><span class="mn">Experiență de grup</span></div></a>
+      <a class="gp-item" href="#"><img src="./images/adv-12.webp" alt="Oxygen Adventure 12"><div class="ov"><span class="mh">10 · curse prin pădure</span><span class="mn">Drumuri care nu apar pe hartă</span></div></a>
+      <a class="gp-item" href="#"><img src="./images/adv-15.webp" alt="Oxygen Adventure 15"><div class="ov"><span class="mh">11 · zonă tehnică</span><span class="mn">Instructor local</span></div></a>
+      <a class="gp-item" href="#"><img src="./images/adv-20.webp" alt="Oxygen Adventure 20"><div class="ov"><span class="mh">12 · finalul turei</span><span class="mn">Întoarcerea la bază</span></div></a>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE NARRATIVE -->
+<section class="seg-flow">
+  <div class="wrap">
+    <div class="sh reveal"><div class="sh-left"><span class="eyebrow">narativ · experiența</span><h2 class="reveal-clip"><span class="clip-inner">2 ore și jumătate <span class="italic">prin pădurea Hășmaș.</span></span></h2></div><span class="sh-meta">verified · oxygenresort.ro</span></div>
+    <div style="display:grid;grid-template-columns:1.05fr 1fr;gap:var(--s-7);align-items:start;margin-top:var(--s-6)">
+      <div class="reveal" data-stagger style="display:flex;flex-direction:column;gap:var(--s-4)">
+        <p style="font-size:17px;line-height:1.72;color:var(--text-lead)"><em>„Descoperă farmecul autentic al munților cu Oxygen Adventure — experiența perfectă pentru iubitorii de natură și aventură.”</em> Acesta este cadrul — și descrierea oficială a complexului.</p>
+        <p style="font-size:17px;line-height:1.72;color:var(--text-lead)">Ce urmărește această tură: nu este o plimbare confortabilă pe asfalt, ci o experiență prin drumurile tehnice ale Munților Hășmaș — <b>drumuri neasfaltate, pante, zone sălbatice</b>, puncte de belvedere și pauze pe care nu le găsești pe hărți. Echipamentul și vehiculele sunt puse la dispoziție de complex, iar grupul rămâne mic pentru ca instructorul local să poată oferi atenție fiecărui participant.</p>
+        <p style="font-size:17px;line-height:1.72;color:var(--text-lead)">Tura durează <b>2 ore și jumătate</b> — de la briefing până la întoarcerea la bază. Tariful este simplu și stabil: <b>250 RON / adult</b> și <b>125 RON / copil sub 10 ani</b>. Copiii mici sunt însoțiți obligatoriu de un adult.</p>
+        <p style="font-size:17px;line-height:1.72;color:var(--text-lead)">Pentru rezervări, contactul dedicat este <b>+40 758 067 478</b>. Turile se organizează pe bază de grup — dacă vii cu familia sau prietenii, e cea mai simplă formă; dacă ești singur, te putem alătura unui grup existent.</p>
+      </div>
+      <div class="reveal" data-stagger style="display:flex;flex-direction:column;gap:var(--s-3)">
+        <div class="info-card"><h4>Cum să te pregătești</h4>
+          <div class="info-row"><span class="k">Încălțăminte</span><span class="v">sport închisă</span></div>
+          <div class="info-row"><span class="k">Îmbrăcăminte</span><span class="v">pe care nu o deranjează noroiul</span></div>
+          <div class="info-row"><span class="k">Vreme</span><span class="v">ture și pe ploaie</span></div>
+          <div class="info-row"><span class="k">Bagaj</span><span class="v">minim · apă, cameră</span></div>
+        </div>
+        <div class="info-card"><h4>Punctul de plecare</h4>
+          <div class="info-row"><span class="k">Baza</span><span class="v">Oxygen Resort · DN12C</span></div>
+          <div class="info-row"><span class="k">Parcare</span><span class="v">inclusă</span></div>
+          <div class="info-row"><span class="k">Briefing</span><span class="v">înainte de plecare</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="seg-flow" id="rezervare">
+  <div class="wrap">
+    <div class="sh reveal"><div class="sh-left"><span class="eyebrow">03 · rezervare</span><h2 class="reveal-clip"><span class="clip-inner">Rezervă <span class="italic">ture de grup.</span></span></h2><p class="lead">Grupul minim 3 persoane · grupul optim 4–6 persoane. Pentru grupuri mai mari (7+), trimite-ne cererea și reveni cu un pachet.</p></div><span class="sh-meta">+40 758 067 478</span></div>
+    <div class="form-wrap">
+      <form class="form reveal" data-local novalidate name="adventure-book" method="POST" data-netlify="true">
+        <input type="hidden" name="form-name" value="adventure-book">
+        <div class="f-row"><label><span class="l">Nume</span><input type="text" name="name" required></label><label><span class="l">Telefon</span><input type="tel" name="phone" required></label></div>
+        <label><span class="l">Email</span><input type="email" name="email" required></label>
+        <div class="f-row"><label><span class="l">Adulți</span><input type="number" name="adults" min="1" required></label><label><span class="l">Copii (&lt; 10)</span><input type="number" name="kids" min="0" value="0"></label></div>
+        <label><span class="l">Data preferată</span><input type="date" name="date" required></label>
+        <label><span class="l">Observații</span><textarea name="notes" placeholder="Experiență anterioară offroad? Pachet combinat cu cabină / restaurant?"></textarea></label>
+        <label class="consent"><input type="checkbox" required> Sunt de acord cu prelucrarea datelor.</label>
+        <div class="submit-row"><span class="note">Răspundem în &lt; 2 ore</span><button type="submit" class="btn primary"><span>Trimite cererea</span><span class="arr">→</span></button></div>
+      </form>
+      <div class="reveal" data-stagger style="display:flex;flex-direction:column;gap:var(--s-3)">
+        <div class="info-card"><h4>Contact dedicat</h4>
+          <div class="info-row"><span class="k">Telefon</span><span class="v"><a href="tel:+40758067478">+40 758 · 067 · 478</a></span></div>
+          <div class="info-row"><span class="k">Email</span><span class="v"><a href="mailto:oxygenrestro@gmail.com">oxygenrestro@gmail.com</a></span></div>
+          <div class="info-row"><span class="k">Adult</span><span class="v">250 RON · 2.5 h</span></div>
+          <div class="info-row"><span class="k">Copil &lt; 10</span><span class="v">125 RON · 2.5 h</span></div>
+        </div>
+        <div class="info-card"><h4>Alege pachet</h4>
+          <div class="info-row"><span class="k">+ Restro</span><span class="v"><a href="./restro.html">Cină după tură →</a></span></div>
+          <div class="info-row"><span class="k">+ Cabină</span><span class="v"><a href="./cabine.html">Noapte în pădure →</a></span></div>
+          <div class="info-row"><span class="k">+ Bob</span><span class="v"><a href="./bob.html">Dimineața pe pistă →</a></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="brand"><div class="lg"><img src="./logo/logo.webp" alt="Oxygen Resort"><span>OXYGEN RESORT</span></div><p>Complex de altitudine pe DN12C, creasta Munților Hășmaș.</p>
+      <div class="f-social"><a href="https://www.facebook.com/profile.php?id=100063484366206" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg></a><a href="https://www.instagram.com/oxygen_restro" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor"/></svg></a></div>
+    </div>
+    <div class="col"><h5>— Experiențe</h5><ul><li><a href="./restro.html">Restro</a></li><li><a href="./cabine.html">Cabine</a></li><li><a href="./bob.html">Bob</a></li><li><a href="./aventura.html">Aventură</a></li><li><a href="./schi.html">Schi</a></li><li><a href="./adventure.html">Adventure</a></li><li><a href="./salina.html">Salina</a></li></ul></div>
+    <div class="col"><h5>— Complex</h5><ul><li><a href="./hotel.html">Hotel</a></li><li><a href="./contact.html">Contact</a></li><li><a href="./index.html#constelatie">Hartă</a></li></ul></div>
+    <div class="col"><h5>— Adventure</h5><ul><li><a href="tel:+40758067478">+40 758 067 478</a></li><li>Adult · 250 RON · 2.5 h</li><li>Copil · 125 RON · 2.5 h</li></ul></div>
+    <div class="f-bot"><span class="mono">© 2026 Oxygen Resort</span><span class="mono">46.7757° N · 1240 m</span></div>
+  </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js"></script>
+<script src="./app.js"></script>
+</body>
+</html>

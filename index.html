@@ -1,0 +1,585 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Oxygen Resort — Șapte experiențe montane, un singur respir</title>
+<meta name="description" content="Oxygen Resort · Pasul Pângărați, Gheorgheni, Harghita — restaurant panoramic, 17 cabine, pistă de bob 1260 m, parc de aventură 5 ha, pârtie de schi, offroad și salină. Un complex de altitudine, high-tech și premium.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@200;300;400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400;1,6..72,500;1,6..72,600&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Spline+Sans+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./style.css">
+<style>
+  /* page-specific */
+  .hero-intro-strip{position:absolute;left:72px;bottom:calc(40px + 44px);z-index:3;display:flex;flex-direction:column;gap:6px}
+  .hero-intro-strip .mico{font-family:var(--f-mono);font-size:10px;letter-spacing:.24em;color:var(--muted);text-transform:uppercase}
+  .hero-intro-strip .mico b{color:var(--text);font-weight:500}
+  @media(max-width:760px){.hero-intro-strip{display:none}}
+
+  .intro{display:grid;grid-template-columns:1fr 1.1fr;gap:var(--s-8);align-items:center}
+  .intro-left h2{max-width:16ch;line-height:1.02;font-size:clamp(42px,5.2vw,80px)}
+  .intro-left h2 .italic{color:var(--accent)}
+  .intro-left .note{font-family:var(--f-mono);font-size:11px;letter-spacing:.2em;color:var(--muted);text-transform:uppercase;margin-top:var(--s-4);display:flex;gap:var(--s-3)}
+  .intro-left .note span b{color:var(--text)}
+  .intro-right{display:flex;flex-direction:column;gap:var(--s-4)}
+  .intro-right p{font-size:17px;line-height:1.72;color:var(--text-lead);max-width:58ch}
+  .intro-right .pull{font-family:var(--f-accent);font-style:italic;font-size:clamp(28px,2.6vw,40px);line-height:1.3;color:var(--text);padding:var(--s-4) 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin:var(--s-4) 0}
+  .intro-right .pull em{color:var(--accent-warm);font-style:italic}
+  @media(max-width:960px){.intro{grid-template-columns:1fr;gap:var(--s-6)}}
+
+  /* hotel soon section */
+  .hotel-soon{position:relative;margin-top:var(--s-8);border:1px solid var(--line);border-radius:var(--r-sharp);overflow:hidden;min-height:520px;background:var(--surface)}
+  .hotel-soon-bg{position:absolute;inset:0;display:grid;grid-template-columns:repeat(24,1fr);grid-auto-rows:60px;pointer-events:none;z-index:0;opacity:.3}
+  .hotel-soon-bg i{border:1px solid rgba(255,255,255,.04)}
+  .hotel-soon-inner{position:relative;z-index:1;padding:var(--s-8) var(--s-7);display:grid;grid-template-columns:1.3fr 1fr;gap:var(--s-6);align-items:center}
+  .hotel-soon .hs-left{display:flex;flex-direction:column;gap:var(--s-4)}
+  .hotel-soon .hs-left h3{font-size:clamp(32px,4vw,60px);font-weight:300;letter-spacing:-.025em;line-height:1;max-width:18ch}
+  .hotel-soon .hs-left h3 .italic{color:var(--accent);font-style:italic}
+  .hotel-soon .hs-left p{font-size:16px;line-height:1.68;color:var(--text-lead);max-width:52ch}
+  .hotel-soon .hs-right{display:flex;flex-direction:column;gap:var(--s-3);padding:var(--s-5);border:1px solid var(--line);background:rgba(6,9,13,.55);backdrop-filter:blur(8px);border-radius:var(--r-sharp)}
+  .hotel-soon .hs-right h4{font-size:15px;letter-spacing:.04em;text-transform:uppercase;font-family:var(--f-display);font-weight:500;color:var(--accent)}
+  .hotel-soon .hs-right .hs-input{display:flex;gap:8px}
+  .hotel-soon .hs-right input{flex:1;padding:13px;background:var(--bg-deep);border:1px solid var(--line);border-radius:var(--r-sharp);color:var(--text);font-size:14px}
+  .hotel-soon .hs-right input:focus{outline:none;border-color:var(--accent)}
+  .hotel-soon .hs-right .h-note{font-family:var(--f-mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+  @media(max-width:860px){.hotel-soon-inner{grid-template-columns:1fr;padding:var(--s-6) var(--s-4)}}
+
+  /* contact cta */
+  .contact-cta{margin-top:var(--s-8);position:relative;aspect-ratio:21/9;overflow:hidden;border-radius:var(--r-sharp);border:1px solid var(--line)}
+  .contact-cta video,.contact-cta img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.35) saturate(.9)}
+  .contact-cta::after{content:"";position:absolute;inset:0;background:radial-gradient(50% 80% at 50% 100%,rgba(6,9,13,.7) 0%,transparent 60%)}
+  .contact-cta .cc-inner{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:var(--s-6);gap:var(--s-4);z-index:2}
+  .contact-cta h3{font-family:var(--f-display);font-size:clamp(36px,5vw,72px);font-weight:300;letter-spacing:-.025em;line-height:1}
+  .contact-cta h3 em{font-family:var(--f-accent);font-style:italic;color:var(--accent)}
+  .contact-cta .cc-meta{font-family:var(--f-mono);font-size:11px;letter-spacing:.24em;color:var(--muted);text-transform:uppercase;display:flex;gap:var(--s-4);flex-wrap:wrap;justify-content:center}
+  .contact-cta .cc-meta b{color:var(--accent)}
+  @media(max-width:860px){.contact-cta{aspect-ratio:4/5}}
+
+  /* services bar list (scroll-linked) */
+  .svc-list{display:flex;flex-direction:column;margin-top:var(--s-6);border-top:1px solid var(--line)}
+  .svc-row{display:grid;grid-template-columns:44px 92px 1fr 1.3fr 120px 180px;gap:var(--s-4);padding:var(--s-4) 0;border-bottom:1px solid var(--line);align-items:center;transition:background .6s var(--ease),padding .6s var(--ease);text-decoration:none;color:inherit;position:relative}
+  .svc-row::before{content:"";position:absolute;left:0;top:0;height:100%;width:0;background:linear-gradient(90deg,rgba(77,197,255,.1) 0%,transparent 100%);transition:width .6s var(--ease);pointer-events:none}
+  .svc-row:hover{padding-left:var(--s-4)}
+  .svc-row:hover::before{width:60%}
+  .svc-row .rn{font-family:var(--f-mono);font-size:11px;letter-spacing:.2em;color:var(--muted);position:relative;z-index:1}
+  .svc-row .rt{font-family:var(--f-display);font-size:clamp(24px,2.4vw,38px);font-weight:400;letter-spacing:-.015em;line-height:1.1;position:relative;z-index:1}
+  .svc-row .rt .italic{color:var(--accent);font-style:italic;transition:color .4s var(--ease)}
+  .svc-row:hover .rt .italic{color:var(--accent-warm)}
+  .svc-row .rd{font-family:var(--f-body);font-size:14px;color:var(--muted);line-height:1.5;position:relative;z-index:1}
+  .svc-row .rm{font-family:var(--f-mono);font-size:11px;letter-spacing:.18em;color:var(--text-lead);text-transform:uppercase;position:relative;z-index:1;text-align:right}
+  .svc-row .rm b{color:var(--accent);font-weight:500}
+  .svc-row .ra{display:inline-flex;align-items:center;gap:8px;font-family:var(--f-mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);justify-self:end;position:relative;z-index:1;transition:color .5s var(--ease)}
+  .svc-row:hover .ra{color:var(--accent)}
+  .svc-row .ra .arr{transition:transform .5s var(--ease)}
+  .svc-row:hover .ra .arr{transform:translateX(6px)}
+  @media(max-width:960px){
+    .svc-row{grid-template-columns:40px 1fr 140px;gap:var(--s-3)}
+    .svc-row .rd,.svc-row .rm,.svc-row .rt-thumb{display:none}
+  }
+</style>
+</head>
+<body>
+
+<!-- rail + altitude chip -->
+<div class="rail" id="rail" style="--p:0%"></div>
+<div class="alt-chip"><div class="ac-line"></div><div class="ac-val">Altitudine <b id="altV">820</b> m</div><div class="ac-line"></div></div>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <div class="nav-left">
+      <a href="./index.html" class="brandmark">
+        <img src="./logo/logo.webp" alt="Oxygen Resort">
+        <span class="bn">OXYGEN RESORT</span>
+      </a>
+    </div>
+    <nav class="nav-links">
+      <a href="#experiente">Experiențe</a>
+      <a href="#constelatie">Complex</a>
+      <a href="./restro.html">Restro</a>
+      <a href="./cabine.html">Cabine</a>
+      <a href="./contact.html">Contact</a>
+    </nav>
+    <div class="nav-right">
+      <div class="lang-toggle">
+        <a href="./index.html" class="on">RO</a>
+        <a href="#">HU</a>
+        <a href="#">EN</a>
+      </div>
+      <a href="./contact.html" class="nav-cta">Rezervă<span class="arr">→</span></a>
+      <button class="nav-burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<nav class="mobile-menu">
+  <a href="./index.html"><span class="num">00</span>Acasă</a>
+  <a href="./restro.html"><span class="num">01</span>Oxygen Restro</a>
+  <a href="./cabine.html"><span class="num">02</span>17 Cabine</a>
+  <a href="./bob.html"><span class="num">03</span>Pistă de bob</a>
+  <a href="./aventura.html"><span class="num">04</span>Parc de aventură</a>
+  <a href="./schi.html"><span class="num">05</span>Pârtie de schi</a>
+  <a href="./adventure.html"><span class="num">06</span>Adventure offroad</a>
+  <a href="./salina.html"><span class="num">07</span>Salina</a>
+  <a href="./hotel.html"><span class="num">08</span>Hotel · în curând</a>
+  <a href="./contact.html"><span class="num">09</span>Contact</a>
+<div class="lang-toggle-mm"><a href="#" class="on">RO</a><a href="#">HU</a><a href="#">EN</a></div></nav>
+
+<!-- COVER -->
+<section class="cover" id="cover">
+  <video preload="metadata" class="cover-video" autoplay muted loop playsinline poster="./images/ski-6.webp">
+    <source src="./images/hero-video.mp4" type="video/mp4">
+  </video>
+  <div class="cover-inner">
+    <div class="cover-top reveal">
+      <div class="cover-chips">
+        <span class="chip on">● Complex de altitudine</span>
+        <span class="chip">Hășmaș · 1240 m</span>
+        <span class="chip">DN12C</span>
+        <span class="chip">Lacul Roșu · 9 km</span>
+      </div>
+      <div class="cover-coord">
+        <div>46°46′32.5″N · 25°43′24.8″E</div>
+        <div><span>Pasul Pângărați · Gheorgheni · Harghita</span></div>
+      </div>
+    </div>
+
+    <div class="cover-mid">
+      <span class="eyebrow reveal" style="margin-bottom:0">— o constelație de experiențe montane</span>
+      <h1 class="words" id="heroH1">
+        <span class="w"><span>Respiră</span></span>
+        <span class="w"><span>muntele.</span></span><br>
+        <span class="w"><span><em>Oxygen</em></span></span>
+        <span class="w"><span><em>Resort.</em></span></span>
+      </h1>
+      <p class="lead reveal">Șapte experiențe montane. Un singur complex de altitudine. Un singur respir.</p>
+      <div class="cover-cta reveal">
+        <a class="btn primary" href="#experiente"><span>Explorează complexul</span><span class="arr">→</span></a>
+        <a class="btn ghost" href="./contact.html"><span>Rezervă acum</span><span class="arr">→</span></a>
+      </div>
+    </div>
+
+    <div class="cover-bot reveal" data-stagger>
+      <div class="meta"><span class="k">Servicii active</span><span class="v">7 · <em>1 în curând</em></span></div>
+      <div class="meta"><span class="k">Pistă bob</span><span class="v">1 <em>260</em> m</span></div>
+      <div class="meta"><span class="k">Parc aventură</span><span class="v">5 <em>ha</em></span></div>
+      <div class="meta"><span class="k">Cabine</span><span class="v">17 · <em>în pădure</em></span></div>
+    </div>
+  </div>
+
+  <div class="cover-marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Restaurant panoramic</span><span>17 cabine de munte</span><span>Pistă de bob 1260 m</span><span>Parc de aventură 5 ha</span><span>Pârtie de schi</span><span>Adventure offroad</span><span>Salina Oxygen</span><span>Hotel — în curând</span>
+      <span>Restaurant panoramic</span><span>17 cabine de munte</span><span>Pistă de bob 1260 m</span><span>Parc de aventură 5 ha</span><span>Pârtie de schi</span><span>Adventure offroad</span><span>Salina Oxygen</span><span>Hotel — în curând</span>
+    </div>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="seg-flow" id="despre">
+  <div class="wrap">
+    <div class="intro">
+      <div class="intro-left reveal">
+        <span class="eyebrow">01 · esență</span>
+        <h2 class="reveal-clip"><span class="clip-inner">Un munte. <span class="italic">Șapte feluri de a-l trăi.</span></span></h2>
+        <div class="note"><span>DN12C · <b>km est</b></span><span>Gheorgheni ↔ Piatra Neamț</span></div>
+      </div>
+      <div class="intro-right reveal" data-stagger>
+        <p>Oxygen Resort nu este un singur loc. Este o constelație de experiențe situate pe drumul DN12C, între Gheorgheni și Piatra Neamț, pe creasta Munților Hășmaș — la câteva minute de Lacul Roșu.</p>
+        <div class="pull">„Un singur munte. <em>Șapte feluri de a-l trăi.</em>"</div>
+        <p>Un complex care unește restaurantul panoramic Oxygen Restro, cele 17 cabine din pădure, pistă de bob de 1260 m, parcul de aventură de 5 hectare, pârtia de schi, experiența offroad Oxygen Adventure, salina cu aerosol de sare — și, în curând, hotelul propriu.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAND -->
+<section class="seg-flow dark">
+  <div class="wrap">
+    <div class="sh reveal">
+      <div class="sh-left">
+        <span class="eyebrow">02 · complexul în cifre</span>
+        <h2 class="reveal-clip"><span class="clip-inner">Ce înseamnă <span class="italic">un resort de altitudine.</span></span></h2>
+      </div>
+      <span class="sh-meta">verified · oxygenresort.ro</span>
+    </div>
+    <div class="stat-band reveal" data-stagger>
+      <div class="stat">
+        <span class="s-n">1 <em>260</em></span>
+        <span class="s-u">Metri · pistă bob</span>
+        <p class="s-d">Dublă spirală, oprire automată, 500 persoane / oră.</p>
+      </div>
+      <div class="stat">
+        <span class="s-n">5 <em>ha</em></span>
+        <span class="s-u">Parc de aventură</span>
+        <p class="s-d">Peste 700 persoane simultan · jocuri de lemn, tragere la țintă, bowling, biliard.</p>
+      </div>
+      <div class="stat">
+        <span class="s-n">17</span>
+        <span class="s-u">Cabine în pădure</span>
+        <p class="s-d">Fiecare cu propriul său traseu — rezervare directă.</p>
+      </div>
+      <div class="stat">
+        <span class="s-n">7 <em>+1</em></span>
+        <span class="s-u">Experiențe montane</span>
+        <p class="s-d">Restaurant · cabine · bob · aventură · schi · offroad · salină. În curând: hotel.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONSTELLATION -->
+<section class="seg-flow" id="constelatie">
+  <div class="wrap">
+    <div class="sh reveal">
+      <div class="sh-left">
+        <span class="eyebrow">03 · constelație</span>
+        <h2 class="reveal-clip"><span class="clip-inner">Harta <span class="italic">experiențelor.</span></span></h2>
+        <p class="lead">Alege steaua. Fiecare duce la o experiență diferită din complex — cu propriul său traseu, propriul său tarif, propriul său ritm.</p>
+      </div>
+      <span class="sh-meta">7 active · 1 în curând</span>
+    </div>
+
+    <div class="constell-hero">
+      <div class="constell-intro reveal">
+        <span class="micro">interacțiune signature</span>
+        <p class="pull">„Pe harta noastră, <em>fiecare stea este o dimineață nouă.</em>"</p>
+        <p class="micro" style="text-transform:none;letter-spacing:.04em;font-size:13px;color:var(--muted);line-height:1.7">Hover pe fiecare stea dezvăluie orarul și prețul de bază. Click — intri în pagina dedicată.</p>
+      </div>
+      <div class="constell-grid reveal" data-stagger>
+        <a class="star featured" href="./restro.html"><span class="st-idx">01</span><span class="st-ico">◐</span><h5>Oxygen Restro</h5><span class="st-m">L–V 10–20 · Sb–D 10–21</span></a>
+        <a class="star" href="./cabine.html"><span class="st-idx">02</span><span class="st-ico">▲</span><h5>17 Cabine</h5><span class="st-m">rezervare directă</span></a>
+        <a class="star" href="./bob.html"><span class="st-idx">03</span><span class="st-ico">∿</span><h5>Pistă bob</h5><span class="st-m">1 260 m · 27 / 22 RON</span></a>
+        <a class="star" href="./aventura.html"><span class="st-idx">04</span><span class="st-ico">⋄</span><h5>Parc aventură</h5><span class="st-m">5 ha · 25 RON</span></a>
+        <a class="star" href="./schi.html"><span class="st-idx">05</span><span class="st-ico">◇</span><h5>Pârtie schi</h5><span class="st-m">sezon iarnă</span></a>
+        <a class="star" href="./adventure.html"><span class="st-idx">06</span><span class="st-ico">⌇</span><h5>Adventure offroad</h5><span class="st-m">250 / 125 RON · 2.5 h</span></a>
+        <a class="star" href="./salina.html"><span class="st-idx">07</span><span class="st-ico">◉</span><h5>Salina Oxygen</h5><span class="st-m">L–D 12–20</span></a>
+        <a class="star soon" href="./hotel.html"><span class="st-idx">08</span><span class="st-ico">○</span><h5>Hotel</h5><span class="st-m">în curând</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENȚE - LISTA DETALIATĂ -->
+<section class="seg-flow dark" id="experiente">
+  <div class="wrap">
+    <div class="sh reveal">
+      <div class="sh-left">
+        <span class="eyebrow">04 · experiențe · ROW view</span>
+        <h2 class="reveal-clip"><span class="clip-inner">Fiecare experiență, <span class="italic">în două rânduri.</span></span></h2>
+        <p class="lead">Pentru vizitatorii care vor să compare pe orizontală: preț, orar, dimensiune, pagină dedicată.</p>
+      </div>
+      <span class="sh-meta">scroll · click · explorează</span>
+    </div>
+
+    <div class="svc-list reveal">
+      <a class="svc-row" href="./restro.html">
+        <span class="rn">01</span>
+        <span class="rt-thumb"><img src="./images/restro-etterem1.webp" alt="Oxygen Restro"></span>
+        <span class="rt">Oxygen <span class="italic">Restro</span></span>
+        <span class="rd">Bucătărie panoramică cu vedere spre Gheorgheni. Terasă + sală cu perete de sticlă.</span>
+        <span class="rm">L–V <b>10–20</b></span>
+        <span class="ra">vezi pagina<span class="arr">→</span></span>
+      </a>
+      <a class="svc-row" href="./cabine.html">
+        <span class="rn">02</span>
+        <span class="rt-thumb"><img src="./images/cabin-1.webp" alt="17 cabine"></span>
+        <span class="rt">17 <span class="italic">Cabine</span></span>
+        <span class="rd">17 cabine în pădure, fiecare cu propriul traseu și ambianță.</span>
+        <span class="rm">rezervare<b>directă</b></span>
+        <span class="ra">vezi pagina<span class="arr">→</span></span>
+      </a>
+      <a class="svc-row" href="./bob.html">
+        <span class="rn">03</span>
+        <span class="rt-thumb"><img src="./images/bob-1.webp" alt="Pistă bob"></span>
+        <span class="rt">Pistă de <span class="italic">bob</span></span>
+        <span class="rd">1260 m dublă spirală · oprire automată · 500 persoane / oră.</span>
+        <span class="rm">adult <b>27 RON</b></span>
+        <span class="ra">vezi pagina<span class="arr">→</span></span>
+      </a>
+      <a class="svc-row" href="./aventura.html">
+        <span class="rn">04</span>
+        <span class="rt-thumb"><img src="./images/park-DSCF5690.webp" alt="Parc aventură"></span>
+        <span class="rt">Parc de <span class="italic">aventură</span></span>
+        <span class="rd">5 hectare · peste 700 persoane · jocuri din lemn, tragere, bowling, biliard.</span>
+        <span class="rm">zi <b>25 RON</b></span>
+        <span class="ra">vezi pagina<span class="arr">→</span></span>
+      </a>
+      <a class="svc-row" href="./schi.html">
+        <span class="rn">05</span>
+        <span class="rt-thumb"><img src="./images/ski-6.webp" alt="Pârtie schi"></span>
+        <span class="rt">Pârtie de <span class="italic">schi</span></span>
+        <span class="rd">Sezon iarnă · ambianță alpină. Detalii curente pe Facebook.</span>
+        <span class="rm">sezon <b>iarnă</b></span>
+        <span class="ra">vezi pagina<span class="arr">→</span></span>
+      </a>
+      <a class="svc-row" href="./adventure.html">
+        <span class="rn">06</span>
+        <span class="rt-thumb"><img src="./images/adv-borito.webp" alt="Adventure offroad"></span>
+        <span class="rt">Oxygen <span class="italic">Adventure</span></span>
+        <span class="rd">Offroad prin munți — 2.5 ore de experiență autentică.</span>
+        <span class="rm">adult <b>250 RON</b></span>
+        <span class="ra">vezi pagina<span class="arr">→</span></span>
+      </a>
+      <a class="svc-row" href="./salina.html">
+        <span class="rn">07</span>
+        <span class="rt-thumb"><img src="./images/salina-1.webp" alt="Salina"></span>
+        <span class="rt">Salina <span class="italic">Oxygen</span></span>
+        <span class="rd">Aerosol de sare uscată · microclimat terapeutic pentru plămâni și imunitate.</span>
+        <span class="rm">L–D <b>12–20</b></span>
+        <span class="ra">vezi pagina<span class="arr">→</span></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED: RESTRO -->
+<section class="seg-flow">
+  <div class="wrap">
+    <div class="sh reveal">
+      <div class="sh-left">
+        <span class="eyebrow">05 · featured · oxygen restro</span>
+        <h2 class="reveal-clip"><span class="clip-inner">Un perete <span class="italic">de sticlă</span> spre Gheorgheni.</span></h2>
+      </div>
+      <span class="sh-meta">L–V 10–20 · Sb–D 10–21</span>
+    </div>
+
+    <div class="feat-split">
+      <div class="feat-left reveal">
+        <img src="./images/restro-etterem1.webp" alt="Oxygen Restro — fațadă la apus">
+        <div class="fl-caption">
+          <span class="c-num">— priveliște</span>
+          <span class="c-val"><em>„Panoramă spre Gheorgheni · pereți de sticlă uriași.”</em></span>
+        </div>
+      </div>
+      <div class="feat-right reveal" data-stagger>
+        <span class="eyebrow">restaurantul complexului</span>
+        <h3>O bucătărie <span class="italic">panoramică,</span> sub cer deschis.</h3>
+        <p>„Restaurantul nostru profită de frumoasa priveliște panoramică cu suprafețe de sticlă uriașe, impresionante, cu vedere spre Gheorgheni.” Atmosferă familială, ingrediente locale, sală largă pentru evenimente private.</p>
+        <div class="feat-stats">
+          <div class="fs"><span class="k">Luni–Vineri</span><span class="v">10 – <em>20</em></span></div>
+          <div class="fs"><span class="k">Sâmbătă–Duminică</span><span class="v">10 – <em>21</em></span></div>
+          <div class="fs"><span class="k">Meniu</span><span class="v">digital · <em>Menubox</em></span></div>
+        </div>
+        <div class="feat-cta"><a class="btn primary" href="./restro.html"><span>Intră în restaurant</span><span class="arr">→</span></a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED: BOB -->
+<section class="seg-flow dark">
+  <div class="wrap">
+    <div class="feat-split reverse">
+      <div class="feat-left reveal">
+        <img src="./images/bob-1.webp" alt="Pistă de bob">
+        <div class="fl-caption">
+          <span class="c-num">— signature</span>
+          <span class="c-val"><em>„1260 m de spirală · oprire automată.”</em></span>
+        </div>
+      </div>
+      <div class="feat-right reveal" data-stagger>
+        <span class="eyebrow">06 · pistă de bob</span>
+        <h3>Un <span class="italic">kilometru</span> pe spirală dublă.</h3>
+        <p>Designul unic și decorul pitoresc al pistei Oxygen Bob o fac o atracție regională. Sistemul de frânare automată garantează o oprire lină și sigură, iar tehnologia de siguranță echipează toate vehiculele.</p>
+        <div class="feat-stats">
+          <div class="fs"><span class="k">Lungime</span><span class="v">1 <em>260</em> m</span></div>
+          <div class="fs"><span class="k">Adult</span><span class="v">27 <em>RON</em></span></div>
+          <div class="fs"><span class="k">Copil &lt; 14</span><span class="v">22 <em>RON</em></span></div>
+        </div>
+        <div class="feat-cta"><a class="btn primary" href="./bob.html"><span>Vezi pista</span><span class="arr">→</span></a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED: CABINE -->
+<section class="seg-flow">
+  <div class="wrap">
+    <div class="feat-split">
+      <div class="feat-left reveal">
+        <img src="./images/cabin-1.webp" alt="Cabine în pădure">
+        <div class="fl-caption">
+          <span class="c-num">— cazare</span>
+          <span class="c-val"><em>„17 cabine · fiecare cu propriul său respir.”</em></span>
+        </div>
+      </div>
+      <div class="feat-right reveal" data-stagger>
+        <span class="eyebrow">07 · cabine de munte</span>
+        <h3>17 cabine <span class="italic">în pădurea Hășmaș.</span></h3>
+        <p>Cabine individuale, fiecare cu propriul său traseu de acces și propriul său decor natural. Rezervare directă prin telefon sau email — un sistem simplu, așa cum se cuvine pentru munte.</p>
+        <div class="feat-stats">
+          <div class="fs"><span class="k">Cabine</span><span class="v">17 · <em>în pădure</em></span></div>
+          <div class="fs"><span class="k">Rezervare</span><span class="v">+40 775 <em>607</em> 812</span></div>
+          <div class="fs"><span class="k">Email</span><span class="v">nature · <em>experience</em></span></div>
+        </div>
+        <div class="feat-cta"><a class="btn primary" href="./cabine.html"><span>Vezi cabinele</span><span class="arr">→</span></a></div>
+      </div>
+    </div>
+
+    <div class="strip reveal">
+      <img src="./images/ski-1.webp" alt="Pârtia de schi">
+      <div class="strip-inner">
+        <div class="lt">
+          <span class="ey">— sezon iarnă</span>
+          <h3>Când ninge, <em>muntele se aprinde.</em> Pârtia, bobul, cabinele — toate, la 1240 m.</h3>
+        </div>
+        <div class="rt">
+          <div>Hășmaș · <b>1240 m</b></div>
+          <div>Lacul Roșu · <b>9 km</b></div>
+          <div>Piatra Neamț · <b>65 km</b></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOTEL SOON -->
+<section class="seg-flow dark">
+  <div class="wrap">
+    <div class="sh reveal">
+      <div class="sh-left">
+        <span class="eyebrow">08 · în curând</span>
+        <h2 class="reveal-clip"><span class="clip-inner">Hotelul <span class="italic">propriu.</span></span></h2>
+      </div>
+      <span class="sh-meta">newsletter · anunțuri</span>
+    </div>
+
+    <div class="hotel-soon reveal">
+      <div class="hotel-soon-bg"></div>
+      <div class="hotel-soon-inner">
+        <div class="hs-left">
+          <span class="micro" style="color:var(--accent)">● în pregătire</span>
+          <h3>Un <span class="italic">hotel</span> la capătul drumului DN12C.</h3>
+          <p>„Hotelul nostru va fi disponibil în curând, cu propriul său sistem de rezervare.” Vom transmite detalii complete — pachete, camere, pornire — celor înscriși la newsletter.</p>
+          <div class="cover-cta" style="margin-top:var(--s-3)">
+            <a class="btn ghost" href="./hotel.html"><span>Pagina hotelului</span><span class="arr">→</span></a>
+          </div>
+        </div>
+        <div class="hs-right">
+          <h4>— Fii printre primii</h4>
+          <form data-local class="hs-input" novalidate>
+            <input type="email" required placeholder="email@exemplu.ro" aria-label="Email">
+            <button type="submit" class="btn primary"><span>Notifică-mă</span><span class="arr">→</span></button>
+          </form>
+          <span class="h-note">Nu trimitem spam · doar anunț de lansare.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIE -->
+<section class="seg-flow">
+  <div class="wrap">
+    <div class="sh reveal">
+      <div class="sh-left">
+        <span class="eyebrow">09 · galerie</span>
+        <h2 class="reveal-clip"><span class="clip-inner">Complex, <span class="italic">în imagini.</span></span></h2>
+        <p class="lead">O selecție editorială din toate experiențele — restaurantul panoramic, cabinele pe zăpadă, pista de bob, pârtia, salina. Fotografiile originale ale complexului.</p>
+      </div>
+      <span class="sh-meta">16 cadre · multiple roluri</span>
+    </div>
+
+    <div class="gal-pro">
+      <a class="gp-item" href="./restro.html"><img src="./images/restro-etterem1.webp" alt="Oxygen Restro"><div class="ov"><span class="mh">restro · fațadă</span><span class="mn">„OXYGEN RESTRO" · la apus</span></div></a>
+      <a class="gp-item" href="./bob.html"><img src="./images/bob-1.webp" alt="Pistă bob"><div class="ov"><span class="mh">bob · winter</span><span class="mn">Pârtia de bob iarna</span></div></a>
+      <a class="gp-item" href="./cabine.html"><img src="./images/cabin-1.webp" alt="Cabine"><div class="ov"><span class="mh">cabine · exterior</span><span class="mn">Cabine individuale pe pilon</span></div></a>
+      <a class="gp-item" href="./aventura.html"><img src="./images/park-DSCF5690.webp" alt="Parc"><div class="ov"><span class="mh">parc · trasee</span><span class="mn">5 hectare · jocuri</span></div></a>
+      <a class="gp-item" href="./schi.html"><img src="./images/ski-6.webp" alt="Schi"><div class="ov"><span class="mh">schi · apus</span><span class="mn">Pârtia la lumini calde</span></div></a>
+      <a class="gp-item" href="./restro.html"><img src="./images/restro-28.webp" alt="Restro arhitectura"><div class="ov"><span class="mh">restro · arhitectură</span><span class="mn">Pereți &amp; acoperișuri ondulate</span></div></a>
+      <a class="gp-item" href="./adventure.html"><img src="./images/adv-borito.webp" alt="Adventure"><div class="ov"><span class="mh">adventure · cover</span><span class="mn">Offroad montan</span></div></a>
+      <a class="gp-item" href="./cabine.html"><img src="./images/cabin-haz-5.webp" alt="Cabina"><div class="ov"><span class="mh">cabine · detaliu</span><span class="mn">Fațadă cu reflexii de sticlă</span></div></a>
+      <a class="gp-item" href="./bob.html"><img src="./images/bob-cropped.webp" alt="Bob"><div class="ov"><span class="mh">bob · signature</span><span class="mn">Imaginea oficială a pistei</span></div></a>
+      <a class="gp-item" href="./salina.html"><img src="./images/salina-1.webp" alt="Salina"><div class="ov"><span class="mh">salină · cristal</span><span class="mn">Microclimat terapeutic</span></div></a>
+      <a class="gp-item" href="./aventura.html"><img src="./images/park-DSCF5547.webp" alt="Parc"><div class="ov"><span class="mh">parc · activitate</span><span class="mn">Jocuri din lemn</span></div></a>
+      <a class="gp-item" href="./restro.html"><img src="./images/restro-2.webp" alt="Restro sala"><div class="ov"><span class="mh">restro · masă</span><span class="mn">Sala panoramică</span></div></a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT CTA -->
+<section class="seg-flow dark" id="contact-cta">
+  <div class="wrap">
+    <div class="sh reveal">
+      <div class="sh-left">
+        <span class="eyebrow">10 · vino la noi</span>
+        <h2 class="reveal-clip"><span class="clip-inner">Pregătit pentru <span class="italic">o zi la altitudine?</span></span></h2>
+        <p class="lead">Contactează-ne direct — sau alege pagina experienței dorite și rezervă pe loc. Suntem deschiși în toată săptămâna, iar drumul DN12C este practicabil tot anul.</p>
+      </div>
+      <span class="sh-meta">0372 · 903 · 789</span>
+    </div>
+
+    <div class="contact-cta reveal">
+      <video preload="metadata" autoplay muted loop playsinline poster="./images/ski-6.webp">
+        <source src="./images/hero-video.mp4" type="video/mp4">
+      </video>
+      <div class="cc-inner">
+        <span class="eyebrow" style="margin:0;color:var(--accent-warm)">— pasul pângărați</span>
+        <h3>Urcă pe <em>DN12C,</em> intră la noi.</h3>
+        <div class="cc-meta">
+          <span>TEL · <b>0372 903 789</b></span>
+          <span>EMAIL · <b>oxygenrestro@gmail.com</b></span>
+          <span>COORD · <b>46.7757° N</b></span>
+        </div>
+        <div class="cover-cta" style="margin-top:var(--s-3)">
+          <a class="btn primary" href="./contact.html"><span>Trimite un mesaj</span><span class="arr">→</span></a>
+          <a class="btn ghost" href="https://maps.app.goo.gl/ZxqF1kKwSY8s2QoL6" target="_blank" rel="noopener"><span>Deschide în Maps</span><span class="arr">↗</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="brand">
+      <div class="lg"><img src="./logo/logo.webp" alt="Oxygen Resort"><span>OXYGEN RESORT</span></div>
+      <p>Complex de altitudine pe drumul DN12C, între Gheorgheni și Piatra Neamț, pe creasta Munților Hășmaș — la câteva minute de Lacul Roșu.</p>
+      <div class="f-social">
+        <a href="https://www.facebook.com/profile.php?id=100063484366206" target="_blank" rel="noopener" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg></a>
+        <a href="https://www.instagram.com/oxygen_restro" target="_blank" rel="noopener" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor"/></svg></a>
+      </div>
+    </div>
+    <div class="col">
+      <h5>— Experiențe</h5>
+      <ul>
+        <li><a href="./restro.html">Oxygen Restro</a></li>
+        <li><a href="./cabine.html">17 Cabine</a></li>
+        <li><a href="./bob.html">Pistă bob</a></li>
+        <li><a href="./aventura.html">Parc aventură</a></li>
+        <li><a href="./schi.html">Pârtie schi</a></li>
+        <li><a href="./adventure.html">Adventure offroad</a></li>
+        <li><a href="./salina.html">Salina</a></li>
+      </ul>
+    </div>
+    <div class="col">
+      <h5>— Complex</h5>
+      <ul>
+        <li><a href="./hotel.html">Hotel · în curând</a></li>
+        <li><a href="./contact.html">Contact</a></li>
+        <li><a href="#constelatie">Hartă servicii</a></li>
+        <li><a href="https://maps.app.goo.gl/ZxqF1kKwSY8s2QoL6" target="_blank" rel="noopener">Google Maps</a></li>
+      </ul>
+    </div>
+    <div class="col">
+      <h5>— Contact</h5>
+      <ul>
+        <li><a href="tel:0372903789">0372 · 903 · 789</a></li>
+        <li><a href="mailto:oxygenrestro@gmail.com">oxygenrestro@gmail.com</a></li>
+        <li>Pasul Pângărați</li>
+        <li>Gheorgheni · Harghita</li>
+      </ul>
+    </div>
+    <div class="f-bot">
+      <span class="mono">© 2026 Oxygen Resort · Pasul Pângărați · DN12C</span>
+      <span class="mono">46.7757° N · 25.7236° E · 1240 m</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js"></script>
+<script src="./app.js"></script>
+</body>
+</html>

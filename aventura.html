@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Parc de aventură · 5 hectare · Oxygen Resort</title>
+<meta name="description" content="Parcul de aventură Oxygen Resort — 5 hectare, peste 700 persoane simultan. Jocuri din lemn, tragere la țintă, bowling, biliard. 25 RON / zi.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@200;300;400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400;1,6..72,500;1,6..72,600&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Spline+Sans+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./style.css">
+<style>
+  .act-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--s-3);margin-top:var(--s-6)}
+  .act{padding:var(--s-5);border:1px solid var(--line);background:var(--surface);border-radius:var(--r-sharp);display:flex;flex-direction:column;gap:var(--s-3);transition:all .6s var(--ease);position:relative;overflow:hidden}
+  .act::before{content:"";position:absolute;top:0;left:0;width:100%;height:2px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .8s var(--ease)}
+  .act:hover{border-color:var(--accent);transform:translateY(-4px)}
+  .act:hover::before{transform:scaleX(1)}
+  .act .ico{font-size:32px;color:var(--accent)}
+  .act h5{font-family:var(--f-display);font-size:20px;font-weight:500;letter-spacing:-.005em}
+  .act p{font-size:13px;color:var(--muted);line-height:1.6}
+  .act .num{position:absolute;top:var(--s-4);right:var(--s-4);font-family:var(--f-mono);font-size:10px;letter-spacing:.2em;color:var(--muted)}
+  @media(max-width:760px){.act-grid{grid-template-columns:repeat(2,1fr)}}
+
+  .big-stat{margin-top:var(--s-8);display:grid;grid-template-columns:1fr 1fr;gap:var(--s-5)}
+  .big-stat .bsb{padding:var(--s-7);border:1px solid var(--line);background:var(--surface);border-radius:var(--r-sharp);position:relative;overflow:hidden}
+  .big-stat .bsb::after{content:"";position:absolute;inset:0;background:radial-gradient(60% 80% at 100% 0%,rgba(77,197,255,.06) 0%,transparent 60%)}
+  .big-stat .bsb .n{font-family:var(--f-display);font-size:clamp(64px,8vw,144px);font-weight:300;letter-spacing:-.03em;line-height:1}
+  .big-stat .bsb .n em{font-family:var(--f-accent);font-style:italic;color:var(--accent)}
+  .big-stat .bsb .u{font-family:var(--f-mono);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);margin-top:var(--s-3);display:block}
+  .big-stat .bsb .d{margin-top:var(--s-3);font-size:15px;color:var(--text-lead);line-height:1.6;max-width:28ch}
+  @media(max-width:760px){.big-stat{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="rail" id="rail" style="--p:0%"></div>
+<div class="alt-chip"><div class="ac-line"></div><div class="ac-val">Altitudine <b id="altV">820</b> m</div><div class="ac-line"></div></div>
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <div class="nav-left"><a href="./index.html" class="brandmark"><img src="./logo/logo.webp" alt="Oxygen Resort"><span class="bn">OXYGEN RESORT</span></a></div>
+    <nav class="nav-links"><a href="./index.html">Acasă</a><a href="./restro.html">Restro</a><a href="./cabine.html">Cabine</a><a href="./bob.html">Bob</a><a href="./contact.html">Contact</a></nav>
+    <div class="nav-right"><div class="lang-toggle"><a class="on" href="#">RO</a><a href="#">HU</a><a href="#">EN</a></div><a href="./contact.html" class="nav-cta">Rezervă<span class="arr">→</span></a><button class="nav-burger" aria-label="Menu"><span></span><span></span><span></span></button></div>
+  </div>
+</header>
+<nav class="mobile-menu"><a href="./index.html"><span class="num">00</span>Acasă</a><a href="./restro.html"><span class="num">01</span>Oxygen Restro</a><a href="./cabine.html"><span class="num">02</span>17 Cabine</a><a href="./bob.html"><span class="num">03</span>Pistă de bob</a><a href="./aventura.html"><span class="num">04</span>Parc de aventură</a><a href="./schi.html"><span class="num">05</span>Pârtie de schi</a><a href="./adventure.html"><span class="num">06</span>Adventure offroad</a><a href="./salina.html"><span class="num">07</span>Salina</a><a href="./hotel.html"><span class="num">08</span>Hotel · în curând</a><a href="./contact.html"><span class="num">09</span>Contact</a><div class="lang-toggle-mm"><a href="#" class="on">RO</a><a href="#">HU</a><a href="#">EN</a></div></nav>
+
+<section class="cover cover-sub" id="cover">
+  <img src="./images/park-DSCF5690.webp" class="cover-video" alt="Parc de aventură Oxygen — 5 ha">
+  <div class="cover-inner">
+    <div class="cover-top reveal">
+      <div class="cover-chips"><span class="chip on">● 04 / 07 · Parc aventură</span><span class="chip">5 hectare</span><span class="chip">700+ persoane</span></div>
+      <div class="cover-coord"><div><span>Luni–Duminică</span> · 10 – 20</div><div>bilet zi · <span>25 RON / pers.</span></div></div>
+    </div>
+    <div class="cover-mid">
+      <span class="eyebrow reveal" style="margin-bottom:0">parc de aventură · pentru toate vârstele</span>
+      <h1 class="words" id="heroH1">
+        <span class="w"><span>5</span></span>
+        <span class="w"><span>hectare.</span></span><br>
+        <span class="w"><span><em>Nesfârșit</em></span></span>
+        <span class="w"><span>de joc.</span></span>
+      </h1>
+      <p class="lead reveal">„Avem ceva pentru toate vârstele, de la cei mici până la adulți.” Jocuri din lemn, tragere la țintă, bowling și biliard — plus mulțime de spații exterioare.</p>
+      <div class="cover-cta reveal">
+        <a class="btn primary" href="#activitati"><span>Vezi activitățile</span><span class="arr">→</span></a>
+        <a class="btn ghost" href="tel:0372903789"><span>Sună</span><span class="arr">↗</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="seg-flow">
+  <div class="wrap">
+    <div class="sh reveal">
+      <div class="sh-left"><span class="eyebrow">01 · dimensiuni</span><h2 class="reveal-clip"><span class="clip-inner">Parcul <span class="italic">în cifre.</span></span></h2></div>
+      <span class="sh-meta">verified · oxygenresort.ro</span>
+    </div>
+    <div class="big-stat reveal" data-stagger>
+      <div class="bsb"><span class="n">5 <em>ha</em></span><span class="u">suprafață totală</span><p class="d">„5 hectare” de parc integrat în decor natural — cu trasee exterioare și pavilioane interioare.</p></div>
+      <div class="bsb"><span class="n">700 <em>+</em></span><span class="u">persoane simultan</span><p class="d">Parcul poate găzdui „mai mult de 700 persoane” în același timp — ideal pentru grupuri mari, evenimente, familii extinse.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="seg-flow dark" id="activitati">
+  <div class="wrap">
+    <div class="sh reveal"><div class="sh-left"><span class="eyebrow">02 · activități</span><h2 class="reveal-clip"><span class="clip-inner">Două <span class="italic">linii:</span> modernă și tradițională.</span></h2><p class="lead">„Jocurile sunt pe două linii: modernă și tradițională.” Alege singur ritmul — sau parcurge-le pe toate într-o zi.</p></div><span class="sh-meta">joc de grup · familie · eveniment</span></div>
+    <div class="act-grid reveal" data-stagger>
+      <div class="act"><span class="num">01</span><span class="ico">▲</span><h5>Jocuri din lemn</h5><p>Trasee și construcții tradiționale în lemn — ambianță pădurii Hășmaș, pentru copii și adulți deopotrivă.</p></div>
+      <div class="act"><span class="num">02</span><span class="ico">◉</span><h5>Tragere la țintă</h5><p>Poligon dedicat — distanțe variate, echipament disponibil, supervizare. Puterea brațului, precizia ochiului.</p></div>
+      <div class="act"><span class="num">03</span><span class="ico">∿</span><h5>Bowling</h5><p>Linii de bowling moderne — rezervare pe loc, jocuri pentru 2 – 8 persoane.</p></div>
+      <div class="act"><span class="num">04</span><span class="ico">⋄</span><h5>Biliard</h5><p>Mese profesionale, atmosferă low-light, combinare perfectă cu un pahar la Restro.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE NARRATIVE -->
+<section class="seg-flow">
+  <div class="wrap">
+    <div class="sh reveal"><div class="sh-left"><span class="eyebrow">narativ · experiența</span><h2 class="reveal-clip"><span class="clip-inner">Ce înseamnă <span class="italic">5 hectare</span> de parc.</span></h2></div><span class="sh-meta">editorial · oxygen resort</span></div>
+    <div style="display:grid;grid-template-columns:1.05fr 1fr;gap:var(--s-7);align-items:start;margin-top:var(--s-6)">
+      <div class="reveal" data-stagger style="display:flex;flex-direction:column;gap:var(--s-4)">
+        <p style="font-size:17px;line-height:1.72;color:var(--text-lead)">Cinci hectare — este mai mult decât suficient pentru o zi întreagă. Parcul este integrat în decorul natural al Munților Hășmaș: <b>pădure, cărări, zone deschise</b>, iar între ele — construcțiile de lemn și zonele de joacă care formează cele două linii ale experienței: <span class="italic">modernă și tradițională.</span></p>
+        <p style="font-size:17px;line-height:1.72;color:var(--text-lead)">Linia <b>tradițională</b> reia jocurile vechi ale copilăriei — structuri de lemn, tragere la țintă, biliard, bowling. Linia <b>modernă</b> completează, cu instalații și activități noi, care fac parcul accesibil pentru toate vârstele, așa cum scrie pe oxygenresort.ro: <em>„avem ceva pentru toate vârstele, de la cei mici până la adulți.”</em></p>
+        <p style="font-size:17px;line-height:1.72;color:var(--text-lead)">Pentru grupuri mai mari — zile de naștere, team-building, familie extinsă — parcul funcționează ca o singură destinație: parcare, acces, supervizare, toate într-un singur loc. <b>Peste 700 persoane</b> pot fi prezente simultan.</p>
+      </div>
+      <div class="reveal" data-stagger style="display:flex;flex-direction:column;gap:var(--s-3)">
+        <div class="info-card"><h4>Cum să ajungi</h4>
+          <div class="info-row"><span class="k">De pe DN12C</span><span class="v">Pasul Pângărați · est</span></div>
+          <div class="info-row"><span class="k">Gheorgheni</span><span class="v">~ 18 km · spre est</span></div>
+          <div class="info-row"><span class="k">Lacul Roșu</span><span class="v">9 km · spre Piatra N.</span></div>
+          <div class="info-row"><span class="k">Altitudine</span><span class="v">1 240 m</span></div>
+          <div class="info-row"><span class="k">Parcare</span><span class="v">inclusă · la complex</span></div>
+        </div>
+        <div class="info-card"><h4>Bun de știut</h4>
+          <div class="info-row"><span class="k">Grupuri mici</span><span class="v">fără rezervare</span></div>
+          <div class="info-row"><span class="k">Grupuri 10+</span><span class="v">cerere prealabilă</span></div>
+          <div class="info-row"><span class="k">Copii</span><span class="v">însoțiți de adult</span></div>
+          <div class="info-row"><span class="k">Vreme rea</span><span class="v">sună înainte</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="seg-flow">
+  <div class="wrap">
+    <div class="sh reveal"><div class="sh-left"><span class="eyebrow">03 · tarif</span><h2 class="reveal-clip"><span class="clip-inner">Un <span class="italic">singur preț.</span> O zi întreagă.</span></h2></div><span class="sh-meta">L–D · 10 – 20</span></div>
+    <div class="big-stat reveal" data-stagger>
+      <div class="bsb"><span class="n">25 <em>RON</em></span><span class="u">bilet zi · adult + copil</span><p class="d">Acces complet la parcul de aventură, toate activitățile de bază incluse. Grupuri mari — contactează-ne pentru pachet.</p></div>
+      <div class="bsb"><span class="n">L–D <em>10–20</em></span><span class="u">program zilnic</span><p class="d">Deschis în fiecare zi a săptămânii, fără pauză de prânz. În sezon rece, orarul poate fi scurtat — sună pentru confirmare.</p></div>
+    </div>
+    <div class="cover-cta" style="justify-content:center;margin-top:var(--s-7)">
+      <a class="btn primary" href="mailto:oxygenresortpark@gmail.com"><span>Cere pachet grup</span><span class="arr">→</span></a>
+      <a class="btn ghost" href="./bob.html"><span>Combină cu pista de bob</span><span class="arr">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="seg-flow dark">
+  <div class="wrap">
+    <div class="sh reveal"><div class="sh-left"><span class="eyebrow">04 · galerie</span><h2 class="reveal-clip"><span class="clip-inner">Parcul <span class="italic">în cadre.</span></span></h2></div><span class="sh-meta">atmosferă · joc · natură</span></div>
+    <div class="gal-pro">
+      <a class="gp-item" href="#"><img src="./images/park-DSCF5690.webp" alt="Parc — trasee"><div class="ov"><span class="mh">01 · trasee exterioare</span><span class="mn">Cărări &amp; zone de joacă</span></div></a>
+      <a class="gp-item" href="#"><img src="./images/park-DSCF5532.webp" alt="Jocuri din lemn"><div class="ov"><span class="mh">02 · jocuri din lemn</span><span class="mn">Structuri tradiționale</span></div></a>
+      <a class="gp-item" href="#"><img src="./images/park-DSCF5547.webp" alt="Parc activități"><div class="ov"><span class="mh">03 · activități copii</span><span class="mn">Pentru toate vârstele</span></div></a>
+      <a class="gp-item" href="#"><img src="./images/park-DSCF5579.webp" alt="Parc aventura"><div class="ov"><span class="mh">04 · parc aventura</span><span class="mn">5 hectare de explorare</span></div></a>
+      <a class="gp-item" href="#"><img src="./images/park-DSCF5612.webp" alt="Joc familie"><div class="ov"><span class="mh">05 · familie</span><span class="mn">Părinți + copii, împreună</span></div></a>
+      <a class="gp-item" href="#"><img src="./images/park-DSCF5619.webp" alt="Trasee"><div class="ov"><span class="mh">06 · trasee</span><span class="mn">Liniile modernă &amp; tradițională</span></div></a>
+      <a class="gp-item" href="#"><img src="./images/park-DSCF5632.webp" alt="Parc detalii"><div class="ov"><span class="mh">07 · detalii</span><span class="mn">Amenajări atente</span></div></a>
+      <a class="gp-item" href="#"><img src="./images/park-DSCF5634.webp" alt="Parc vara"><div class="ov"><span class="mh">08 · sezonul cald</span><span class="mn">Vara la parc</span></div></a>
+      <a class="gp-item" href="#"><img src="./images/park-DSCF5641.webp" alt="Parc zone"><div class="ov"><span class="mh">09 · zone tematice</span><span class="mn">Jocuri · tragere · bowling</span></div></a>
+      <a class="gp-item" href="#"><img src="./images/park-DSC03728.webp" alt="Parc aerian"><div class="ov"><span class="mh">10 · vedere aeriană</span><span class="mn">700+ persoane simultan</span></div></a>
+      <a class="gp-item" href="#"><img src="./images/park-DSC03736.webp" alt="Parc ambiant"><div class="ov"><span class="mh">11 · ambianță</span><span class="mn">Decor alpin</span></div></a>
+      <a class="gp-item" href="#"><img src="./images/park-DSC03744.webp" alt="Parc explorare"><div class="ov"><span class="mh">12 · explorare</span><span class="mn">Ziua întreagă la 25 RON</span></div></a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="seg-flow">
+  <div class="wrap">
+    <div class="sh reveal"><div class="sh-left"><span class="eyebrow">05 · echipa parcului</span><h2 class="reveal-clip"><span class="clip-inner">Contact <span class="italic">dedicat.</span></span></h2></div><span class="sh-meta">parcul · separat de restaurant</span></div>
+    <div class="form-wrap">
+      <div class="reveal" data-stagger style="display:flex;flex-direction:column;gap:var(--s-3)">
+        <div class="info-card"><h4>Parcul de aventură</h4>
+          <div class="info-row"><span class="k">Telefon</span><span class="v"><a href="tel:0372903789">0372 · 903 · 789</a></span></div>
+          <div class="info-row"><span class="k">Email dedicat</span><span class="v"><a href="mailto:oxygenresortpark@gmail.com">oxygenresortpark</a></span></div>
+          <div class="info-row"><span class="k">Tarif zi</span><span class="v">25 RON / persoană</span></div>
+          <div class="info-row"><span class="k">Capacitate</span><span class="v">700+ persoane simultan</span></div>
+          <div class="info-row"><span class="k">Orar</span><span class="v">L–D · 10 – 20</span></div>
+        </div>
+      </div>
+      <form class="form reveal" data-local novalidate name="aventura-group" method="POST" data-netlify="true">
+        <input type="hidden" name="form-name" value="aventura-group">
+        <div class="f-row"><label><span class="l">Nume organizator</span><input type="text" name="name" required></label><label><span class="l">Telefon</span><input type="tel" name="phone" required></label></div>
+        <label><span class="l">Email</span><input type="email" name="email" required></label>
+        <div class="f-row"><label><span class="l">Persoane</span><input type="number" name="guests" min="10" required placeholder="min 10"></label><label><span class="l">Data dorită</span><input type="date" name="date" required></label></div>
+        <label><span class="l">Tip eveniment</span><select name="type"><option>Zi de naștere</option><option>Team-building</option><option>Grup de prieteni</option><option>Familia extinsă</option><option>Altceva</option></select></label>
+        <label><span class="l">Detalii</span><textarea name="notes" placeholder="Activități preferate, ore, combinare cu bob / restro…"></textarea></label>
+        <label class="consent"><input type="checkbox" required> Sunt de acord cu prelucrarea datelor.</label>
+        <div class="submit-row"><span class="note">Răspundem în &lt; 2 ore</span><button type="submit" class="btn primary"><span>Cere ofertă</span><span class="arr">→</span></button></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="brand"><div class="lg"><img src="./logo/logo.webp" alt="Oxygen Resort"><span>OXYGEN RESORT</span></div><p>Complex de altitudine pe DN12C, creasta Munților Hășmaș.</p>
+      <div class="f-social"><a href="https://www.facebook.com/profile.php?id=100063484366206" target="_blank" rel="noopener" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg></a><a href="https://www.instagram.com/oxygen_restro" target="_blank" rel="noopener" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor"/></svg></a></div>
+    </div>
+    <div class="col"><h5>— Experiențe</h5><ul><li><a href="./restro.html">Restro</a></li><li><a href="./cabine.html">Cabine</a></li><li><a href="./bob.html">Bob</a></li><li><a href="./aventura.html">Aventură</a></li><li><a href="./schi.html">Schi</a></li><li><a href="./adventure.html">Adventure</a></li><li><a href="./salina.html">Salina</a></li></ul></div>
+    <div class="col"><h5>— Complex</h5><ul><li><a href="./hotel.html">Hotel</a></li><li><a href="./contact.html">Contact</a></li><li><a href="./index.html#constelatie">Hartă</a></li></ul></div>
+    <div class="col"><h5>— Parc</h5><ul><li><a href="tel:0372903789">0372 · 903 · 789</a></li><li><a href="mailto:oxygenresortpark@gmail.com">oxygenresortpark</a></li><li>Tarif · 25 RON / zi</li></ul></div>
+    <div class="f-bot"><span class="mono">© 2026 Oxygen Resort</span><span class="mono">46.7757° N · 1240 m</span></div>
+  </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js"></script>
+<script src="./app.js"></script>
+</body>
+</html>

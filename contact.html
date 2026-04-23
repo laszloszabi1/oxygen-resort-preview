@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Contact · Oxygen Resort — Pasul Pângărați, DN12C</title>
+<meta name="description" content="Contactează Oxygen Resort — Pasul Pângărați, Gheorgheni. Telefon 0372 903 789, email oxygenrestro@gmail.com. Formular + Google Maps.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@200;300;400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400;1,6..72,500;1,6..72,600&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Spline+Sans+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./style.css">
+<style>
+  .contact-head{display:grid;grid-template-columns:1.2fr 1fr;gap:var(--s-7);align-items:end;margin-top:var(--s-6)}
+  .contact-head h2{font-size:clamp(48px,6vw,104px);font-weight:300;letter-spacing:-.035em;line-height:.96}
+  .contact-head h2 .italic{color:var(--accent);font-style:italic}
+  .contact-head .r{display:flex;flex-direction:column;gap:var(--s-3)}
+  .contact-head .r .rl{font-family:var(--f-mono);font-size:10px;letter-spacing:.22em;color:var(--muted);text-transform:uppercase}
+  .contact-head .r .rv{font-family:var(--f-display);font-size:18px;font-weight:400;letter-spacing:-.005em}
+  .contact-head .r .rv a{color:var(--accent)}
+  @media(max-width:760px){.contact-head{grid-template-columns:1fr;gap:var(--s-4)}}
+
+  .contacts-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--s-3);margin-top:var(--s-8)}
+  .cc{padding:var(--s-4);border:1px solid var(--line);background:var(--surface);border-radius:var(--r-sharp);display:flex;flex-direction:column;gap:var(--s-2);transition:all .5s var(--ease)}
+  .cc:hover{border-color:var(--accent)}
+  .cc .n{font-family:var(--f-mono);font-size:10px;letter-spacing:.2em;color:var(--muted);text-transform:uppercase}
+  .cc h5{font-family:var(--f-display);font-size:17px;font-weight:500;letter-spacing:-.005em;text-transform:none}
+  .cc a,.cc span.v{font-family:var(--f-mono);font-size:12px;letter-spacing:.1em;color:var(--accent);word-break:break-all}
+  .cc p{font-size:12px;color:var(--muted);line-height:1.5;margin-top:auto}
+  @media(max-width:960px){.contacts-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:520px){.contacts-grid{grid-template-columns:1fr}}
+
+  .map-wrap{margin-top:var(--s-8);position:relative;aspect-ratio:16/7;border:1px solid var(--line);border-radius:var(--r-sharp);overflow:hidden}
+  .map-wrap iframe{width:100%;height:100%;border:0;filter:grayscale(.4) contrast(1.05) brightness(.85) invert(.92) hue-rotate(180deg)}
+  .map-wrap .m-ov{position:absolute;bottom:16px;left:16px;right:16px;display:flex;justify-content:space-between;align-items:flex-end;gap:var(--s-3);z-index:2;pointer-events:none}
+  .map-wrap .m-ov .mb{background:rgba(6,9,13,.88);backdrop-filter:blur(10px);padding:var(--s-3) var(--s-4);border:1px solid var(--line);border-radius:var(--r-sharp);pointer-events:auto;display:flex;flex-direction:column;gap:4px}
+  .map-wrap .m-ov .mb .mh{font-family:var(--f-mono);font-size:10px;letter-spacing:.22em;color:var(--accent);text-transform:uppercase}
+  .map-wrap .m-ov .mb .mv{font-family:var(--f-display);font-size:14px;color:var(--text)}
+  @media(max-width:760px){.map-wrap{aspect-ratio:4/5}}
+</style>
+</head>
+<body>
+<div class="rail" id="rail" style="--p:0%"></div>
+<div class="alt-chip"><div class="ac-line"></div><div class="ac-val">Altitudine <b id="altV">820</b> m</div><div class="ac-line"></div></div>
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <div class="nav-left"><a href="./index.html" class="brandmark"><img src="./logo/logo.webp" alt="Oxygen Resort"><span class="bn">OXYGEN RESORT</span></a></div>
+    <nav class="nav-links"><a href="./index.html">Acasă</a><a href="./restro.html">Restro</a><a href="./cabine.html">Cabine</a><a href="./bob.html">Bob</a><a href="./contact.html" class="active">Contact</a></nav>
+    <div class="nav-right"><div class="lang-toggle"><a class="on" href="#">RO</a><a href="#">HU</a><a href="#">EN</a></div><a href="#form" class="nav-cta">Scrie-ne<span class="arr">→</span></a><button class="nav-burger" aria-label="Menu"><span></span><span></span><span></span></button></div>
+  </div>
+</header>
+<nav class="mobile-menu"><a href="./index.html"><span class="num">00</span>Acasă</a><a href="./restro.html"><span class="num">01</span>Oxygen Restro</a><a href="./cabine.html"><span class="num">02</span>17 Cabine</a><a href="./bob.html"><span class="num">03</span>Pistă de bob</a><a href="./aventura.html"><span class="num">04</span>Parc de aventură</a><a href="./schi.html"><span class="num">05</span>Pârtie de schi</a><a href="./adventure.html"><span class="num">06</span>Adventure offroad</a><a href="./salina.html"><span class="num">07</span>Salina</a><a href="./hotel.html"><span class="num">08</span>Hotel · în curând</a><a href="./contact.html"><span class="num">09</span>Contact</a><div class="lang-toggle-mm"><a href="#" class="on">RO</a><a href="#">HU</a><a href="#">EN</a></div></nav>
+
+<!-- intro (no fullscreen hero — direct contact page) -->
+<section style="padding:140px 0 var(--s-7);background:var(--bg-deep)">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">— contact</span>
+    </div>
+    <div class="contact-head reveal">
+      <h2 class="reveal-clip"><span class="clip-inner">Urcă pe DN12C, <span class="italic">intră la noi.</span></span></h2>
+      <div class="r">
+        <div><span class="rl">Telefon central</span><span class="rv"><a href="tel:0372903789">0372 · 903 · 789</a></span></div>
+        <div><span class="rl">Email</span><span class="rv"><a href="mailto:oxygenrestro@gmail.com">oxygenrestro@gmail.com</a></span></div>
+        <div><span class="rl">Locație</span><span class="rv">Pasul Pângărați · Gheorgheni · Harghita</span></div>
+      </div>
+    </div>
+
+    <div class="contacts-grid reveal" data-stagger>
+      <div class="cc"><span class="n">01 · restaurant</span><h5>Oxygen Restro</h5><a href="tel:0372903789">0372 903 789</a><a href="mailto:oxygenrestro@gmail.com">oxygenrestro@gmail.com</a><p>L–V 10–20 · Sb–D 10–21</p></div>
+      <div class="cc"><span class="n">02 · cabine</span><h5>Rezervare cabine</h5><a href="tel:+40775607812">+40 775 607 812</a><a href="mailto:nature.experience2021@gmail.com">nature.experience2021</a><p>17 cabine · pădure Hășmaș</p></div>
+      <div class="cc"><span class="n">03 · parc aventură</span><h5>Parcul de aventură</h5><a href="tel:0372903789">0372 903 789</a><a href="mailto:oxygenresortpark@gmail.com">oxygenresortpark</a><p>5 ha · 700+ pers · 25 RON</p></div>
+      <div class="cc"><span class="n">04 · adventure</span><h5>Oxygen Adventure</h5><a href="tel:+40758067478">+40 758 067 478</a><a href="mailto:oxygenrestro@gmail.com">oxygenrestro@gmail.com</a><p>Offroad · 2.5 h · 250 / 125 RON</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FORM -->
+<section class="seg-flow" id="form">
+  <div class="wrap">
+    <div class="sh reveal"><div class="sh-left"><span class="eyebrow">01 · formular general</span><h2 class="reveal-clip"><span class="clip-inner">Scrie-ne <span class="italic">un mesaj.</span></span></h2><p class="lead">Completează formularul de mai jos — vom reveni prin telefon sau email în orarul de funcționare (L–V 10–20, Sb–D 10–21). Pentru rezervări specifice, folosește formularul de pe pagina experienței respective.</p></div><span class="sh-meta">răspundem · &lt; 2 ore</span></div>
+    <div class="form-wrap">
+      <form class="form reveal" data-local novalidate name="contact-general" method="POST" data-netlify="true">
+        <input type="hidden" name="form-name" value="contact-general">
+        <div class="f-row"><label><span class="l">Nume</span><input type="text" name="name" required></label><label><span class="l">Telefon</span><input type="tel" name="phone" placeholder="opțional"></label></div>
+        <label><span class="l">Email</span><input type="email" name="email" required placeholder="email@exemplu.ro"></label>
+        <label><span class="l">Subiect</span>
+          <select name="topic" required>
+            <option>Întrebare generală</option><option>Rezervare masă (Restro)</option><option>Rezervare cabină</option><option>Bilete bob / parc aventură</option><option>Offroad adventure</option><option>Salina — ședință</option><option>Eveniment privat / grup</option><option>Presă / colaborare</option>
+          </select>
+        </label>
+        <label><span class="l">Mesaj</span><textarea name="message" required placeholder="Spune-ne despre ce vorbim — data, numărul de persoane, pachetul dorit…"></textarea></label>
+        <label class="consent"><input type="checkbox" required> Sunt de acord cu prelucrarea datelor pentru a fi contactat(ă).</label>
+        <div class="submit-row"><span class="note">Formular securizat · Netlify</span><button type="submit" class="btn primary"><span>Trimite mesajul</span><span class="arr">→</span></button></div>
+      </form>
+
+      <div class="reveal" data-stagger style="display:flex;flex-direction:column;gap:var(--s-3)">
+        <div class="info-card">
+          <h4>Detalii locație</h4>
+          <div class="info-row"><span class="k">Adresă</span><span class="v">Pasul Pângărați · QPGC+95 · Gheorgheni</span></div>
+          <div class="info-row"><span class="k">Județ</span><span class="v">Harghita</span></div>
+          <div class="info-row"><span class="k">Drum</span><span class="v">DN12C · est</span></div>
+          <div class="info-row"><span class="k">Altitudine</span><span class="v">1 240 m</span></div>
+          <div class="info-row"><span class="k">Coordonate</span><span class="v">46.7757° N · 25.7236° E</span></div>
+        </div>
+        <div class="info-card">
+          <h4>Social</h4>
+          <div class="info-row"><span class="k">Facebook</span><span class="v"><a href="https://www.facebook.com/profile.php?id=100063484366206" target="_blank" rel="noopener">facebook.com →</a></span></div>
+          <div class="info-row"><span class="k">Instagram</span><span class="v"><a href="https://www.instagram.com/oxygen_restro" target="_blank" rel="noopener">@oxygen_restro →</a></span></div>
+          <div class="info-row"><span class="k">Maps</span><span class="v"><a href="https://maps.app.goo.gl/ZxqF1kKwSY8s2QoL6" target="_blank" rel="noopener">Google Maps →</a></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MAP -->
+<section class="seg-flow dark">
+  <div class="wrap">
+    <div class="sh reveal"><div class="sh-left"><span class="eyebrow">02 · locație</span><h2 class="reveal-clip"><span class="clip-inner">Pe harta <span class="italic">Hășmașului.</span></span></h2><p class="lead">La câteva minute de Lacul Roșu, pe drumul DN12C, între Gheorgheni și Piatra Neamț. Drumul este accesibil tot anul.</p></div><span class="sh-meta">46.7757° N · 25.7236° E</span></div>
+    <div class="map-wrap reveal">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10815.123!2d25.7235625!3d46.7756875!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x474a95001d610fd9%3A0x250f00c73dcf63fb!2sOxygen%20Resort%20Cabin%20Hotels!5e0!3m2!1sro!2sro!4v1714000000000" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen title="Oxygen Resort · Google Maps"></iframe>
+      <div class="m-ov">
+        <div class="mb"><span class="mh">— Oxygen Resort</span><span class="mv">Pasul Pângărați · DN12C</span></div>
+        <div class="mb"><span class="mh">— Distanță</span><span class="mv">Lacul Roșu · 9 km</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="brand"><div class="lg"><img src="./logo/logo.webp" alt="Oxygen Resort"><span>OXYGEN RESORT</span></div><p>Complex de altitudine pe DN12C, creasta Munților Hășmaș.</p>
+      <div class="f-social"><a href="https://www.facebook.com/profile.php?id=100063484366206" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg></a><a href="https://www.instagram.com/oxygen_restro" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor"/></svg></a></div>
+    </div>
+    <div class="col"><h5>— Experiențe</h5><ul><li><a href="./restro.html">Restro</a></li><li><a href="./cabine.html">Cabine</a></li><li><a href="./bob.html">Bob</a></li><li><a href="./aventura.html">Aventură</a></li><li><a href="./schi.html">Schi</a></li><li><a href="./adventure.html">Adventure</a></li><li><a href="./salina.html">Salina</a></li></ul></div>
+    <div class="col"><h5>— Complex</h5><ul><li><a href="./hotel.html">Hotel</a></li><li><a href="./contact.html">Contact</a></li><li><a href="./index.html#constelatie">Hartă</a></li></ul></div>
+    <div class="col"><h5>— Contact</h5><ul><li><a href="tel:0372903789">0372 · 903 · 789</a></li><li><a href="mailto:oxygenrestro@gmail.com">oxygenrestro@gmail.com</a></li><li>Pasul Pângărați</li><li>Gheorgheni · Harghita</li></ul></div>
+    <div class="f-bot"><span class="mono">© 2026 Oxygen Resort · DN12C</span><span class="mono">46.7757° N · 1240 m</span></div>
+  </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js"></script>
+<script src="./app.js"></script>
+</body>
+</html>

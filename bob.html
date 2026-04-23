@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Pistă de bob · 1260 m · Oxygen Resort</title>
+<meta name="description" content="Pistă de bob Oxygen Resort — 1260 metri de dublă spirală, oprire automată, capacitate 500 persoane / oră. Adult 27 RON · copil 22 RON.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@200;300;400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400;1,6..72,500;1,6..72,600&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Spline+Sans+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./style.css">
+<style>
+  .bob-viz{margin-top:var(--s-8);position:relative;aspect-ratio:21/9;background:radial-gradient(60% 100% at 50% 50%,rgba(77,197,255,.06) 0%,transparent 70%),var(--surface);border:1px solid var(--line);border-radius:var(--r-sharp);overflow:hidden;padding:var(--s-6)}
+  .bob-viz svg{width:100%;height:100%}
+  .bob-viz .path{fill:none;stroke:var(--accent);stroke-width:1.4;stroke-dasharray:2800;stroke-dashoffset:2800;transition:stroke-dashoffset 3.4s var(--ease)}
+  .bob-viz.in .path{stroke-dashoffset:0}
+  .bob-viz .track-shadow{fill:none;stroke:rgba(77,197,255,.15);stroke-width:6;filter:blur(8px)}
+  .bob-viz .tags{position:absolute;inset:0;pointer-events:none}
+  .bob-viz .tags .t{position:absolute;display:flex;flex-direction:column;gap:4px;font-family:var(--f-mono);font-size:10px;letter-spacing:.18em;color:var(--muted);text-transform:uppercase}
+  .bob-viz .tags .t b{color:var(--accent);font-family:var(--f-display);font-size:22px;font-weight:400;letter-spacing:-.01em}
+  .bob-viz .tags .t1{top:14%;left:10%}
+  .bob-viz .tags .t2{top:62%;left:44%}
+  .bob-viz .tags .t3{top:20%;right:8%}
+  @media(max-width:760px){.bob-viz{aspect-ratio:4/3;padding:var(--s-4)}.bob-viz .tags{display:none}}
+
+  .safety{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s-3);margin-top:var(--s-6)}
+  .safety .s-card{padding:var(--s-5);border:1px solid var(--line);background:var(--surface);border-radius:var(--r-sharp);display:flex;flex-direction:column;gap:var(--s-3)}
+  .safety .s-card .ico{font-size:28px;color:var(--accent)}
+  .safety .s-card h5{font-family:var(--f-display);font-size:18px;font-weight:500;letter-spacing:-.005em}
+  .safety .s-card p{font-size:13px;color:var(--muted);line-height:1.6}
+  @media(max-width:760px){.safety{grid-template-columns:1fr}}
+
+  .price-card{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:var(--s-6);border:1px solid var(--line);border-radius:var(--r-sharp);overflow:hidden;background:var(--line)}
+  .price-card .p{padding:var(--s-6);background:var(--surface);display:flex;flex-direction:column;gap:var(--s-3);transition:background .5s var(--ease);position:relative}
+  .price-card .p:hover{background:var(--surface-hi)}
+  .price-card .p.featured{background:linear-gradient(135deg,rgba(77,197,255,.08) 0%,var(--surface) 60%);border-top:2px solid var(--accent)}
+  .price-card .p .ty{font-family:var(--f-mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+  .price-card .p.featured .ty{color:var(--accent)}
+  .price-card .p .pr{font-family:var(--f-display);font-size:clamp(40px,5vw,72px);font-weight:300;letter-spacing:-.02em;line-height:1}
+  .price-card .p .pr em{font-family:var(--f-accent);font-style:italic;color:var(--accent)}
+  .price-card .p .pn{font-family:var(--f-body);font-size:14px;color:var(--text-lead);line-height:1.6}
+  @media(max-width:760px){.price-card{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="rail" id="rail" style="--p:0%"></div>
+<div class="alt-chip"><div class="ac-line"></div><div class="ac-val">Altitudine <b id="altV">820</b> m</div><div class="ac-line"></div></div>
+
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <div class="nav-left"><a href="./index.html" class="brandmark"><img src="./logo/logo.webp" alt="Oxygen Resort"><span class="bn">OXYGEN RESORT</span></a></div>
+    <nav class="nav-links"><a href="./index.html">Acasă</a><a href="./restro.html">Restro</a><a href="./cabine.html">Cabine</a><a href="./bob.html" class="active">Bob</a><a href="./contact.html">Contact</a></nav>
+    <div class="nav-right"><div class="lang-toggle"><a class="on" href="#">RO</a><a href="#">HU</a><a href="#">EN</a></div><a href="./contact.html" class="nav-cta">Rezervă<span class="arr">→</span></a><button class="nav-burger" aria-label="Menu"><span></span><span></span><span></span></button></div>
+  </div>
+</header>
+<nav class="mobile-menu"><a href="./index.html"><span class="num">00</span>Acasă</a><a href="./restro.html"><span class="num">01</span>Oxygen Restro</a><a href="./cabine.html"><span class="num">02</span>17 Cabine</a><a href="./bob.html"><span class="num">03</span>Pistă de bob</a><a href="./aventura.html"><span class="num">04</span>Parc de aventură</a><a href="./schi.html"><span class="num">05</span>Pârtie de schi</a><a href="./adventure.html"><span class="num">06</span>Adventure offroad</a><a href="./salina.html"><span class="num">07</span>Salina</a><a href="./hotel.html"><span class="num">08</span>Hotel · în curând</a><a href="./contact.html"><span class="num">09</span>Contact</a><div class="lang-toggle-mm"><a href="#" class="on">RO</a><a href="#">HU</a><a href="#">EN</a></div></nav>
+
+<section class="cover cover-sub" id="cover">
+  <img src="./images/bob-1.webp" class="cover-video" alt="Pistă de bob Oxygen">
+  <div class="cover-inner">
+    <div class="cover-top reveal">
+      <div class="cover-chips"><span class="chip on">● 03 / 07 · Pistă de bob</span><span class="chip">Dublă spirală</span><span class="chip">500 pers / h</span></div>
+      <div class="cover-coord"><div><span>Luni–Duminică</span> · 10 – 20</div><div>adult 27 · <span>copil 22 RON</span></div></div>
+    </div>
+    <div class="cover-mid">
+      <span class="eyebrow reveal" style="margin-bottom:0">un kilometru de spirală</span>
+      <h1 class="words" id="heroH1">
+        <span class="w"><span>1 260</span></span>
+        <span class="w"><span>metri.</span></span><br>
+        <span class="w"><span>Dublă</span></span>
+        <span class="w"><span><em>spirală.</em></span></span>
+      </h1>
+      <p class="lead reveal">Designul unic și decorul pitoresc al pistei Oxygen Bob o fac o atracție regională. Oprire automată, siguranță avansată, capacitate 500 persoane / oră.</p>
+      <div class="cover-cta reveal">
+        <a class="btn primary" href="#tarif"><span>Vezi tariful</span><span class="arr">→</span></a>
+        <a class="btn ghost" href="#siguranta"><span>Siguranță</span><span class="arr">↓</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPIRAL VIZ -->
+<section class="seg-flow">
+  <div class="wrap">
+    <div class="sh reveal">
+      <div class="sh-left"><span class="eyebrow">01 · traseul</span><h2 class="reveal-clip"><span class="clip-inner">O spirală <span class="italic">dublă,</span> de 1260 m.</span></h2><p class="lead">„Sistemul de frânare automată garantează o oprire lină și sigură.” Design ergonomic pentru confort maxim, la orice viteză.</p></div>
+      <span class="sh-meta">frânare automată · confort maxim</span>
+    </div>
+    <div class="bob-viz reveal" id="bobViz">
+      <svg viewBox="0 0 800 300" preserveAspectRatio="none">
+        <path class="track-shadow" d="M 40 260 C 120 260, 160 40, 260 40 C 360 40, 380 160, 280 160 C 180 160, 200 260, 320 260 C 440 260, 460 80, 560 80 C 660 80, 680 220, 580 220 C 480 220, 520 260, 720 260 C 780 260, 780 200, 760 180"/>
+        <path class="path" d="M 40 260 C 120 260, 160 40, 260 40 C 360 40, 380 160, 280 160 C 180 160, 200 260, 320 260 C 440 260, 460 80, 560 80 C 660 80, 680 220, 580 220 C 480 220, 520 260, 720 260 C 780 260, 780 200, 760 180"/>
+        <circle cx="40" cy="260" r="5" fill="#4DC5FF"/>
+        <circle cx="760" cy="180" r="5" fill="#FFD9A1"/>
+      </svg>
+      <div class="tags">
+        <div class="t t1"><span>start</span><b>0 m</b></div>
+        <div class="t t2"><span>spirală mijloc</span><b>630 m</b></div>
+        <div class="t t3"><span>finish</span><b>1 260 m</b></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICES -->
+<section class="seg-flow dark" id="tarif">
+  <div class="wrap">
+    <div class="sh reveal">
+      <div class="sh-left"><span class="eyebrow">02 · tarif</span><h2 class="reveal-clip"><span class="clip-inner">Trei <span class="italic">tarife,</span> o singură pistă.</span></h2></div>
+      <span class="sh-meta">bilet / cursă</span>
+    </div>
+    <div class="price-card reveal" data-stagger>
+      <div class="p"><span class="ty">— copil (&lt; 14 ani)</span><span class="pr">22 <em>RON</em></span><span class="pn">Bilet / cursă · însoțit de un adult, conform regulilor de vârstă/înălțime.</span></div>
+      <div class="p featured"><span class="ty">— adult</span><span class="pr">27 <em>RON</em></span><span class="pn">Bilet / cursă · pentru persoane de peste 14 ani. Cel mai cerut.</span></div>
+      <div class="p"><span class="ty">— grup</span><span class="pr">la <em>cerere</em></span><span class="pn">Pentru grupuri &gt; 10 persoane contactează-ne direct — pachete combinate cu parcul și restaurantul.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- SAFETY -->
+<section class="seg-flow" id="siguranta">
+  <div class="wrap">
+    <div class="sh reveal">
+      <div class="sh-left"><span class="eyebrow">03 · siguranță</span><h2 class="reveal-clip"><span class="clip-inner">Oprire <span class="italic">lină</span> · tehnologie modernă.</span></h2></div>
+      <span class="sh-meta">verified · producător</span>
+    </div>
+    <div class="safety reveal" data-stagger>
+      <div class="s-card"><span class="ico">◉</span><h5>Frânare automată</h5><p>„Sistemul de frânare automată garantează o oprire lină și sigură” la capătul pistei.</p></div>
+      <div class="s-card"><span class="ico">▲</span><h5>Design ergonomic</h5><p>Vehiculele sunt echipate cu sisteme avansate de siguranță și design ergonomic pentru confort maxim.</p></div>
+      <div class="s-card"><span class="ico">∿</span><h5>Capacitate</h5><p>Capacitate 500 persoane / oră — organizăm fluxul pentru timp de așteptare minim.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="seg-flow dark">
+  <div class="wrap">
+    <div class="sh reveal"><div class="sh-left"><span class="eyebrow">04 · galerie</span><h2 class="reveal-clip"><span class="clip-inner">Pista, <span class="italic">curbă cu curbă.</span></span></h2></div><span class="sh-meta">5 cadre action</span></div>
+    <div class="gal-pro">
+      <a class="gp-item" href="#"><img src="./images/bob-1.webp" alt="Pista iarna"><div class="ov"><span class="mh">01 · panoramă iarnă</span><span class="mn">Pista pe zăpadă</span></div></a>
+      <a class="gp-item" href="#"><img src="./images/bob-cropped.webp" alt="Bob signature"><div class="ov"><span class="mh">02 · signature</span><span class="mn">Cadrul oficial al pistei</span></div></a>
+      <a class="gp-item" href="#"><img src="./images/bob-2.webp" alt="Bob spirală"><div class="ov"><span class="mh">03 · spirală</span><span class="mn">Detail curbă</span></div></a>
+      <a class="gp-item" href="#"><img src="./images/bob-DSCF6113.webp" alt="Bob action"><div class="ov"><span class="mh">04 · action</span><span class="mn">În plin traseu</span></div></a>
+      <a class="gp-item" href="#"><img src="./images/bob-DSCF6125.webp" alt="Bob sanie"><div class="ov"><span class="mh">05 · sanie</span><span class="mn">Vehicul cu siguranță avansată</span></div></a>
+      <a class="gp-item" href="#"><img src="./images/bob-DSCF6173.webp" alt="Bob curba"><div class="ov"><span class="mh">06 · curba largă</span><span class="mn">1260 m dublă spirală</span></div></a>
+      <a class="gp-item" href="#"><img src="./images/bob-DSCF6213.webp" alt="Bob vara"><div class="ov"><span class="mh">07 · vara</span><span class="mn">Deschis tot anul</span></div></a>
+      <a class="gp-item" href="#"><img src="./images/bob-5.webp" alt="Bob duotone"><div class="ov"><span class="mh">08 · duotone</span><span class="mn">Signature banner</span></div></a>
+      <a class="gp-item" href="#"><img src="./images/bob-DSCF6285.webp" alt="Bob final"><div class="ov"><span class="mh">09 · final</span><span class="mn">Oprire automată, lină</span></div></a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="seg-flow">
+  <div class="wrap">
+    <div class="strip reveal"><img src="./images/bob-2.webp" alt="">
+      <div class="strip-inner">
+        <div class="lt"><span class="ey">— program</span><h3>Deschis <em>Luni – Duminică · 10:00 – 20:00.</em> Bilet direct la casă.</h3></div>
+        <div class="rt"><div>Tel · <b>0372 903 789</b></div><div>Adult · <b>27 RON</b></div><div>Copil · <b>22 RON</b></div></div>
+      </div>
+    </div>
+    <div class="cover-cta" style="justify-content:center;margin-top:var(--s-6)">
+      <a class="btn primary" href="./contact.html"><span>Întreabă-ne orice</span><span class="arr">→</span></a>
+      <a class="btn ghost" href="./aventura.html"><span>Combină cu parcul de aventură</span><span class="arr">→</span></a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="brand"><div class="lg"><img src="./logo/logo.webp" alt="Oxygen Resort"><span>OXYGEN RESORT</span></div><p>Complex de altitudine pe DN12C, creasta Munților Hășmaș.</p>
+      <div class="f-social"><a href="https://www.facebook.com/profile.php?id=100063484366206" target="_blank" rel="noopener" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg></a><a href="https://www.instagram.com/oxygen_restro" target="_blank" rel="noopener" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor"/></svg></a></div>
+    </div>
+    <div class="col"><h5>— Experiențe</h5><ul><li><a href="./restro.html">Restro</a></li><li><a href="./cabine.html">Cabine</a></li><li><a href="./bob.html">Bob</a></li><li><a href="./aventura.html">Aventură</a></li><li><a href="./schi.html">Schi</a></li><li><a href="./adventure.html">Adventure</a></li><li><a href="./salina.html">Salina</a></li></ul></div>
+    <div class="col"><h5>— Complex</h5><ul><li><a href="./hotel.html">Hotel</a></li><li><a href="./contact.html">Contact</a></li><li><a href="./index.html#constelatie">Hartă</a></li><li><a href="https://maps.app.goo.gl/ZxqF1kKwSY8s2QoL6" target="_blank" rel="noopener">Google Maps</a></li></ul></div>
+    <div class="col"><h5>— Contact</h5><ul><li><a href="tel:0372903789">0372 · 903 · 789</a></li><li><a href="mailto:oxygenrestro@gmail.com">oxygenrestro@gmail.com</a></li><li>Pasul Pângărați</li></ul></div>
+    <div class="f-bot"><span class="mono">© 2026 Oxygen Resort</span><span class="mono">46.7757° N · 1240 m</span></div>
+  </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js"></script>
+<script src="./app.js"></script>
+<script>
+  // trigger bob-viz path draw when visible
+  const bv = document.getElementById('bobViz');
+  if (bv){
+    const o = new IntersectionObserver((e)=>{ e.forEach(x=> x.isIntersecting && (bv.classList.add('in'), o.disconnect())); }, { threshold: .3 });
+    o.observe(bv);
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Oxygen Restro — Bucătărie panoramică · Oxygen Resort</title>
+<meta name="description" content="Oxygen Restro — restaurantul complexului Oxygen Resort. Panoramă spre Gheorgheni, perete de sticlă, atmosferă familială. L–V 10–20 · Sb–D 10–21.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@200;300;400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400;1,6..72,500;1,6..72,600&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Spline+Sans+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./style.css">
+<style>
+  .hours-card{display:grid;grid-template-columns:repeat(7,1fr);gap:2px;margin-top:var(--s-6);border:1px solid var(--line);border-radius:var(--r-sharp);overflow:hidden;background:var(--line)}
+  .hours-card .d{padding:var(--s-4) var(--s-3);background:var(--surface);display:flex;flex-direction:column;gap:6px;transition:background .5s var(--ease);position:relative}
+  .hours-card .d.open::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:var(--accent)}
+  .hours-card .d:hover{background:var(--surface-hi)}
+  .hours-card .d .dn{font-family:var(--f-mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+  .hours-card .d .dh{font-family:var(--f-display);font-size:16px;font-weight:500;letter-spacing:-.005em;color:var(--text)}
+  .hours-card .d.open .dn{color:var(--accent)}
+  @media(max-width:760px){.hours-card{grid-template-columns:repeat(2,1fr)}}
+
+  .menu-tabs{display:flex;gap:10px;flex-wrap:wrap;margin-top:var(--s-5)}
+  .menu-tabs .tab{padding:10px 18px;border:1px solid var(--line);border-radius:var(--r-pill);font-family:var(--f-mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--text-lead);transition:all .5s var(--ease);cursor:pointer}
+  .menu-tabs .tab.on{background:var(--accent);color:var(--bg-deep);border-color:var(--accent)}
+  .menu-tabs .tab:not(.on):hover{border-color:var(--accent);color:var(--accent)}
+
+  .menu-note{margin-top:var(--s-5);padding:var(--s-5);border:1px dashed var(--line);border-radius:var(--r-sharp);background:var(--surface);display:flex;justify-content:space-between;align-items:center;gap:var(--s-4);flex-wrap:wrap}
+  .menu-note .l{font-family:var(--f-display);font-size:20px;font-weight:400}
+  .menu-note .l em{font-family:var(--f-accent);font-style:italic;color:var(--accent)}
+  .menu-note .r{font-family:var(--f-mono);font-size:11px;letter-spacing:.18em;color:var(--muted);text-transform:uppercase}
+</style>
+</head>
+<body>
+
+<div class="rail" id="rail" style="--p:0%"></div>
+<div class="alt-chip"><div class="ac-line"></div><div class="ac-val">Altitudine <b id="altV">820</b> m</div><div class="ac-line"></div></div>
+
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <div class="nav-left"><a href="./index.html" class="brandmark"><img src="./logo/logo.webp" alt="Oxygen Resort"><span class="bn">OXYGEN RESORT</span></a></div>
+    <nav class="nav-links"><a href="./index.html">Acasă</a><a href="./restro.html" class="active">Restro</a><a href="./cabine.html">Cabine</a><a href="./bob.html">Bob</a><a href="./contact.html">Contact</a></nav>
+    <div class="nav-right">
+      <div class="lang-toggle"><a class="on" href="#">RO</a><a href="#">HU</a><a href="#">EN</a></div>
+      <a href="./contact.html" class="nav-cta">Rezervă<span class="arr">→</span></a>
+      <button class="nav-burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<nav class="mobile-menu">
+  <a href="./index.html"><span class="num">00</span>Acasă</a><a href="./restro.html"><span class="num">01</span>Oxygen Restro</a><a href="./cabine.html"><span class="num">02</span>17 Cabine</a><a href="./bob.html"><span class="num">03</span>Pistă de bob</a><a href="./aventura.html"><span class="num">04</span>Parc de aventură</a><a href="./schi.html"><span class="num">05</span>Pârtie de schi</a><a href="./adventure.html"><span class="num">06</span>Adventure offroad</a><a href="./salina.html"><span class="num">07</span>Salina</a><a href="./hotel.html"><span class="num">08</span>Hotel · în curând</a><a href="./contact.html"><span class="num">09</span>Contact</a>
+<div class="lang-toggle-mm"><a href="#" class="on">RO</a><a href="#">HU</a><a href="#">EN</a></div></nav>
+
+<!-- COVER -->
+<section class="cover cover-sub" id="cover">
+  <img src="./images/restro-28.webp" class="cover-video" alt="Oxygen Restro — acoperiș ondulat + pereți de sticlă">
+  <div class="cover-inner">
+    <div class="cover-top reveal">
+      <div class="cover-chips">
+        <span class="chip on">● 01 / 07 · Restaurant</span>
+        <span class="chip">Perete de sticlă</span>
+        <span class="chip">Vedere spre Gheorgheni</span>
+      </div>
+      <div class="cover-coord"><div><span>Luni–Vineri</span> · 10:00 – 20:00</div><div><span>Sâmbătă–Duminică</span> · 10:00 – 21:00</div></div>
+    </div>
+
+    <div class="cover-mid">
+      <span class="eyebrow reveal" style="margin-bottom:0">restaurantul complexului</span>
+      <h1 class="words" id="heroH1">
+        <span class="w"><span>Oxygen</span></span>
+        <span class="w"><span><em>Restro.</em></span></span>
+      </h1>
+      <p class="lead reveal">Priveliște panoramică cu suprafețe de sticlă uriașe — atmosferă familială în inima Munților Hășmaș.</p>
+      <div class="cover-cta reveal">
+        <a class="btn primary" href="#rezervare"><span>Rezervă o masă</span><span class="arr">→</span></a>
+        <a class="btn ghost" href="#etlap"><span>Vezi meniul</span><span class="arr">↓</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="seg-flow">
+  <div class="wrap">
+    <div class="intro" style="display:grid;grid-template-columns:1fr 1.1fr;gap:var(--s-8);align-items:start">
+      <div class="reveal">
+        <span class="eyebrow">01 · despre restaurant</span>
+        <h2 class="reveal-clip"><span class="clip-inner">Un perete <span class="italic">de sticlă</span> spre Gheorgheni.</span></h2>
+      </div>
+      <div class="reveal" data-stagger style="display:flex;flex-direction:column;gap:var(--s-4)">
+        <p style="font-size:17px;line-height:1.72;color:var(--text-lead)">„Restaurantul nostru profită de frumoasa priveliște panoramică cu suprafețe de sticlă uriașe, impresionante, cu vedere spre Gheorgheni.”</p>
+        <p style="font-size:17px;line-height:1.72;color:var(--text-lead)">Atmosferă familială, ingrediente locale, sală largă pentru evenimente private. Restroul este parte integrantă a complexului Oxygen Resort — puteți combina prânzul cu o tură pe pista de bob sau cu o oră în parcul de aventură.</p>
+        <div style="display:flex;gap:var(--s-2);flex-wrap:wrap;margin-top:var(--s-2)">
+          <span class="chip on">panoramă</span><span class="chip">familial</span><span class="chip">local</span><span class="chip">evenimente</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOURS -->
+<section class="seg-flow dark">
+  <div class="wrap">
+    <div class="sh reveal">
+      <div class="sh-left"><span class="eyebrow">02 · orar</span><h2 class="reveal-clip"><span class="clip-inner">Deschis <span class="italic">în fiecare zi.</span></span></h2></div>
+      <span class="sh-meta">0372 · 903 · 789</span>
+    </div>
+    <div class="hours-card reveal" data-stagger>
+      <div class="d open"><span class="dn">Luni</span><span class="dh">10:00 – 20:00</span></div>
+      <div class="d open"><span class="dn">Marți</span><span class="dh">10:00 – 20:00</span></div>
+      <div class="d open"><span class="dn">Miercuri</span><span class="dh">10:00 – 20:00</span></div>
+      <div class="d open"><span class="dn">Joi</span><span class="dh">10:00 – 20:00</span></div>
+      <div class="d open"><span class="dn">Vineri</span><span class="dh">10:00 – 20:00</span></div>
+      <div class="d open"><span class="dn">Sâmbătă</span><span class="dh">10:00 – 21:00</span></div>
+      <div class="d open"><span class="dn">Duminică</span><span class="dh">10:00 – 21:00</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- MENU -->
+<section class="seg-flow" id="etlap">
+  <div class="wrap">
+    <div class="sh reveal">
+      <div class="sh-left">
+        <span class="eyebrow">03 · meniul</span>
+        <h2 class="reveal-clip"><span class="clip-inner">Ce servim <span class="italic">la Oxygen.</span></span></h2>
+        <p class="lead">Meniul complet este disponibil digital — actualizat de fiecare dată când bucătarul schimbă preparatul zilei. Scanați QR-ul la intrare sau deschideți aici.</p>
+      </div>
+      <span class="sh-meta">menubox · digital</span>
+    </div>
+
+    <div class="menu-tabs reveal">
+      <span class="tab on">Meniu complet</span>
+      <span class="tab">Oferta zilei</span>
+      <span class="tab">Băuturi</span>
+      <span class="tab">Deserturi</span>
+      <span class="tab">Copii</span>
+    </div>
+
+    <div class="menu-note reveal">
+      <div class="l">Meniul complet este disponibil prin <em>platforma digitală Menubox.</em></div>
+      <a class="btn primary" href="tel:0372903789"><span>Sună și rezervă</span><span class="arr">→</span></a>
+      <div class="r">0372 · 903 · 789</div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="seg-flow dark">
+  <div class="wrap">
+    <div class="sh reveal">
+      <div class="sh-left"><span class="eyebrow">04 · galerie</span><h2 class="reveal-clip"><span class="clip-inner">Sala, terasa, <span class="italic">priveliștea.</span></span></h2></div>
+      <span class="sh-meta">6 cadre editorial</span>
+    </div>
+    <div class="gal-pro">
+      <a class="gp-item" href="#"><img src="./images/restro-etterem1.webp" alt="Oxygen Restro sunset"><div class="ov"><span class="mh">01 · fațada · sunset</span><span class="mn">„OXYGEN RESTRO" — la apus</span></div></a>
+      <a class="gp-item" href="#"><img src="./images/restro-28.webp" alt="Oxygen Restro hullámos tető"><div class="ov"><span class="mh">02 · acoperiș ondulat</span><span class="mn">Pereți de sticlă &amp; acoperiș signature</span></div></a>
+      <a class="gp-item" href="#"><img src="./images/restro-2.webp" alt="Masă + panoramă"><div class="ov"><span class="mh">03 · sala panoramă</span><span class="mn">Mese cu vedere spre munte</span></div></a>
+      <a class="gp-item" href="#"><img src="./images/restro-1.webp" alt="Șemineu"><div class="ov"><span class="mh">04 · șemineu</span><span class="mn">Ambient cald, lemn &amp; foc</span></div></a>
+      <a class="gp-item" href="#"><img src="./images/restro-3.webp" alt="Bar și mese"><div class="ov"><span class="mh">05 · bar &amp; structură</span><span class="mn">Grinzi de lemn, lumini joase</span></div></a>
+      <a class="gp-item" href="#"><img src="./images/restro-7.webp" alt="Terasa"><div class="ov"><span class="mh">06 · terasa</span><span class="mn">Vedere din interior spre exterior</span></div></a>
+      <a class="gp-item" href="#"><img src="./images/restro-22.webp" alt="Restro cu 5 acoperișuri"><div class="ov"><span class="mh">07 · volum arhitectural</span><span class="mn">Seria de acoperișuri ondulate</span></div></a>
+    </div>
+  </div>
+</section>
+
+<!-- RESERVATION FORM -->
+<section class="seg-flow" id="rezervare">
+  <div class="wrap">
+    <div class="sh reveal">
+      <div class="sh-left">
+        <span class="eyebrow">05 · rezervare</span>
+        <h2 class="reveal-clip"><span class="clip-inner">Rezervă o <span class="italic">masă.</span></span></h2>
+        <p class="lead">Trimite-ne detaliile rezervării — revenim cu confirmarea în cel mult 2 ore, în orarul de funcționare.</p>
+      </div>
+      <span class="sh-meta">răspundem · sub 2 ore</span>
+    </div>
+
+    <div class="form-wrap">
+      <form class="form reveal" data-local novalidate name="restro-reservation" method="POST" data-netlify="true">
+        <input type="hidden" name="form-name" value="restro-reservation">
+        <div class="f-row">
+          <label><span class="l">Nume</span><input type="text" name="name" required placeholder="Numele tău"></label>
+          <label><span class="l">Telefon</span><input type="tel" name="phone" required placeholder="07xx xxx xxx"></label>
+        </div>
+        <div class="f-row">
+          <label><span class="l">Email</span><input type="email" name="email" required placeholder="email@exemplu.ro"></label>
+          <label><span class="l">Persoane</span>
+            <select name="guests" required>
+              <option value="2">2 persoane</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="10">10+</option>
+            </select>
+          </label>
+        </div>
+        <div class="f-row">
+          <label><span class="l">Data</span><input type="date" name="date" required></label>
+          <label><span class="l">Ora</span>
+            <select name="time" required>
+              <option>10:00</option><option>11:00</option><option>12:00</option><option>13:00</option><option>14:00</option><option>15:00</option><option>16:00</option><option>17:00</option><option>18:00</option><option>19:00</option><option>20:00</option>
+            </select>
+          </label>
+        </div>
+        <label><span class="l">Preferințe</span><textarea name="notes" placeholder="Masă lângă fereastră, ocazie specială, alergii alimentare…"></textarea></label>
+        <label class="consent"><input type="checkbox" required> Sunt de acord cu prelucrarea datelor pentru această rezervare.</label>
+        <div class="submit-row">
+          <span class="note">Răspundem telefonic / email</span>
+          <button type="submit" class="btn primary"><span>Trimite rezervarea</span><span class="arr">→</span></button>
+        </div>
+      </form>
+
+      <div class="reveal" data-stagger style="display:flex;flex-direction:column;gap:var(--s-3)">
+        <div class="info-card">
+          <h4>Contact rapid</h4>
+          <div class="info-row"><span class="k">Telefon</span><span class="v"><a href="tel:0372903789">0372 · 903 · 789</a></span></div>
+          <div class="info-row"><span class="k">Email</span><span class="v"><a href="mailto:oxygenrestro@gmail.com">oxygenrestro@gmail.com</a></span></div>
+          <div class="info-row"><span class="k">Adresă</span><span class="v">Pasul Pângărați · Gheorgheni</span></div>
+          <div class="info-row"><span class="k">Drum</span><span class="v">DN12C · km est</span></div>
+        </div>
+        <div class="info-card">
+          <h4>Ce mai există la Oxygen</h4>
+          <div class="info-row"><span class="k">Cabine</span><span class="v"><a href="./cabine.html">17 în pădure →</a></span></div>
+          <div class="info-row"><span class="k">Bob</span><span class="v"><a href="./bob.html">1260 m →</a></span></div>
+          <div class="info-row"><span class="k">Aventură</span><span class="v"><a href="./aventura.html">5 ha →</a></span></div>
+          <div class="info-row"><span class="k">Salina</span><span class="v"><a href="./salina.html">Terapie →</a></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="brand">
+      <div class="lg"><img src="./logo/logo.webp" alt="Oxygen Resort"><span>OXYGEN RESORT</span></div>
+      <p>Complex de altitudine pe drumul DN12C, între Gheorgheni și Piatra Neamț, pe creasta Munților Hășmaș.</p>
+      <div class="f-social">
+        <a href="https://www.facebook.com/profile.php?id=100063484366206" target="_blank" rel="noopener" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg></a>
+        <a href="https://www.instagram.com/oxygen_restro" target="_blank" rel="noopener" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor"/></svg></a>
+      </div>
+    </div>
+    <div class="col"><h5>— Experiențe</h5><ul><li><a href="./restro.html">Oxygen Restro</a></li><li><a href="./cabine.html">17 Cabine</a></li><li><a href="./bob.html">Pistă bob</a></li><li><a href="./aventura.html">Parc aventură</a></li><li><a href="./schi.html">Pârtie schi</a></li><li><a href="./adventure.html">Adventure offroad</a></li><li><a href="./salina.html">Salina</a></li></ul></div>
+    <div class="col"><h5>— Complex</h5><ul><li><a href="./hotel.html">Hotel · în curând</a></li><li><a href="./contact.html">Contact</a></li><li><a href="./index.html#constelatie">Hartă servicii</a></li><li><a href="https://maps.app.goo.gl/ZxqF1kKwSY8s2QoL6" target="_blank" rel="noopener">Google Maps</a></li></ul></div>
+    <div class="col"><h5>— Contact</h5><ul><li><a href="tel:0372903789">0372 · 903 · 789</a></li><li><a href="mailto:oxygenrestro@gmail.com">oxygenrestro@gmail.com</a></li><li>Pasul Pângărați</li><li>Gheorgheni · Harghita</li></ul></div>
+    <div class="f-bot">
+      <span class="mono">© 2026 Oxygen Resort · DN12C</span>
+      <span class="mono">46.7757° N · 25.7236° E · 1240 m</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js"></script>
+<script src="./app.js"></script>
+</body>
+</html>
